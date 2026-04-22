@@ -344,3 +344,4 @@ void Engine::info(const std::string& input_path,
         std::map<std::string, std::string> out;
         out["version"] = std::to_string(info.version);
         out["gzip"] = (info.flags & FLAG_GZIP) ? "true" : "false";
+        out["metadata_preserved"] = (info.flags & FLAG_METADATA) ? "true" : "false";
