@@ -99,3 +99,4 @@ void Engine::hide(const std::string& host_path,
             uint64_t mtime = static_cast<uint64_t>(
                 std::chrono::duration_cast<std::chrono::milliseconds>(
                     ftime.time_since_epoch()).count());
+            auto perms = fs::status(p).permissions();
