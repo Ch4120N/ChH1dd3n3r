@@ -160,3 +160,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         std::ifstream file(entry, std::ios::binary);
         if (!file) {
             throw ChH1dd3n3rError("Failed to open file for tar: " + entry.string());
+        }
