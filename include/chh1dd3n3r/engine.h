@@ -21,3 +21,4 @@ public:
               const std::string& password,
               bool gzip_compress,
               bool force,
+              int pbkdf2_iterations,
