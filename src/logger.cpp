@@ -41,3 +41,4 @@ void Logger::log(const std::string& level, const std::string& msg,
         std::cout << line << std::endl;
     }
 
+    if (!log_file_.empty()) {
