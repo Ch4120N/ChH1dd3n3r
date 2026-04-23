@@ -11,3 +11,4 @@ namespace chh1dd3n3r {
 
 namespace {
 
+uint64_t read_be64(const uint8_t* p) {
