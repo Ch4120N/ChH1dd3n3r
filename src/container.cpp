@@ -143,3 +143,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         if (info.flags & FLAG_METADATA) {
             if (offset + 10 > plain_meta.size()) {
                 throw MetadataError("Truncated metadata.");
+            }
