@@ -274,3 +274,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             continue;
         }
 
+        if (member.find("..") != std::string::npos || fs::path(member).is_absolute()) {
