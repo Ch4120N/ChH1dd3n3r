@@ -125,3 +125,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
     info.flags = plain_meta[6];
 
     size_t offset = 7;
+    while (offset < plain_meta.size()) {
