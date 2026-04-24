@@ -480,3 +480,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
         try {
             uintmax_t size = fs::file_size(p);
             std::fstream file(p, std::ios::in | std::ios::out | std::ios::binary);
+            if (!file) {
