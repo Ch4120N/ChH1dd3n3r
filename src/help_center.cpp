@@ -12,3 +12,4 @@ std::string HelpCenter::main_help(bool color) {
         return colorize(txt, code, color);
     };
     return
+        C("╭──────────────────────────────────────────────────────────────╮", "\033[36m") + "\n" +
