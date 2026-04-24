@@ -20,3 +20,4 @@ std::vector<uint8_t> random_bytes(size_t count) {
         }
     }
     return buffer;
+}
