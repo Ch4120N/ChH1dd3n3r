@@ -487,3 +487,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             for (int pass = 0; pass < passes; ++pass) {
                 file.seekp(0);
                 uintmax_t remaining = size;
+                while (remaining > 0) {
