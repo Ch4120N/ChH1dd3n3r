@@ -56,3 +56,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
 
     for (const auto& entry : files) {
         std::string name_utf8 = entry.name;
+        write_be16(meta_block, static_cast<uint16_t>(name_utf8.size()));
