@@ -128,3 +128,4 @@ std::string HelpCenter::benchmark_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r benchmark [--iterations N]\n\n"
         "Options:\n"
+        "  --iterations <N>       Number of PBKDF2 iterations (default: 100000)\n";
