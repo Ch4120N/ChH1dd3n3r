@@ -186,3 +186,4 @@ void Engine::unhide(const std::string& input_path,
     if (!fs::is_regular_file(input_path)) {
         throw InputFileError("Container file not found: " + input_path);
     }
+
