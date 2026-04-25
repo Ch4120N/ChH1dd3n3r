@@ -403,3 +403,4 @@ bool Engine::test(const std::string& input_path,
         std::vector<uint8_t> encrypted_meta(data.begin() + footer_pos - footer.enc_len,
                                             data.begin() + footer_pos);
         decrypt_metadata(encrypted_meta, footer.meta_salt, footer.meta_nonce,
+                         password, pbkdf2_iterations);
