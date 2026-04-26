@@ -215,3 +215,4 @@ void Engine::unhide(const std::string& input_path,
 
     MetadataInfo info = parse_metadata_block(plain_meta);
 
+    logger_.info("Container version " + std::to_string(info.version) +
