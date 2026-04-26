@@ -52,3 +52,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
             continue;
         }
         if (ret == Z_MEM_ERROR) {
+            throw ChH1dd3n3rError("Out of memory during GZip decompression.");
