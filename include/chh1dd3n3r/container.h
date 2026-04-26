@@ -14,3 +14,4 @@ namespace chh1dd3n3r {
  */
 std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
                                    bool gzip_flag,
+                                   const std::string& password,
