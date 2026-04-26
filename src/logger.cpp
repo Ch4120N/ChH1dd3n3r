@@ -42,3 +42,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     }
 
     if (!log_file_.empty()) {
+        std::lock_guard<std::mutex> lock(mutex_);
