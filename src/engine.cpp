@@ -485,3 +485,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             }
             std::vector<uint8_t> random_buffer(1024 * 1024);
             for (int pass = 0; pass < passes; ++pass) {
+                file.seekp(0);
