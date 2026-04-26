@@ -255,3 +255,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         uint64_t size = parse_octal(header.size, sizeof(header.size));
 
         if (header.typeflag == 'L') {
+            // GNU long name
