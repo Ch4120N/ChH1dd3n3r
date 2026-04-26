@@ -20,3 +20,4 @@ uint64_t read_be64(const uint8_t* p) {
            (static_cast<uint64_t>(p[5]) << 16) |
            (static_cast<uint64_t>(p[6]) << 8)  |
            static_cast<uint64_t>(p[7]);
+}
