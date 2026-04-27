@@ -221,3 +221,4 @@ void Engine::unhide(const std::string& input_path,
 
     if (info.files.empty()) {
         logger_.warn("Container is empty.");
+        return;
