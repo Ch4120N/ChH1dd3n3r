@@ -294,3 +294,4 @@ void Engine::unhide(const std::string& input_path,
     if (shred_container) {
         shred({input_path}, 3);
     }
+}
