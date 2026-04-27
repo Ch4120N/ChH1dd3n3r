@@ -11,3 +11,4 @@ std::string HelpCenter::main_help(bool color) {
     auto C = [color](const std::string& txt, const char* code) {
         return colorize(txt, code, color);
     };
+    return
