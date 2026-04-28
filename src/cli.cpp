@@ -23,3 +23,4 @@ struct CLI::Options {
     std::string command;
     bool color = true;
     bool banner = true;
+    bool verbose = false;
