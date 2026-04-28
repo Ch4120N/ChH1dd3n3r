@@ -37,3 +37,4 @@ struct TarHeader {
     char prefix[155];
     char pad[12];
 };
+#pragma pack(pop)
