@@ -112,3 +112,4 @@ std::string HelpCenter::strip_help(bool color) {
         "Usage:\n  ChH1dd3n3r strip [OPTIONS]\n\n"
         "Required:\n"
         "  -i, --input <FILE>     Container file\n\n"
+        "Options:\n"
