@@ -101,3 +101,4 @@ std::string HelpCenter::test_help(bool color) {
         "  -i, --input <FILE>     Container file\n\n"
         "Authentication:\n"
         "  -p, --password <PWD>   Password to test\n"
+        "  --key-file <PATH>      Read password from file\n"
