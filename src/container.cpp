@@ -131,3 +131,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         }
         uint16_t fname_len = read_be16(plain_meta.data() + offset);
         offset += 2;
+
