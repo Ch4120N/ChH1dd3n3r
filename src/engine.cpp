@@ -323,3 +323,4 @@ void Engine::info(const std::string& input_path,
                                         data.begin() + footer_pos);
 
     if (password.empty()) {
+        if (json_output) {
