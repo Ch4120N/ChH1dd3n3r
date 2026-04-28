@@ -95,3 +95,4 @@ std::string HelpCenter::info_help(bool color) {
 }
 
 std::string HelpCenter::test_help(bool color) {
+    return
