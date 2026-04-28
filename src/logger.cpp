@@ -53,3 +53,4 @@ void Logger::log(const std::string& level, const std::string& msg,
                 if (end == std::string::npos) break;
                 clean_line.erase(pos, end - pos + 1);
             }
+            time_t now = time(nullptr);
