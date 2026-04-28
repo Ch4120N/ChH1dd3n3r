@@ -114,3 +114,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
     if (plain_meta.size() < 7) {
         throw MetadataError("Metadata block is too short.");
     }
+
