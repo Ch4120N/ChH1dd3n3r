@@ -321,3 +321,4 @@ void Engine::info(const std::string& input_path,
     FooterInfo footer = parse_footer(data, footer_pos);
     std::vector<uint8_t> encrypted_meta(data.begin() + footer_pos - footer.enc_len,
                                         data.begin() + footer_pos);
+
