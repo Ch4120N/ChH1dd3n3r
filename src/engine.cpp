@@ -501,3 +501,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
         } catch (const std::exception& e) {
             logger_.error("Failed to shred " + p.string() + ": " + e.what());
         }
+        spinner.stop();
