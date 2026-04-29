@@ -273,3 +273,4 @@ void Engine::unhide(const std::string& input_path,
                 }
             }
             continue;
+        }
