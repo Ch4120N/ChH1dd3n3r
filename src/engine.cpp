@@ -252,3 +252,4 @@ void Engine::unhide(const std::string& input_path,
 
         if (tar::is_tar(plain)) {
             bool do_extract = false;
+            if (extract_tar == "yes") do_extract = true;
