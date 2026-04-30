@@ -175,3 +175,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
 uint64_t parse_octal(const char* field, size_t size) {
     std::string str(field, size);
     // trim at first NUL or space
+    size_t end = str.find_first_of("\0 ");
