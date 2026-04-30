@@ -113,3 +113,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
         if (a == "-i" || a == "--input") opts.input = get_value_after(args, a, i);
         else if (a == "-o" || a == "--output") opts.output_dir = get_value_after(args, a, i);
         else if (a == "-p" || a == "--password") opts.password = get_value_after(args, a, i);
+        else if (a == "--key-file") opts.key_file = get_value_after(args, a, i);
