@@ -296,3 +296,4 @@ void Engine::unhide(const std::string& input_path,
     }
 }
 
+void Engine::info(const std::string& input_path,
