@@ -250,3 +250,4 @@ void Engine::unhide(const std::string& input_path,
             }
         }
 
+        if (tar::is_tar(plain)) {
