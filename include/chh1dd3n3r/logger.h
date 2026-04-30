@@ -41,3 +41,4 @@ private:
     std::string style(const std::string& text, const std::string& ansi_code) const;
     void log(const std::string& level, const std::string& msg,
              const std::string& ansi_code, bool to_stderr = false);
+    void write_log_file(const std::string& level, const std::string& clean_line);
