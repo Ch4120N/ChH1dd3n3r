@@ -47,3 +47,4 @@ std::vector<uint8_t> decrypt_metadata(const std::vector<uint8_t>& encrypted_meta
 struct MetadataInfo {
     uint8_t version = 0;
     uint8_t flags = 0;
+    std::vector<BlockFileInfo> files;
