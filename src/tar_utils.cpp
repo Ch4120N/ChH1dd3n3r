@@ -138,3 +138,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     if (!is_dir && fs::is_regular_file(entry)) {
         size = fs::file_size(entry);
     }
+    fill_field(header.size, sizeof(header.size), std::to_string(size), true);
