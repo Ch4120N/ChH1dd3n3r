@@ -47,3 +47,4 @@ void Logger::log(const std::string& level, const std::string& msg,
         if (out) {
             std::string clean_line = line;
             // remove ANSI escape sequences
+            std::string::size_type pos;
