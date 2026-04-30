@@ -13,3 +13,4 @@ namespace chh1dd3n3r::tar {
 
 namespace fs = std::filesystem;
 
+namespace {
