@@ -213,3 +213,4 @@ std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
     if (!fs::is_directory(dir)) {
         throw ChH1dd3n3rError("Path is not a directory: " + dir.string());
     }
+
