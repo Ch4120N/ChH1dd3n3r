@@ -267,3 +267,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
         std::string member = long_name.empty() ? get_tar_path(header) : long_name;
         long_name.clear();
+
