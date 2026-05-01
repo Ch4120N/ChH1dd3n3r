@@ -549,3 +549,4 @@ void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode)
             fs::last_write_time(path, ftime);
         } catch (...) {}
     }
+    if (mode != 0) {
