@@ -144,3 +144,4 @@ void Engine::hide(const std::string& host_path,
         Spinner spinner("  Encrypting " + entry.name, !logger_.quiet_);
         spinner.start();
         std::vector<uint8_t> aad(entry.name.begin(), entry.name.end());
+        std::vector<uint8_t> blob = crypto::encrypt_blob(password, entry.data,
