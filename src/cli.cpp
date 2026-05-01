@@ -103,3 +103,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--shred") opts.shred = true;
         else if (a == "--no-metadata") opts.no_metadata = true;
         else if (a == "--pbkdf2-iterations")
+            opts.pbkdf2_iterations = std::stoi(get_value_after(args, a, i));
