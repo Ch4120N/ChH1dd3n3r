@@ -283,3 +283,4 @@ int CLI::run(int argc, char* argv[]) {
                           opts.force, opts.extract_tar,
                           opts.pbkdf2_iterations, opts.shred);
         } else if (opts.command == "info") {
+            std::string password = resolve_password(opts);
