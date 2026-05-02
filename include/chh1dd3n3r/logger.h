@@ -31,3 +31,4 @@ public:
 
     // Allow direct access for Spinner (friend not needed)
     bool quiet_ = false;
+
