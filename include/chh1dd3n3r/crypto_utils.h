@@ -51,3 +51,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
                                   const std::vector<uint8_t>& aad,
                                   int iterations);
 
+/**
