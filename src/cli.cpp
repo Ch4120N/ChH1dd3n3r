@@ -270,3 +270,4 @@ int CLI::run(int argc, char* argv[]) {
     }
 
     Engine engine(logger);
+
