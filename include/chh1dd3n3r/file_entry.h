@@ -27,3 +27,4 @@ struct BlockFileInfo {
     uint64_t data_len = 0;
     uint64_t data_offset = 0;   // offset inside decrypted metadata block
 };
+
