@@ -300,3 +300,4 @@ int CLI::run(int argc, char* argv[]) {
         } else if (opts.command == "genkey") {
             engine.genkey(opts.output_path, opts.length, opts.force);
         }
+    } catch (const ChH1dd3n3rError& e) {
