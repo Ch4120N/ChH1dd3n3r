@@ -13,3 +13,4 @@ public:
     explicit ChH1dd3n3rError(const std::string& message)
         : std::runtime_error(message) {}
 };
+
