@@ -253,3 +253,4 @@ void CLI::print_banner(const Logger& logger) {
 
 int CLI::run(int argc, char* argv[]) {
 #ifdef _WIN32
+    // Set the console code page to UTF-8.
