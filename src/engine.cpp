@@ -467,3 +467,4 @@ void Engine::strip(const std::string& input_path,
     logger_.success("Stripped container. Clean host saved to '" + dest + "'.");
 }
 
+void Engine::shred(const std::vector<std::string>& paths, int passes) {
