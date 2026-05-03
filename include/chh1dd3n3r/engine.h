@@ -32,3 +32,4 @@ public:
                 const std::string& extract_tar,
                 int pbkdf2_iterations,
                 bool shred_container);
+
