@@ -230,3 +230,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
     return aes_gcm_decrypt(key, nonce, ct_tag, aad);
 }
 
+std::string base64_encode(const std::vector<uint8_t>& data) {
