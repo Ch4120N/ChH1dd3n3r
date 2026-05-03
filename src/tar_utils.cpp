@@ -309,3 +309,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             fs::permissions(dest, static_cast<fs::perms>(mode & 0777),
                             fs::perm_options::replace);
         }
+
