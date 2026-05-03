@@ -32,3 +32,4 @@ struct TarHeader {
     char version[2];
     char uname[32];
     char gname[32];
+    char devmajor[8];
