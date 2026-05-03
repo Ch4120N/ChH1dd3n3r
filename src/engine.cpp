@@ -371,3 +371,4 @@ void Engine::info(const std::string& input_path,
         for (const auto& f : info.files) {
             std::cout << "║ " << f.name << "  " << f.data_len << " B\n";
         }
+        std::cout << "╚══════════════════════════════════════╝\n";
