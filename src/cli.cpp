@@ -183,3 +183,4 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
 
 } // anonymous namespace
 
+void CLI::parse_args(int argc, char* argv[], Options& opts) {
