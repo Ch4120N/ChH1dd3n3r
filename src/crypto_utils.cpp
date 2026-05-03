@@ -55,3 +55,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         throw ChH1dd3n3rError("AES-256-GCM requires a 12-byte nonce.");
     }
 
+    EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
