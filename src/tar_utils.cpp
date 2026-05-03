@@ -262,3 +262,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             long_name.assign(reinterpret_cast<const char*>(tar_data.data() + offset), size);
             long_name = long_name.substr(0, long_name.find('\0'));
             offset += ((size + BLOCK_SIZE - 1) / BLOCK_SIZE) * BLOCK_SIZE;
+            continue;
