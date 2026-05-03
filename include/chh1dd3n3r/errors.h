@@ -38,3 +38,4 @@ public:
 class MetadataError : public ContainerError {
 public:
     explicit MetadataError(const std::string& message)
+        : ContainerError(message) {}
