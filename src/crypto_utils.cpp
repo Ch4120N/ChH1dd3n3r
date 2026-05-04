@@ -40,3 +40,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
                     32,
                     key.data())) {
         throw ChH1dd3n3rError("PBKDF2 key derivation failed.");
+    }
