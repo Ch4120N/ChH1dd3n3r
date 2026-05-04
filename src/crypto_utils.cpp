@@ -52,3 +52,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         throw ChH1dd3n3rError("AES-256-GCM requires a 32-byte key.");
     }
     if (nonce.size() != 12) {
+        throw ChH1dd3n3rError("AES-256-GCM requires a 12-byte nonce.");
