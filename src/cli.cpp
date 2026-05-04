@@ -66,3 +66,4 @@ std::string get_value_after(const std::vector<std::string>& args,
                             size_t& i) {
     if (i + 1 < args.size()) {
         return args[++i];
+    }
