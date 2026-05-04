@@ -191,3 +191,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         cleanup();
         throw;
     } catch (...) {
+        cleanup();
