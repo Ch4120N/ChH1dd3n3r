@@ -146,3 +146,4 @@ void Engine::hide(const std::string& host_path,
         std::vector<uint8_t> aad(entry.name.begin(), entry.name.end());
         std::vector<uint8_t> blob = crypto::encrypt_blob(password, entry.data,
                                                          aad, pbkdf2_iterations);
+        encrypted.push_back({entry.name, std::move(blob), entry.is_gzip,
