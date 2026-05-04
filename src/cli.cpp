@@ -269,3 +269,4 @@ int CLI::run(int argc, char* argv[]) {
         print_banner(logger);
     }
 
+    Engine engine(logger);
