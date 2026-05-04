@@ -27,3 +27,4 @@ void Spinner::stop() {
     std::cout << "\r" << std::string(text_.size() + 5, ' ') << "\r" << std::flush;
 }
 
+void Spinner::animate() {
