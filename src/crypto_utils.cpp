@@ -107,3 +107,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         ciphertext.resize(ciphertext_len);
         ciphertext.insert(ciphertext.end(), tag.begin(), tag.end());
 
+        cleanup();
