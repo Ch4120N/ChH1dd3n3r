@@ -88,3 +88,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         }
 
         if (!plaintext.empty()) {
+            if (1 != EVP_EncryptUpdate(ctx, ciphertext.data(), &len,
