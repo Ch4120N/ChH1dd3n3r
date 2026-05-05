@@ -47,3 +47,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     uint8_t flags = 0;
     if (gzip_flag) flags |= FLAG_GZIP;
     if (preserve_metadata) flags |= FLAG_METADATA;
+
