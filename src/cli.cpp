@@ -238,3 +238,4 @@ std::string CLI::resolve_password(const Options& opts) {
         (opts.command == "info" && !opts.password.empty())) {
         return read_password("Password: ");
     }
+    return "";
