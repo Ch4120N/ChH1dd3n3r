@@ -12,3 +12,4 @@ namespace chh1dd3n3r {
  */
 class CLI {
 public:
+    static int run(int argc, char* argv[]);
