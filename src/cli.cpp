@@ -64,3 +64,4 @@ bool has_flag(const std::vector<std::string>& args, const std::string& flag) {
 std::string get_value_after(const std::vector<std::string>& args,
                             const std::string& flag,
                             size_t& i) {
+    if (i + 1 < args.size()) {
