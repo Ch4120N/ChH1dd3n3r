@@ -17,3 +17,4 @@ void Spinner::start() {
     stop_flag_ = false;
     thread_ = std::thread(&Spinner::animate, this);
 }
+
