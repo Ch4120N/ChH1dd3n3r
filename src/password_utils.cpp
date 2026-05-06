@@ -39,3 +39,4 @@ std::string read_password(const std::string& prompt) {
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 
     std::string password;
+    std::getline(std::cin, password);
