@@ -415,3 +415,4 @@ bool Engine::test(const std::string& input_path,
         else if (grep) logger_.grep("STATUS", "ERROR");
         return false;
     }
+
