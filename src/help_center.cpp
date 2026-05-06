@@ -23,3 +23,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  info      ", "\033[32m") + " Display container metadata (alias: list)\n" +
         C("  test      ", "\033[32m") + " Verify password can decrypt container\n" +
         C("  strip     ", "\033[32m") + " Remove hidden data, restore host file\n" +
+        C("  shred     ", "\033[32m") + " Securely delete files\n" +
