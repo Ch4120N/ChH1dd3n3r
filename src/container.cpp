@@ -107,3 +107,4 @@ std::vector<uint8_t> decrypt_metadata(const std::vector<uint8_t>& encrypted_meta
                                       const std::string& password,
                                       int iterations) {
     std::vector<uint8_t> meta_key = crypto::derive_key(password, meta_salt, iterations);
+    return crypto::aes_gcm_decrypt(meta_key, meta_nonce, encrypted_meta, {});
