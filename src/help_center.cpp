@@ -116,3 +116,4 @@ std::string HelpCenter::strip_help(bool color) {
         "  -o, --output <FILE>    Output file (default: overwrite input)\n"
         "  --force                Allow overwriting input file\n";
 }
+
