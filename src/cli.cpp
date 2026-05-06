@@ -264,3 +264,4 @@ int CLI::run(int argc, char* argv[]) {
     parse_args(argc, argv, opts);
 
     Logger logger(opts.color, opts.verbose, opts.quiet, opts.log_file);
+
