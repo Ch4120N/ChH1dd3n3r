@@ -16,3 +16,4 @@ extern const std::vector<uint8_t> MAGIC_HEADER_V1;
 extern const std::vector<uint8_t> MAGIC_HEADER_V2;
 extern const std::vector<uint8_t> MAGIC_FOOTER;
 
+constexpr uint8_t VERSION_V1 = 1;
