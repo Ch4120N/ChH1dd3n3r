@@ -182,3 +182,4 @@ uint64_t parse_octal(const char* field, size_t size) {
     if (str.empty()) {
         return 0;
     }
+    try {
