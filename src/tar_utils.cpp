@@ -58,3 +58,4 @@ void fill_field(char* dest, size_t dest_size, const std::string& value, bool num
         std::memcpy(dest, oct.c_str(), oct.size());
         dest[dest_size - 1] = '\0';
     } else {
+        size_t len = std::min(value.size(), dest_size - 1);
