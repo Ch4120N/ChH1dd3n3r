@@ -46,3 +46,4 @@ void Logger::log(const std::string& level, const std::string& msg,
         std::ofstream out(log_file_, std::ios::app);
         if (out) {
             std::string clean_line = line;
+            // remove ANSI escape sequences
