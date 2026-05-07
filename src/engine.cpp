@@ -217,3 +217,4 @@ void Engine::unhide(const std::string& input_path,
 
     logger_.info("Container version " + std::to_string(info.version) +
                  ", gzip=" + ((info.flags & FLAG_GZIP) ? "yes" : "no") +
+                 ", metadata=" + ((info.flags & FLAG_METADATA) ? "yes" : "no"));
