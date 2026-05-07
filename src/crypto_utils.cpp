@@ -171,3 +171,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
                                        ciphertext.data(), static_cast<int>(ciphertext.size()))) {
                 throw InvalidPasswordError("Decryption failed.");
             }
+            plaintext_len = len;
