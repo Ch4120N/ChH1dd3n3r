@@ -284,3 +284,4 @@ void Engine::unhide(const std::string& input_path,
         if (!out) {
             throw ChH1dd3n3rError("Cannot write file: " + dest.string());
         }
+        out.write(reinterpret_cast<const char*>(plain.data()), plain.size());
