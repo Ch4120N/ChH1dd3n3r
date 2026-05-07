@@ -16,3 +16,4 @@ public:
            const std::string& log_file = "");
 
     void set_color(bool enabled);
+    void set_verbose(bool enabled);
