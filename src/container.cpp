@@ -23,3 +23,4 @@ uint64_t read_be64(const uint8_t* p) {
 }
 
 void write_be64(std::vector<uint8_t>& vec, uint64_t value) {
+    for (int i = 7; i >= 0; --i) {
