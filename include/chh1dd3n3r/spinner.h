@@ -26,3 +26,4 @@ private:
     std::atomic<bool> stop_flag_;
     std::thread thread_;
 
+    void animate();
