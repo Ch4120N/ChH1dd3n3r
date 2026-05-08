@@ -88,3 +88,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
         const std::string& a = args[i];
         if (a == "-H" || a == "--host") opts.host = get_value_after(args, a, i);
         else if (a == "-o" || a == "--output") opts.output = get_value_after(args, a, i);
+        else if (a == "-f" || a == "--files") {
