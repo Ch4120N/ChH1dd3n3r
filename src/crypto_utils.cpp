@@ -205,3 +205,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
     std::vector<uint8_t> nonce = random_bytes(12);
     std::vector<uint8_t> encrypted = aes_gcm_encrypt(key, nonce, plaintext, aad);
 
+    std::vector<uint8_t> blob;
