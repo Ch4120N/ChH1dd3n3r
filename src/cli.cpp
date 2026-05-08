@@ -279,3 +279,4 @@ int CLI::run(int argc, char* argv[]) {
                         !opts.no_metadata, opts.shred);
         } else if (opts.command == "unhide") {
             std::string password = resolve_password(opts);
+            engine.unhide(opts.input, opts.output_dir, password,
