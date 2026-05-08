@@ -31,3 +31,4 @@ struct CLI::Options {
 
     // hide
     std::string host, output, input, file, output_dir;
+    std::vector<std::string> files;
