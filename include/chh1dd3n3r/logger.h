@@ -44,3 +44,4 @@ private:
     void write_log_file(const std::string& level, const std::string& clean_line);
 };
 
+}
