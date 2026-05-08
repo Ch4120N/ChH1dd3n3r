@@ -552,3 +552,4 @@ void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode)
     if (mode != 0) {
         try {
             fs::permissions(path, static_cast<fs::perms>(mode & 07777),
+                            fs::perm_options::replace);
