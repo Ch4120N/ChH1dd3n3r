@@ -46,3 +46,4 @@ public:
               int pbkdf2_iterations);
 
     void strip(const std::string& input_path,
+               const std::string& output_path,
