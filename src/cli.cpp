@@ -256,3 +256,4 @@ int CLI::run(int argc, char* argv[]) {
     // Set the console code page to UTF-8.
     // This is the programmatic equivalent of `chcp 65001`,
     // without invoking a shell command.
+    SetConsoleOutputCP(CP_UTF8);
