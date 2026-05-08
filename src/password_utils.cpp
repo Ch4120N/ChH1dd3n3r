@@ -34,3 +34,4 @@ std::string read_password(const std::string& prompt) {
 #else
     termios oldt, newt;
     tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
