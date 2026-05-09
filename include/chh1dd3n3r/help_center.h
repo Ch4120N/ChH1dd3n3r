@@ -13,3 +13,4 @@ public:
     static std::string hide_help(bool color);
     static std::string unhide_help(bool color);
     static std::string info_help(bool color);
+    static std::string test_help(bool color);
