@@ -264,3 +264,4 @@ void Engine::unhide(const std::string& input_path,
                 do_extract = answer.empty() || answer == "y" || answer == "yes";
             }
             if (do_extract) {
+                logger_.info("Extracting directory contents from " + file.name + " ...");
