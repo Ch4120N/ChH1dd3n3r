@@ -239,3 +239,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
     while (offset + BLOCK_SIZE <= tar_data.size()) {
         const uint8_t* block = tar_data.data() + offset;
+
