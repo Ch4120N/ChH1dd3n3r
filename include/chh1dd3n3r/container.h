@@ -55,3 +55,4 @@ struct MetadataInfo {
  */
 MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta);
 
+} 
