@@ -41,3 +41,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
         int ret = uncompress(dest.data(), &dest_len, data.data(),
                              static_cast<uLong>(data.size()));
         if (ret == Z_OK) {
+            dest.resize(dest_len);
