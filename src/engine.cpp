@@ -416,3 +416,4 @@ bool Engine::test(const std::string& input_path,
         return false;
     }
 
+    if (json_output) logger_.json({{"status", "VALID"}});
