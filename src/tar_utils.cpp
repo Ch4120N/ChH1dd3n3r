@@ -85,3 +85,4 @@ void append_bytes(std::vector<uint8_t>& vec, const void* data, size_t size) {
     const uint8_t* ptr = static_cast<const uint8_t*>(data);
     vec.insert(vec.end(), ptr, ptr + size);
 }
+
