@@ -17,3 +17,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
                                    const std::string& password,
                                    int iterations,
                                    bool preserve_metadata);
+
