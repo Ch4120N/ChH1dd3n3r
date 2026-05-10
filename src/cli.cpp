@@ -67,3 +67,4 @@ std::string get_value_after(const std::vector<std::string>& args,
     if (i + 1 < args.size()) {
         return args[++i];
     }
+    throw ChH1dd3n3rError("Missing value for option: " + flag);
