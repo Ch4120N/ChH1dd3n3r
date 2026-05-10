@@ -531,3 +531,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     std::string encoded = crypto::base64_encode(random);
     std::ofstream out(output_path, std::ios::binary);
     if (!out) {
+        throw ChH1dd3n3rError("Cannot write key file: " + output_path);
