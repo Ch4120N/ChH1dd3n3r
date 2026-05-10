@@ -481,3 +481,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             uintmax_t size = fs::file_size(p);
             std::fstream file(p, std::ios::in | std::ios::out | std::ios::binary);
             if (!file) {
+                throw ChH1dd3n3rError("Cannot open file for shredding: " + p.string());
