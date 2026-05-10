@@ -304,3 +304,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         out.close();
 
         // apply permissions (optional)
+        uint64_t mode = parse_octal(header.mode, sizeof(header.mode));
