@@ -98,3 +98,4 @@ std::string HelpCenter::test_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r test [OPTIONS]\n\n"
         "Required:\n"
+        "  -i, --input <FILE>     Container file\n\n"
