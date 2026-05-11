@@ -26,3 +26,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
                                 const std::vector<uint8_t>& salt,
                                 int iterations) {
     if (iterations <= 0) {
+        throw ChH1dd3n3rError("PBKDF2 iterations must be > 0.");
