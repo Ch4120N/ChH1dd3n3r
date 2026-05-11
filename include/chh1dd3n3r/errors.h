@@ -52,3 +52,4 @@ public:
 
 /**
  * @brief Thrown when an input file is missing or unreadable.
+ */
