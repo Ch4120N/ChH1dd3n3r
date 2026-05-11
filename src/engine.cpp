@@ -32,3 +32,4 @@ std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
     }
     dest.resize(dest_len);
     return dest;
+}
