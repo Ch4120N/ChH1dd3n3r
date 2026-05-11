@@ -24,3 +24,4 @@ struct CLI::Options {
     bool color = true;
     bool banner = true;
     bool verbose = false;
+    bool quiet = false;
