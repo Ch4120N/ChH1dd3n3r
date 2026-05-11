@@ -37,3 +37,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --json                JSON output\n" +
         "  --log-file <PATH>     Write logs to file\n\n" +
         C("AUTHENTICATION OPTIONS:", "\033[37m") + "\n" +
+        "  -p, --password <PWD>  Encryption/decryption password\n" +
