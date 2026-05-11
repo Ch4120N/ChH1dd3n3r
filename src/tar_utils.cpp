@@ -317,3 +317,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 bool is_tar(const std::vector<uint8_t>& data) {
     return data.size() > 262 &&
            std::memcmp(data.data() + 257, "ustar", 5) == 0;
+}
