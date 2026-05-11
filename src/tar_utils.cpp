@@ -20,3 +20,4 @@ constexpr size_t BLOCK_SIZE = 512;
 #pragma pack(push, 1)
 struct TarHeader {
     char name[100];
+    char mode[8];
