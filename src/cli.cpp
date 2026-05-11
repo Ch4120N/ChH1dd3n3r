@@ -43,3 +43,4 @@ struct CLI::Options {
     std::string output_path;
 
     // shred
+    int passes = 3;
