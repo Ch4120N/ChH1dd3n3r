@@ -20,3 +20,4 @@ public:
     static std::string genkey_help(bool color);
 };
 
+} 
