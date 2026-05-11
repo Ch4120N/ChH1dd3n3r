@@ -149,3 +149,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     try {
         if (1 != EVP_DecryptInit_ex(ctx, EVP_aes_256_gcm(), nullptr, nullptr, nullptr)) {
             throw ChH1dd3n3rError("EVP_DecryptInit_ex failed.");
+        }
