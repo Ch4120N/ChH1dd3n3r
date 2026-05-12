@@ -14,3 +14,4 @@ std::vector<uint8_t> create_tar_from_directory(const std::filesystem::path& dir)
 /**
  * @brief Extract a ustar tar archive to an output directory.
  * Rejects path traversal and symlinks.
+ */
