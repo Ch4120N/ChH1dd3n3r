@@ -34,3 +34,4 @@ struct CLI::Options {
     std::vector<std::string> files;
     std::string password, key_file, key_env;
     bool no_gzip = false, force = false, shred = false, no_metadata = false;
+    int pbkdf2_iterations = 100000;
