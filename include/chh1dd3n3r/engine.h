@@ -23,3 +23,4 @@ public:
               bool force,
               int pbkdf2_iterations,
               bool preserve_metadata,
+              bool shred_originals);
