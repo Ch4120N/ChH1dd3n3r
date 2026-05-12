@@ -174,3 +174,4 @@ void parse_benchmark(const std::vector<std::string>& args, CLI::Options& opts) {
 
 void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
+        const std::string& a = args[i];
