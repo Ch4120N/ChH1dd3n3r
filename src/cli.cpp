@@ -52,3 +52,4 @@ struct CLI::Options {
     int length = 32;
 };
 
+namespace {
