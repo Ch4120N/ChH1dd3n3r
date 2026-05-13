@@ -35,3 +35,4 @@ public:
 private:
     bool color_;
     bool verbose_;
+    std::string log_file_;
