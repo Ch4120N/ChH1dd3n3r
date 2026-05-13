@@ -233,3 +233,4 @@ std::string CLI::resolve_password(const Options& opts) {
         if (env) return env;
         throw ChH1dd3n3rError("Environment variable '" + opts.key_env + "' is not set");
     }
+    if (opts.command == "hide" || opts.command == "unhide" ||
