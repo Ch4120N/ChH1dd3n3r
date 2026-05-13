@@ -217,3 +217,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
                                   const std::vector<uint8_t>& blob,
                                   const std::vector<uint8_t>& aad,
                                   int iterations) {
+    const size_t min_size = 16 + 12 + 16;
