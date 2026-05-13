@@ -37,3 +37,4 @@ struct CLI::Options {
     int pbkdf2_iterations = 100000;
 
     // unhide
+    std::string extract_tar = "ask";
