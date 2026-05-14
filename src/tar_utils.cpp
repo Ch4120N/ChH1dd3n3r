@@ -232,3 +232,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
     }
 
     fs::create_directories(output_dir);
+
