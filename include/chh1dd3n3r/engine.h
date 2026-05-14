@@ -15,3 +15,4 @@ class Engine {
 public:
     Engine(Logger& logger);
 
+    void hide(const std::string& host_path,
