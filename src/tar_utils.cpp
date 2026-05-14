@@ -113,3 +113,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
     name = full.substr(slash + 1);
 }
 
+void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
