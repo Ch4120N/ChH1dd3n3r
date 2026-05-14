@@ -49,3 +49,4 @@ std::string to_octal(uint64_t value, size_t width) {
         throw ChH1dd3n3rError("Tar field too large for octal representation.");
     }
     return str;
+}
