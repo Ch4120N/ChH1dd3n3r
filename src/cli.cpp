@@ -90,3 +90,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "-o" || a == "--output") opts.output = get_value_after(args, a, i);
         else if (a == "-f" || a == "--files") {
             ++i;
+            while (i < args.size() && args[i][0] != '-') {
