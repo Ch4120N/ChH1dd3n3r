@@ -27,3 +27,4 @@ struct CLI::Options {
     bool quiet = false;
     bool grep = false;
     bool json = false;
+    std::string log_file;
