@@ -453,3 +453,4 @@ void Engine::strip(const std::string& input_path,
     std::string dest = output_path.empty() ? input_path : output_path;
     if (dest == input_path && !force) {
         throw OutputExistsError("Overwriting input file requires --force.");
+    }
