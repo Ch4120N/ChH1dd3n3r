@@ -42,3 +42,4 @@ std::vector<uint8_t> decrypt_metadata(const std::vector<uint8_t>& encrypted_meta
                                       int iterations);
 
 /**
+ * @brief Parsed metadata information.
