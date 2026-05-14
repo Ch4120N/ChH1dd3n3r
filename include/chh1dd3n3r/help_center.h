@@ -11,3 +11,4 @@ class HelpCenter {
 public:
     static std::string main_help(bool color);
     static std::string hide_help(bool color);
+    static std::string unhide_help(bool color);
