@@ -293,3 +293,4 @@ int CLI::run(int argc, char* argv[]) {
             return valid ? 0 : 1;
         } else if (opts.command == "strip") {
             engine.strip(opts.input, opts.output_path, opts.force);
+        } else if (opts.command == "shred") {
