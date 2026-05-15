@@ -92,3 +92,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
             ++i;
             while (i < args.size() && args[i][0] != '-') {
                 opts.files.push_back(args[i++]);
+            }
