@@ -17,3 +17,4 @@ public:
     static std::string strip_help(bool color);
     static std::string shred_help(bool color);
     static std::string benchmark_help(bool color);
+    static std::string genkey_help(bool color);
