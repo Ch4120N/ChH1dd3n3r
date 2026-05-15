@@ -438,3 +438,4 @@ void Engine::strip(const std::string& input_path,
                                  MAGIC_FOOTER.rbegin(), MAGIC_FOOTER.rend());
     if (footer_it == data.rend()) {
         throw ContainerError("No container footer – nothing to strip.");
+    }
