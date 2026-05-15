@@ -132,3 +132,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     size_t ct_len = ciphertext_with_tag.size() - 16;
     std::vector<uint8_t> ciphertext(ciphertext_with_tag.begin(),
                                     ciphertext_with_tag.begin() + ct_len);
+    std::vector<uint8_t> tag(ciphertext_with_tag.end() - 16,
