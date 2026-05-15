@@ -20,3 +20,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
 /**
  * @brief Check whether data begins with a tar header (ustar magic).
+ */
