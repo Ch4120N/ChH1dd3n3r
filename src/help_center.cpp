@@ -38,3 +38,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --log-file <PATH>     Write logs to file\n\n" +
         C("AUTHENTICATION OPTIONS:", "\033[37m") + "\n" +
         "  -p, --password <PWD>  Encryption/decryption password\n" +
+        "  --key-file <PATH>     Read password from file\n" +
