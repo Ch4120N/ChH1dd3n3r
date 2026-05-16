@@ -199,3 +199,4 @@ bool is_zero_block(const uint8_t* block) {
 }
 
 std::string get_tar_path(const TarHeader& header) {
+    std::string prefix(header.prefix, strnlen(header.prefix, sizeof(header.prefix)));
