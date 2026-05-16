@@ -183,3 +183,4 @@ uint64_t parse_octal(const char* field, size_t size) {
         return 0;
     }
     try {
+        return std::stoull(str, nullptr, 8);
