@@ -19,3 +19,4 @@ private:
     static void parse_args(int argc, char* argv[], Options& opts);
     static std::string resolve_password(const Options& opts);
     static std::string read_password_from_file(const std::string& path);
+    static void print_banner(const Logger& logger);
