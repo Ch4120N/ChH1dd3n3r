@@ -73,3 +73,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  -o, --output <DIR>     Output directory\n\n"
         "Authentication:\n"
         "  -p, --password <PWD>   Decryption password\n"
+        "  --key-file <PATH>      Read password from file\n"
