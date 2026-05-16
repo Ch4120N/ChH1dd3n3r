@@ -38,3 +38,4 @@ private:
     std::string log_file_;
     std::mutex mutex_;
 
+    std::string style(const std::string& text, const std::string& ansi_code) const;
