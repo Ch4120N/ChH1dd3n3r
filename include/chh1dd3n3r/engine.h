@@ -19,3 +19,4 @@ public:
               const std::string& output_path,
               const std::vector<std::string>& files,
               const std::string& password,
+              bool gzip_compress,
