@@ -14,3 +14,4 @@ public:
         : std::runtime_error(message) {}
 };
 
+/**
