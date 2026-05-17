@@ -46,3 +46,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
 /**
  * @brief Decrypt a blob produced by encrypt_blob.
  */
+std::vector<uint8_t> decrypt_blob(const std::string& password,
