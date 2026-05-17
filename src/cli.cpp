@@ -227,3 +227,4 @@ std::string CLI::read_password_from_file(const std::string& path) {
 
 std::string CLI::resolve_password(const Options& opts) {
     if (!opts.password.empty()) return opts.password;
+    if (!opts.key_file.empty()) return read_password_from_file(opts.key_file);
