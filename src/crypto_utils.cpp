@@ -111,3 +111,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         return ciphertext;
     } catch (...) {
         cleanup();
+        throw;
