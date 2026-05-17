@@ -86,3 +86,4 @@ void Engine::hide(const std::string& host_path,
     std::vector<uint8_t> host_data((std::istreambuf_iterator<char>(host_file)),
                                    std::istreambuf_iterator<char>());
     host_file.close();
+
