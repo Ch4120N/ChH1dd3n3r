@@ -291,3 +291,4 @@ int CLI::run(int argc, char* argv[]) {
             bool valid = engine.test(opts.input, password, opts.grep, opts.json,
                                      opts.pbkdf2_iterations);
             return valid ? 0 : 1;
+        } else if (opts.command == "strip") {
