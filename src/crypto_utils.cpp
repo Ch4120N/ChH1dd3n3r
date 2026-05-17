@@ -6,3 +6,4 @@
 #include <openssl/sha.h>
 
 #include <stdexcept>
+#include <cstring>
