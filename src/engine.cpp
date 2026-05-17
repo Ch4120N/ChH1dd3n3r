@@ -359,3 +359,4 @@ void Engine::info(const std::string& input_path,
         logger_.grep("METADATA_PRESERVED", (info.flags & FLAG_METADATA) ? "YES" : "NO");
         logger_.grep("FILES_COUNT", std::to_string(info.files.size()));
         for (const auto& f : info.files) {
+            logger_.grep("FILE", f.name + " SIZE:" + std::to_string(f.data_len));
