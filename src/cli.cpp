@@ -282,3 +282,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.unhide(opts.input, opts.output_dir, password,
                           opts.force, opts.extract_tar,
                           opts.pbkdf2_iterations, opts.shred);
+        } else if (opts.command == "info") {
