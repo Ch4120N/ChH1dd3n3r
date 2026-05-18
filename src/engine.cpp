@@ -395,3 +395,4 @@ bool Engine::test(const std::string& input_path,
         if (footer_it == data.rend()) {
             logger_.error("No container footer.");
             return false;
+        }
