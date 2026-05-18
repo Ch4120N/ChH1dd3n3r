@@ -32,3 +32,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     else if (level == "WARN") prefix = "[-]";
     else if (level == "ERROR") prefix = "[!]";
     else if (level == "FATAL") prefix = "[X]";
+
