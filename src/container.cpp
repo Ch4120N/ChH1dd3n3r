@@ -95,3 +95,4 @@ FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos) {
     const uint8_t* p = data.data() + footer_pos + MAGIC_FOOTER.size();
     info.enc_len = read_be64(p);
     p += 8;
+    info.meta_salt.assign(p, p + 16);
