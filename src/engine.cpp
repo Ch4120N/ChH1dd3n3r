@@ -510,3 +510,4 @@ void Engine::benchmark(int iterations) {
     std::string password = "benchmark-password";
     auto start = std::chrono::steady_clock::now();
     crypto::derive_key(password, salt, iterations);
+    auto end = std::chrono::steady_clock::now();
