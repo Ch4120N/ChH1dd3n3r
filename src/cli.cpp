@@ -46,3 +46,4 @@ struct CLI::Options {
     int passes = 3;
 
     // benchmark
+    int iterations = 100000;
