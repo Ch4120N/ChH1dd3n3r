@@ -31,3 +31,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --version             Show program version\n" +
         "  --no-color            Disable coloured output\n" +
         "  --no-banner           Suppress startup banner\n" +
+        "  -v, --verbose         Verbose output\n" +
