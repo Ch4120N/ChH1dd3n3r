@@ -146,3 +146,4 @@ void parse_test(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--pbkdf2-iterations")
             opts.pbkdf2_iterations = std::stoi(get_value_after(args, a, i));
     }
+}
