@@ -349,3 +349,4 @@ void Engine::info(const std::string& input_path,
         size_t total = 0;
         for (const auto& f : info.files) {
             total += f.data_len;
+            out["file_" + f.name] = std::to_string(f.data_len);
