@@ -183,3 +183,4 @@ void Engine::unhide(const std::string& input_path,
                     const std::string& extract_tar,
                     int pbkdf2_iterations,
                     bool shred_container) {
+    if (!fs::is_regular_file(input_path)) {
