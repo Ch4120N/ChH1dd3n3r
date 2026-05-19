@@ -332,3 +332,4 @@ void Engine::info(const std::string& input_path,
                          "║ Encrypted Container – provide --password to list files.\n"
                          "╚════════════════════════════════════════════╝\n";
         }
+        return;
