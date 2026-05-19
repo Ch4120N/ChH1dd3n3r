@@ -95,3 +95,4 @@ std::string relative_path(const fs::path& root, const fs::path& entry) {
 }
 
 void split_tar_name(const std::string& full, std::string& name, std::string& prefix) {
+    if (full.size() <= 100) {
