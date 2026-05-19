@@ -150,3 +150,4 @@ void Engine::hide(const std::string& host_path,
                              entry.mtime, entry.mode});
         spinner.stop();
     }
+
