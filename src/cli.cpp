@@ -95,3 +95,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
             }
             --i; // compensate for loop increment
         }
+        else if (a == "-p" || a == "--password") opts.password = get_value_after(args, a, i);
