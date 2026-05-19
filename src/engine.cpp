@@ -494,3 +494,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
                     remaining -= chunk;
                 }
                 file.flush();
+            }
