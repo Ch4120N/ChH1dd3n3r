@@ -32,3 +32,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --no-color            Disable coloured output\n" +
         "  --no-banner           Suppress startup banner\n" +
         "  -v, --verbose         Verbose output\n" +
+        "  -q, --quiet           Suppress non-error messages\n" +
