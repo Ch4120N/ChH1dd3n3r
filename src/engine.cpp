@@ -31,3 +31,4 @@ std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
         throw ChH1dd3n3rError("GZip compression failed.");
     }
     dest.resize(dest_len);
+    return dest;
