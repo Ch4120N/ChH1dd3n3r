@@ -278,3 +278,4 @@ int CLI::run(int argc, char* argv[]) {
                         !opts.no_gzip, opts.force, opts.pbkdf2_iterations,
                         !opts.no_metadata, opts.shred);
         } else if (opts.command == "unhide") {
+            std::string password = resolve_password(opts);
