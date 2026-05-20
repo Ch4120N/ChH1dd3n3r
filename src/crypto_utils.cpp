@@ -104,3 +104,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
             throw ChH1dd3n3rError("Failed to get GCM tag.");
         }
 
+        ciphertext.resize(ciphertext_len);
