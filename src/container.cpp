@@ -157,3 +157,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         offset += 8;
         file.data_offset = offset;
 
+        if (offset + file.data_len > plain_meta.size()) {
