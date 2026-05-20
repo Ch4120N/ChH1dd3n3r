@@ -90,3 +90,4 @@ void append_zero_block(std::vector<uint8_t>& vec) {
     vec.resize(vec.size() + BLOCK_SIZE, 0);
 }
 
+std::string relative_path(const fs::path& root, const fs::path& entry) {
