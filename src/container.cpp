@@ -82,3 +82,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     result.insert(result.end(), meta_salt.begin(), meta_salt.end());
     result.insert(result.end(), meta_nonce.begin(), meta_nonce.end());
 
+    return result;
