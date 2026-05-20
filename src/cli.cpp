@@ -101,3 +101,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--no-gzip") opts.no_gzip = true;
         else if (a == "--force") opts.force = true;
         else if (a == "--shred") opts.shred = true;
+        else if (a == "--no-metadata") opts.no_metadata = true;
