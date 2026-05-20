@@ -69,3 +69,4 @@ std::string HelpCenter::unhide_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r unhide [OPTIONS]\n\n"
         "Required:\n"
+        "  -i, --input <FILE>     Container file\n"
