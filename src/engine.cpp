@@ -474,3 +474,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             logger_.warn("Skipping non-file: " + p.string());
             continue;
         }
+        logger_.info("Securely shredding: " + p.string());
