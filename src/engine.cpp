@@ -138,3 +138,4 @@ void Engine::hide(const std::string& host_path,
     encrypted.reserve(collected.size());
     for (size_t i = 0; i < collected.size(); ++i) {
         const auto& entry = collected[i];
+        logger_.info("Encrypting " + std::to_string(i + 1) + "/" +
