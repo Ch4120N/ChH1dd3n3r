@@ -189,3 +189,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
         exit(0);
     }
 
+    std::string cmd = argv[1];
