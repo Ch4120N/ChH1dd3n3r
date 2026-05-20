@@ -119,3 +119,4 @@ void Engine::hide(const std::string& host_path,
             }
             if (gzip_compress) data = gzip_compress(data);
 
+            auto ftime = fs::last_write_time(p);
