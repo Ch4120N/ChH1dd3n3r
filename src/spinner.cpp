@@ -24,3 +24,4 @@ void Spinner::stop() {
     if (thread_.joinable()) {
         thread_.join();
     }
+    std::cout << "\r" << std::string(text_.size() + 5, ' ') << "\r" << std::flush;
