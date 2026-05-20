@@ -100,3 +100,4 @@ std::string HelpCenter::test_help(bool color) {
         "Required:\n"
         "  -i, --input <FILE>     Container file\n\n"
         "Authentication:\n"
+        "  -p, --password <PWD>   Password to test\n"
