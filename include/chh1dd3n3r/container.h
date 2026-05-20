@@ -50,3 +50,4 @@ struct MetadataInfo {
     std::vector<BlockFileInfo> files;
 };
 
+/**
