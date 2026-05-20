@@ -79,3 +79,4 @@ void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "-q" || a == "--quiet") opts.quiet = true;
         else if (a == "--grep") opts.grep = true;
         else if (a == "--json") opts.json = true;
+        else if (a == "--log-file") opts.log_file = get_value_after(args, a, i);
