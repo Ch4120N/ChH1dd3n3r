@@ -20,3 +20,4 @@ std::string HelpCenter::main_help(bool color) {
         C("COMMANDS:", "\033[37m") + "\n" +
         C("  hide      ", "\033[32m") + " Hide files/directories inside a carrier file\n" +
         C("  unhide    ", "\033[32m") + " Extract hidden files (alias: extract)\n" +
+        C("  info      ", "\033[32m") + " Display container metadata (alias: list)\n" +
