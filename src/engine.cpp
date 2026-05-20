@@ -412,3 +412,4 @@ bool Engine::test(const std::string& input_path,
     } catch (const std::exception& e) {
         logger_.error(e.what());
         if (json_output) logger_.json({{"status", "ERROR"}});
+        else if (grep) logger_.grep("STATUS", "ERROR");
