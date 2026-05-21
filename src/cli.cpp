@@ -45,3 +45,4 @@ struct CLI::Options {
     // shred
     int passes = 3;
 
+    // benchmark
