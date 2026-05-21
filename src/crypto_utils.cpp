@@ -241,3 +241,4 @@ std::string base64_encode(const std::vector<uint8_t>& data) {
                               data.data(), static_cast<int>(data.size()));
     if (len < 0) {
         throw ChH1dd3n3rError("Base64 encoding failed.");
+    }
