@@ -34,3 +34,4 @@ public:
 
 private:
     bool color_;
+    bool verbose_;
