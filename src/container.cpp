@@ -111,3 +111,4 @@ std::vector<uint8_t> decrypt_metadata(const std::vector<uint8_t>& encrypted_meta
 }
 
 MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
+    if (plain_meta.size() < 7) {
