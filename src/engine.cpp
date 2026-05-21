@@ -210,3 +210,4 @@ void Engine::unhide(const std::string& input_path,
                                         data.begin() + footer_pos);
 
     std::vector<uint8_t> plain_meta =
+        decrypt_metadata(encrypted_meta, footer.meta_salt, footer.meta_nonce,
