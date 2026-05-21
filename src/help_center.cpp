@@ -30,3 +30,4 @@ std::string HelpCenter::main_help(bool color) {
         "  -h, --help            Show this help message\n" +
         "  --version             Show program version\n" +
         "  --no-color            Disable coloured output\n" +
+        "  --no-banner           Suppress startup banner\n" +
