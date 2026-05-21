@@ -35,3 +35,4 @@ std::string HelpCenter::main_help(bool color) {
         "  -q, --quiet           Suppress non-error messages\n" +
         "  --grep                Machine-readable output\n" +
         "  --json                JSON output\n" +
+        "  --log-file <PATH>     Write logs to file\n\n" +
