@@ -68,3 +68,4 @@ void clear_header(TarHeader& header) {
     std::memset(&header, 0, sizeof(header));
 }
 
+void set_checksum(TarHeader& header) {
