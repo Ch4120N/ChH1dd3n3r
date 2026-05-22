@@ -95,3 +95,4 @@ void Engine::hide(const std::string& host_path,
             std::vector<uint8_t> tar_data = tar::create_tar_from_directory(p);
             if (gzip_compress) tar_data = gzip_compress(tar_data);
 
+            auto ftime = fs::last_write_time(p);
