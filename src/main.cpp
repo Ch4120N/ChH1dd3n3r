@@ -8,3 +8,4 @@ int main(int argc, char* argv[]) {
 
     // Run CLI
     return chh1dd3n3r::CLI::run(argc, argv);
+}
