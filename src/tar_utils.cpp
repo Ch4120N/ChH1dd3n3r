@@ -241,3 +241,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         const uint8_t* block = tar_data.data() + offset;
 
         if (is_zero_block(block)) {
+            if (prev_zero) break;
