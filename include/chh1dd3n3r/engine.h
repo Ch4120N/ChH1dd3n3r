@@ -30,3 +30,4 @@ public:
                 const std::string& password,
                 bool force,
                 const std::string& extract_tar,
+                int pbkdf2_iterations,
