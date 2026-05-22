@@ -525,3 +525,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
         throw ChH1dd3n3rError("Key length must be > 0.");
     }
     if (fs::exists(output_path) && !force) {
+        throw OutputExistsError("'" + output_path + "' exists. Use --force to overwrite.");
