@@ -58,3 +58,4 @@ std::string HelpCenter::hide_help(bool color) {
         "  --key-file <PATH>      Read password from file\n"
         "  --key-env <VAR>        Read password from environment variable\n\n"
         "Options:\n"
+        "  --no-gzip              Disable GZip compression\n"
