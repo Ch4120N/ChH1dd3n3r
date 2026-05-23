@@ -25,3 +25,4 @@ public:
     void warn(const std::string& msg);
     void error(const std::string& msg);
     void fatal(const std::string& msg);
+
