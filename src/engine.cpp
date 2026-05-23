@@ -427,3 +427,4 @@ void Engine::strip(const std::string& input_path,
                    bool force) {
     if (!fs::is_regular_file(input_path)) {
         throw InputFileError("Input file not found: " + input_path);
+    }
