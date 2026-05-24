@@ -31,3 +31,4 @@ struct FooterInfo {
  * @brief Parse footer at a given position.
  */
 FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos);
+
