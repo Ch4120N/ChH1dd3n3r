@@ -40,3 +40,4 @@ struct CLI::Options {
     std::string extract_tar = "ask";
 
     // strip
+    std::string output_path;
