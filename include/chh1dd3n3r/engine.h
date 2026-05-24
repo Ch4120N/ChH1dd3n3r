@@ -29,3 +29,4 @@ public:
                 const std::string& output_dir,
                 const std::string& password,
                 bool force,
+                const std::string& extract_tar,
