@@ -40,3 +40,4 @@ public:
               int pbkdf2_iterations);
 
     bool test(const std::string& input_path,
+              const std::string& password,
