@@ -117,3 +117,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
 
     if (!std::equal(MAGIC_HEADER_V1.begin(), MAGIC_HEADER_V1.end(), plain_meta.begin()) &&
         !std::equal(MAGIC_HEADER_V2.begin(), MAGIC_HEADER_V2.end(), plain_meta.begin())) {
+        throw MetadataError("Unknown magic header in metadata block.");
