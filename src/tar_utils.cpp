@@ -39,3 +39,4 @@ struct TarHeader {
 };
 #pragma pack(pop)
 
+static_assert(sizeof(TarHeader) == 512, "TarHeader must be 512 bytes");
