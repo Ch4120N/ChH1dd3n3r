@@ -142,3 +142,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
 
     uint64_t mtime = static_cast<uint64_t>(
         std::chrono::duration_cast<std::chrono::seconds>(
+            fs::last_write_time(entry).time_since_epoch()).count());
