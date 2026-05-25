@@ -18,3 +18,4 @@ std::string HelpCenter::main_help(bool color) {
         C("USAGE:", "\033[37m") + "\n" +
         "  ChH1dd3n3r <COMMAND> [OPTIONS]\n\n" +
         C("COMMANDS:", "\033[37m") + "\n" +
+        C("  hide      ", "\033[32m") + " Hide files/directories inside a carrier file\n" +
