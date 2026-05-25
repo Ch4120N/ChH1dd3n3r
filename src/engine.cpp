@@ -263,3 +263,4 @@ void Engine::unhide(const std::string& input_path,
                                [](unsigned char c) { return std::tolower(c); });
                 do_extract = answer.empty() || answer == "y" || answer == "yes";
             }
+            if (do_extract) {
