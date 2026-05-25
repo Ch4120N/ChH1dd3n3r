@@ -125,3 +125,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
 
 void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
     // positional file
+    for (size_t i = 0; i < args.size(); ++i) {
