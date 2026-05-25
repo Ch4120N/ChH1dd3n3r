@@ -455,3 +455,4 @@ void Engine::strip(const std::string& input_path,
         throw OutputExistsError("Overwriting input file requires --force.");
     }
     if (fs::exists(dest) && !force && dest != input_path) {
+        throw OutputExistsError("'" + dest + "' exists. Use --force to overwrite.");
