@@ -538,3 +538,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     logger_.success("Random key written to '" + output_path + "'.");
 }
 
+bool Engine::is_tar_data(const std::vector<uint8_t>& data) {
