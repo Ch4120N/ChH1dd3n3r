@@ -48,3 +48,4 @@ void Logger::log(const std::string& level, const std::string& msg,
             std::string clean_line = line;
             // remove ANSI escape sequences
             std::string::size_type pos;
+            while ((pos = clean_line.find("\033[")) != std::string::npos) {
