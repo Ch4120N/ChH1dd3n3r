@@ -118,3 +118,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     TarHeader header;
     clear_header(header);
 
+    std::string rel = relative_path(root, entry);
