@@ -175,3 +175,4 @@ void Engine::hide(const std::string& host_path,
         shred(files, 3);
     }
 }
+
