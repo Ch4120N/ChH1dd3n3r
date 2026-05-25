@@ -60,3 +60,4 @@ bool has_flag(const std::vector<std::string>& args, const std::string& flag) {
     }
     return false;
 }
+
