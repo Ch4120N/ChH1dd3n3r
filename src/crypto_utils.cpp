@@ -165,3 +165,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
                 throw ChH1dd3n3rError("Failed to process AAD.");
             }
         }
+
