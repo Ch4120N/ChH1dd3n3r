@@ -291,3 +291,4 @@ void Engine::unhide(const std::string& input_path,
         logger_.success("Written " + std::to_string(plain.size()) + " bytes to " + dest.string());
     }
 
+    if (shred_container) {
