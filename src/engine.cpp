@@ -547,3 +547,4 @@ void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode)
         auto ftime = fs::file_time_type(std::chrono::milliseconds(mtime));
         try {
             fs::last_write_time(path, ftime);
+        } catch (...) {}
