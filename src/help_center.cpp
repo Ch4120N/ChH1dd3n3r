@@ -33,3 +33,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --no-banner           Suppress startup banner\n" +
         "  -v, --verbose         Verbose output\n" +
         "  -q, --quiet           Suppress non-error messages\n" +
+        "  --grep                Machine-readable output\n" +
