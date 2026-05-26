@@ -19,3 +19,4 @@ public:
     static std::string benchmark_help(bool color);
     static std::string genkey_help(bool color);
 };
+
