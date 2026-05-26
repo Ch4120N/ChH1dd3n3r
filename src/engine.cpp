@@ -230,3 +230,4 @@ void Engine::unhide(const std::string& input_path,
         logger_.info("Extracting: " + file.name);
         if (file.data_offset + file.data_len > plain_meta.size()) {
             throw MetadataError("File data offset out of range.");
+        }
