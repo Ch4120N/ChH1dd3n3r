@@ -75,3 +75,4 @@ void Logger::grep(const std::string& key, const std::string& value) {
 void Logger::json(const std::map<std::string, std::string>& data) {
     std::cout << "{" << std::endl;
     bool first = true;
+    for (const auto& [key, value] : data) {
