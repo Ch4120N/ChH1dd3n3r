@@ -261,3 +261,4 @@ int CLI::run(int argc, char* argv[]) {
 #endif
 
     Options opts;
+    parse_args(argc, argv, opts);
