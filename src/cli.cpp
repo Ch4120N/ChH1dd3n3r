@@ -217,3 +217,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
 std::string CLI::read_password_from_file(const std::string& path) {
     std::ifstream file(path);
     if (!file) {
+        throw ChH1dd3n3rError("Failed to read key file: " + path);
