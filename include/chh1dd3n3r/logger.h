@@ -42,3 +42,4 @@ private:
     void log(const std::string& level, const std::string& msg,
              const std::string& ansi_code, bool to_stderr = false);
     void write_log_file(const std::string& level, const std::string& clean_line);
+};
