@@ -272,3 +272,4 @@ void Engine::unhide(const std::string& input_path,
                     logger_.error("Failed to extract tar: " + std::string(e.what()));
                 }
             }
+            continue;
