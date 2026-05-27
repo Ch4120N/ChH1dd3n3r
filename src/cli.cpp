@@ -263,3 +263,4 @@ int CLI::run(int argc, char* argv[]) {
     Options opts;
     parse_args(argc, argv, opts);
 
+    Logger logger(opts.color, opts.verbose, opts.quiet, opts.log_file);
