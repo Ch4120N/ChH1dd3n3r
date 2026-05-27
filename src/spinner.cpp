@@ -15,3 +15,4 @@ Spinner::~Spinner() {
 void Spinner::start() {
     if (!enabled_) return;
     stop_flag_ = false;
+    thread_ = std::thread(&Spinner::animate, this);
