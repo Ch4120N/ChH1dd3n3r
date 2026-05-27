@@ -251,3 +251,4 @@ void CLI::print_banner(const Logger& logger) {
         "  File Steganography & Encryption v1.0  by Ch4120N\n\n";
 }
 
+int CLI::run(int argc, char* argv[]) {
