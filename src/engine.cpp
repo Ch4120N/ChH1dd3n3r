@@ -170,3 +170,4 @@ void Engine::hide(const std::string& host_path,
 
     logger_.success("Hidden data written to '" + output_path + "' (" +
                     std::to_string(container_block.size()) + " bytes appended).");
+
