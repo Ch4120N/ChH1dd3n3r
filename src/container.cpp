@@ -97,3 +97,4 @@ FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos) {
     p += 8;
     info.meta_salt.assign(p, p + 16);
     p += 16;
+    info.meta_nonce.assign(p, p + 12);
