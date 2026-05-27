@@ -298,3 +298,4 @@ int CLI::run(int argc, char* argv[]) {
         } else if (opts.command == "benchmark") {
             engine.benchmark(opts.iterations);
         } else if (opts.command == "genkey") {
+            engine.genkey(opts.output_path, opts.length, opts.force);
