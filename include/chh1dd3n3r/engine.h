@@ -27,3 +27,4 @@ public:
 
     void unhide(const std::string& input_path,
                 const std::string& output_dir,
+                const std::string& password,
