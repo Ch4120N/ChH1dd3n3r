@@ -220,3 +220,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
     const size_t min_size = 16 + 12 + 16;
     if (blob.size() < min_size) {
         throw InvalidPasswordError("Encrypted data is too short.");
+    }
