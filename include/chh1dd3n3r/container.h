@@ -9,3 +9,4 @@
 namespace chh1dd3n3r {
 
 /**
+ * @brief Pack files into an encrypted v2 container block.
