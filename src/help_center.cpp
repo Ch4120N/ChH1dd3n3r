@@ -46,3 +46,4 @@ std::string HelpCenter::main_help(bool color) {
         "  ChH1dd3n3r info hidden.jpg\n";
 }
 
+std::string HelpCenter::hide_help(bool color) {
