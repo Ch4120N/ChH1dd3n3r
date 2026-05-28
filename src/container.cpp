@@ -72,3 +72,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     std::vector<uint8_t> meta_salt = crypto::random_bytes(16);
     std::vector<uint8_t> meta_key = crypto::derive_key(password, meta_salt, iterations);
     std::vector<uint8_t> meta_nonce = crypto::random_bytes(12);
+    std::vector<uint8_t> encrypted_meta =
