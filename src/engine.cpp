@@ -521,3 +521,4 @@ void Engine::benchmark(int iterations) {
 }
 
 void Engine::genkey(const std::string& output_path, int length, bool force) {
+    if (length <= 0) {
