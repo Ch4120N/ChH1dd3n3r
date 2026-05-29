@@ -82,3 +82,4 @@ void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--log-file") opts.log_file = get_value_after(args, a, i);
     }
 }
+
