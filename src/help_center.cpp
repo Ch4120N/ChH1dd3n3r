@@ -13,3 +13,4 @@ std::string HelpCenter::main_help(bool color) {
     };
     return
         C("╭──────────────────────────────────────────────────────────────╮", "\033[36m") + "\n" +
+        C("│  ChH1dd3n3r  │  Advanced File Steganography & Encryption      │", "\033[36m") + "\n" +
