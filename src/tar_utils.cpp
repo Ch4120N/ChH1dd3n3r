@@ -77,3 +77,4 @@ void set_checksum(TarHeader& header) {
     }
     std::string chk = to_octal(sum, 6);
     std::memcpy(header.checksum, chk.c_str(), chk.size());
+    header.checksum[6] = '\0';
