@@ -133,3 +133,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     fill_field(header.mode, sizeof(header.mode), std::to_string(mode), true);
     fill_field(header.uid, sizeof(header.uid), "0", true);
     fill_field(header.gid, sizeof(header.gid), "0", true);
+
