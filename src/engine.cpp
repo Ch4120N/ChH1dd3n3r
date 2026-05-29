@@ -280,3 +280,4 @@ void Engine::unhide(const std::string& input_path,
             throw OutputExistsError("'" + dest.string() + "' already exists. Use --force to overwrite.");
         }
 
+        std::ofstream out(dest, std::ios::binary);
