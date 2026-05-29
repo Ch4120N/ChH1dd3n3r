@@ -160,3 +160,4 @@ void parse_strip(const std::vector<std::string>& args, CLI::Options& opts) {
 void parse_shred(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
+        if (a == "--passes") opts.passes = std::stoi(get_value_after(args, a, i));
