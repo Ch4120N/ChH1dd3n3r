@@ -11,3 +11,4 @@ namespace chh1dd3n3r::crypto {
  */
 std::vector<uint8_t> random_bytes(size_t count);
 
+/**
