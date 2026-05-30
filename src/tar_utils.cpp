@@ -146,3 +146,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     fill_field(header.mtime, sizeof(header.mtime), std::to_string(mtime), true);
 
     header.typeflag = is_dir ? '5' : '0';
+    std::memcpy(header.magic, "ustar", 6);
