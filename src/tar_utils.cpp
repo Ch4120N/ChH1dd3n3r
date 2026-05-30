@@ -272,3 +272,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             // symlink – skip for safety
             offset += ((size + BLOCK_SIZE - 1) / BLOCK_SIZE) * BLOCK_SIZE;
             continue;
+        }
