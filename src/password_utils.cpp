@@ -37,3 +37,4 @@ std::string read_password(const std::string& prompt) {
     newt = oldt;
     newt.c_lflag &= ~ECHO;
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+
