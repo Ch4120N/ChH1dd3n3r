@@ -22,3 +22,4 @@ namespace fs = std::filesystem;
 
 namespace {
 
+std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
