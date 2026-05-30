@@ -335,3 +335,4 @@ void Engine::info(const std::string& input_path,
         return;
     }
 
+    std::vector<uint8_t> plain_meta =
