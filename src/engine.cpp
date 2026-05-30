@@ -361,3 +361,4 @@ void Engine::info(const std::string& input_path,
         for (const auto& f : info.files) {
             logger_.grep("FILE", f.name + " SIZE:" + std::to_string(f.data_len));
         }
+    } else {
