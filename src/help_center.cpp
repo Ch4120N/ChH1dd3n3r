@@ -21,3 +21,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  hide      ", "\033[32m") + " Hide files/directories inside a carrier file\n" +
         C("  unhide    ", "\033[32m") + " Extract hidden files (alias: extract)\n" +
         C("  info      ", "\033[32m") + " Display container metadata (alias: list)\n" +
+        C("  test      ", "\033[32m") + " Verify password can decrypt container\n" +
