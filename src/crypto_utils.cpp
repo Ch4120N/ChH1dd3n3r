@@ -92,3 +92,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
                                        plaintext.data(), static_cast<int>(plaintext.size()))) {
                 throw ChH1dd3n3rError("Encryption failed.");
             }
+            ciphertext_len = len;
