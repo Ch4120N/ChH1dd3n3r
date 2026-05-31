@@ -48,3 +48,4 @@ std::string HelpCenter::main_help(bool color) {
 
 std::string HelpCenter::hide_help(bool color) {
     return
+        "Usage:\n  ChH1dd3n3r hide [OPTIONS]\n\n"
