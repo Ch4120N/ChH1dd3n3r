@@ -318,3 +318,4 @@ bool is_tar(const std::vector<uint8_t>& data) {
     return data.size() > 262 &&
            std::memcmp(data.data() + 257, "ustar", 5) == 0;
 }
+
