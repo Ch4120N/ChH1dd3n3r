@@ -27,3 +27,4 @@ public:
  * @brief Thrown when the container format is malformed.
  */
 class ContainerError : public ChH1dd3n3rError {
+public:
