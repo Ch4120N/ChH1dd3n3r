@@ -164,3 +164,4 @@ void parse_shred(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a[0] != '-') opts.files.push_back(a);
     }
 }
+
