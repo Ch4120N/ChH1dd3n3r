@@ -209,3 +209,4 @@ void Engine::unhide(const std::string& input_path,
     std::vector<uint8_t> encrypted_meta(data.begin() + encrypted_meta_start,
                                         data.begin() + footer_pos);
 
+    std::vector<uint8_t> plain_meta =
