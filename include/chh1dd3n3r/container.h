@@ -33,3 +33,4 @@ struct FooterInfo {
 FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos);
 
 /**
+ * @brief Decrypt metadata block.
