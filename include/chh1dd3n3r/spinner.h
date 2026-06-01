@@ -14,3 +14,4 @@ public:
     Spinner(const std::string& text, bool enabled = true);
     ~Spinner();
 
+    Spinner(const Spinner&) = delete;
