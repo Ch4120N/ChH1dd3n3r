@@ -125,3 +125,4 @@ void Engine::hide(const std::string& host_path,
                     ftime.time_since_epoch()).count());
             auto perms = fs::status(p).permissions();
             collected.push_back({p.filename().string(),
+                                 std::move(data),
