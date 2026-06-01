@@ -43,3 +43,4 @@ public:
 
 /**
  * @brief Thrown when an output file/directory already exists.
+ */
