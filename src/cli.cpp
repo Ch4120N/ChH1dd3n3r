@@ -193,3 +193,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
     if (cmd == "extract") cmd = "unhide";
     else if (cmd == "list") cmd = "info";
     opts.command = cmd;
+
