@@ -242,3 +242,4 @@ void Engine::unhide(const std::string& input_path,
         spinner.stop();
 
         if (info.flags & FLAG_GZIP) {
+            try {
