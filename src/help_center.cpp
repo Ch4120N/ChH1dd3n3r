@@ -9,3 +9,4 @@ static std::string colorize(const std::string& text, const char* code, bool use_
 
 std::string HelpCenter::main_help(bool color) {
     auto C = [color](const std::string& txt, const char* code) {
+        return colorize(txt, code, color);
