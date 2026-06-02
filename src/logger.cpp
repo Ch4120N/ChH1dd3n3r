@@ -60,3 +60,4 @@ void Logger::log(const std::string& level, const std::string& msg,
             out << time_buf << " [" << level << "] " << clean_line << std::endl;
         }
     }
+}
