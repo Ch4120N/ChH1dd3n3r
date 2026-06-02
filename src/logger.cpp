@@ -54,3 +54,4 @@ void Logger::log(const std::string& level, const std::string& msg,
                 clean_line.erase(pos, end - pos + 1);
             }
             time_t now = time(nullptr);
+            char time_buf[32];
