@@ -33,3 +33,4 @@ public:
                 int pbkdf2_iterations,
                 bool shred_container);
 
+    void info(const std::string& input_path,
