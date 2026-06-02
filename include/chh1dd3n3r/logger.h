@@ -30,3 +30,4 @@ public:
     void json(const std::map<std::string, std::string>& data);
 
     // Allow direct access for Spinner (friend not needed)
+    bool quiet_ = false;
