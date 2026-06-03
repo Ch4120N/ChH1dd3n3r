@@ -422,3 +422,4 @@ bool Engine::test(const std::string& input_path,
     return true;
 }
 
+void Engine::strip(const std::string& input_path,
