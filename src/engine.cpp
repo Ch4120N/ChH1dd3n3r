@@ -328,3 +328,4 @@ void Engine::info(const std::string& input_path,
         } else if (grep) {
             logger_.grep("STATUS", "ENCRYPTED_METADATA");
         } else {
+            std::cout << "╔════════════════════════════════════════════╗\n"
