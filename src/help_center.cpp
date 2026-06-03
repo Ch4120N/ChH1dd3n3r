@@ -125,3 +125,4 @@ std::string HelpCenter::shred_help(bool color) {
 }
 
 std::string HelpCenter::benchmark_help(bool color) {
+    return
