@@ -18,3 +18,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
                                 const std::vector<uint8_t>& salt,
                                 int iterations);
 
+/**
