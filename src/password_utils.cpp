@@ -32,3 +32,4 @@ std::string read_password(const std::string& prompt) {
     std::cout << std::endl;
     return password;
 #else
+    termios oldt, newt;
