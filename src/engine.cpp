@@ -429,3 +429,4 @@ void Engine::strip(const std::string& input_path,
         throw InputFileError("Input file not found: " + input_path);
     }
 
+    std::ifstream input(input_path, std::ios::binary);
