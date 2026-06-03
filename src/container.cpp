@@ -127,3 +127,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
     size_t offset = 7;
     while (offset < plain_meta.size()) {
         if (offset + 2 > plain_meta.size()) {
+            throw MetadataError("Truncated filename length.");
