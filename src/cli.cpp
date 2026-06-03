@@ -78,3 +78,4 @@ void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "-v" || a == "--verbose") opts.verbose = true;
         else if (a == "-q" || a == "--quiet") opts.quiet = true;
         else if (a == "--grep") opts.grep = true;
+        else if (a == "--json") opts.json = true;
