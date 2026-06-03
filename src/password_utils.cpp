@@ -14,3 +14,4 @@ namespace chh1dd3n3r {
 
 std::string read_password(const std::string& prompt) {
     std::cout << prompt << std::flush;
+
