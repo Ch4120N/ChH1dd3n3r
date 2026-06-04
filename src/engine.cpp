@@ -89,3 +89,4 @@ void Engine::hide(const std::string& host_path,
 
     std::vector<FileEntry> collected;
     for (const auto& path_str : files) {
+        fs::path p(path_str);
