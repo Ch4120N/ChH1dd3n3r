@@ -39,3 +39,4 @@ public:
               bool json_output,
               int pbkdf2_iterations);
 
+    bool test(const std::string& input_path,
