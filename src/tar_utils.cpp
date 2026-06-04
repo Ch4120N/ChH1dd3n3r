@@ -56,3 +56,4 @@ void fill_field(char* dest, size_t dest_size, const std::string& value, bool num
     if (numeric) {
         std::string oct = to_octal(std::stoull(value.empty() ? "0" : value), dest_size - 1);
         std::memcpy(dest, oct.c_str(), oct.size());
+        dest[dest_size - 1] = '\0';
