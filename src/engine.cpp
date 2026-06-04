@@ -244,3 +244,4 @@ void Engine::unhide(const std::string& input_path,
         if (info.flags & FLAG_GZIP) {
             try {
                 plain = gzip_decompress(plain);
+            } catch (...) {
