@@ -17,3 +17,4 @@ std::string HelpCenter::main_help(bool color) {
         C("╰──────────────────────────────────────────────────────────────╯", "\033[36m") + "\n" +
         C("USAGE:", "\033[37m") + "\n" +
         "  ChH1dd3n3r <COMMAND> [OPTIONS]\n\n" +
+        C("COMMANDS:", "\033[37m") + "\n" +
