@@ -49,3 +49,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
                                      const std::vector<uint8_t>& plaintext,
                                      const std::vector<uint8_t>& aad) {
     if (key.size() != 32) {
+        throw ChH1dd3n3rError("AES-256-GCM requires a 32-byte key.");
