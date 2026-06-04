@@ -23,3 +23,4 @@ public:
 private:
     std::string text_;
     bool enabled_;
+    std::atomic<bool> stop_flag_;
