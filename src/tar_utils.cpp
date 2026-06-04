@@ -188,3 +188,4 @@ uint64_t parse_octal(const char* field, size_t size) {
         throw MetadataError("Invalid octal field in tar header.");
     }
 }
+
