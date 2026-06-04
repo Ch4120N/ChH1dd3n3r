@@ -106,3 +106,4 @@ void Engine::hide(const std::string& host_path,
                                  mtime,
                                  static_cast<uint16_t>(perms)});
         } else if (fs::is_regular_file(p)) {
+            std::ifstream file(p, std::ios::binary);
