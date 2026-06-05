@@ -45,3 +45,4 @@ public:
               bool json_output,
               int pbkdf2_iterations);
 
+    void strip(const std::string& input_path,
