@@ -20,3 +20,4 @@ std::string Logger::style(const std::string& text, const std::string& ansi_code)
     }
     return ansi_code + text + "\033[0m";
 }
+
