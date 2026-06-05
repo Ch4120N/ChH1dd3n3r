@@ -22,3 +22,4 @@ uint64_t read_be64(const uint8_t* p) {
            static_cast<uint64_t>(p[7]);
 }
 
+void write_be64(std::vector<uint8_t>& vec, uint64_t value) {
