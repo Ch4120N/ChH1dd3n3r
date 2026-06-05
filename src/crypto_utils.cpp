@@ -98,3 +98,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         if (1 != EVP_EncryptFinal_ex(ctx, ciphertext.data() + len, &len)) {
             throw ChH1dd3n3rError("Encryption finalisation failed.");
         }
+        ciphertext_len += len;
