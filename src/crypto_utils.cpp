@@ -76,3 +76,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
             throw ChH1dd3n3rError("Failed to set IV length.");
         }
         if (1 != EVP_EncryptInit_ex(ctx, nullptr, nullptr, key.data(), nonce.data())) {
+            throw ChH1dd3n3rError("Failed to set key/IV.");
