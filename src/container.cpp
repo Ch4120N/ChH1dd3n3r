@@ -121,3 +121,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
     }
 
     MetadataInfo info;
+    info.version = plain_meta[5];
