@@ -228,3 +228,4 @@ std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
 void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
                               const fs::path& output_dir) {
     if (tar_data.size() % BLOCK_SIZE != 0) {
+        throw MetadataError("Tar data size is not a multiple of 512.");
