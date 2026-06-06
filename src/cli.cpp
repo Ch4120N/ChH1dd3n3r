@@ -97,3 +97,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
         }
         else if (a == "-p" || a == "--password") opts.password = get_value_after(args, a, i);
         else if (a == "--key-file") opts.key_file = get_value_after(args, a, i);
+        else if (a == "--key-env") opts.key_env = get_value_after(args, a, i);
