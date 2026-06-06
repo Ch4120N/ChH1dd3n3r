@@ -174,3 +174,4 @@ void Engine::hide(const std::string& host_path,
     if (shred_originals) {
         shred(files, 3);
     }
+}
