@@ -26,3 +26,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     if (quiet_ && level != "ERROR" && level != "FATAL") {
         return;
     }
+
