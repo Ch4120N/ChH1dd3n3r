@@ -30,3 +30,4 @@ void Spinner::stop() {
 void Spinner::animate() {
     const char frames[] = {'|', '/', '-', '\\'};
     size_t i = 0;
+    while (!stop_flag_) {
