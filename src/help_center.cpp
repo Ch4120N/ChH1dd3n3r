@@ -47,3 +47,4 @@ std::string HelpCenter::main_help(bool color) {
 }
 
 std::string HelpCenter::hide_help(bool color) {
+    return
