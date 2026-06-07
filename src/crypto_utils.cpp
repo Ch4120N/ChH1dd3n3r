@@ -61,3 +61,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
     }
 
     std::vector<uint8_t> ciphertext(plaintext.size());
+    std::vector<uint8_t> tag(16);
