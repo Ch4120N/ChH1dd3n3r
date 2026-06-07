@@ -88,3 +88,4 @@ void append_bytes(std::vector<uint8_t>& vec, const void* data, size_t size) {
 
 void append_zero_block(std::vector<uint8_t>& vec) {
     vec.resize(vec.size() + BLOCK_SIZE, 0);
+}
