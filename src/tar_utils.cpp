@@ -106,3 +106,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
         slash = full.find('/', slash - 1);
     }
     if (slash == std::string::npos || full.substr(0, slash).size() > 155 ||
+        full.substr(slash + 1).size() > 100) {
