@@ -224,3 +224,4 @@ std::string CLI::read_password_from_file(const std::string& path) {
     if (!pwd.empty() && pwd.back() == '\r') pwd.pop_back();
     return pwd;
 }
+
