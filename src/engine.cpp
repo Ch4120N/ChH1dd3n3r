@@ -108,3 +108,4 @@ void Engine::hide(const std::string& host_path,
         } else if (fs::is_regular_file(p)) {
             std::ifstream file(p, std::ios::binary);
             if (!file) {
+                throw InputFileError("Cannot read file: " + p.string());
