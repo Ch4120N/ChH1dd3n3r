@@ -35,3 +35,4 @@ std::string read_password(const std::string& prompt) {
     termios oldt, newt;
     tcgetattr(STDIN_FILENO, &oldt);
     newt = oldt;
+    newt.c_lflag &= ~ECHO;
