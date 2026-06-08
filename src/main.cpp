@@ -6,3 +6,4 @@ int main(int argc, char* argv[]) {
     // Set UTF-8 locale
     std::locale::global(std::locale(""));
 
+    // Run CLI
