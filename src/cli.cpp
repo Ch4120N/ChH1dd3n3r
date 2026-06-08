@@ -94,3 +94,4 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
                 opts.files.push_back(args[i++]);
             }
             --i; // compensate for loop increment
+        }
