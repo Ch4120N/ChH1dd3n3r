@@ -276,3 +276,4 @@ int CLI::run(int argc, char* argv[]) {
             std::string password = resolve_password(opts);
             engine.hide(opts.host, opts.output, opts.files, password,
                         !opts.no_gzip, opts.force, opts.pbkdf2_iterations,
+                        !opts.no_metadata, opts.shred);
