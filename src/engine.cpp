@@ -148,3 +148,4 @@ void Engine::hide(const std::string& host_path,
                                                          aad, pbkdf2_iterations);
         encrypted.push_back({entry.name, std::move(blob), entry.is_gzip,
                              entry.mtime, entry.mode});
+        spinner.stop();
