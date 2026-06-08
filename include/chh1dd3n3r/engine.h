@@ -57,3 +57,4 @@ public:
 
 private:
     Logger& logger_;
+
