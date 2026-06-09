@@ -7,3 +7,4 @@
 #include <string>
 #include <vector>
 
+#ifdef _WIN32
