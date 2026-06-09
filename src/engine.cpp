@@ -162,3 +162,4 @@ void Engine::hide(const std::string& host_path,
     std::ofstream out(output_path, std::ios::binary);
     if (!out) {
         throw ChH1dd3n3rError("Cannot write output file: " + output_path);
+    }
