@@ -224,3 +224,4 @@ void Engine::unhide(const std::string& input_path,
         return;
     }
 
+    fs::create_directories(output_dir);
