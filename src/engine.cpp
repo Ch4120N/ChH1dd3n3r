@@ -201,3 +201,4 @@ void Engine::unhide(const std::string& input_path,
                                                 std::distance(data.rbegin(), footer_it) -
                                                 MAGIC_FOOTER.size());
 
+    FooterInfo footer = parse_footer(data, footer_pos);
