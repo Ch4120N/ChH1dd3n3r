@@ -47,3 +47,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
 std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
                                      const std::vector<uint8_t>& nonce,
                                      const std::vector<uint8_t>& plaintext,
+                                     const std::vector<uint8_t>& aad) {
