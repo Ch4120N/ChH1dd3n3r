@@ -21,3 +21,4 @@ private:
     static std::string read_password_from_file(const std::string& path);
     static void print_banner(const Logger& logger);
 };
+
