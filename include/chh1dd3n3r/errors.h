@@ -54,3 +54,4 @@ public:
  * @brief Thrown when an input file is missing or unreadable.
  */
 class InputFileError : public ChH1dd3n3rError {
+public:
