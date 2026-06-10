@@ -145,3 +145,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     int plaintext_len = 0;
 
     auto cleanup = [&]() { EVP_CIPHER_CTX_free(ctx); };
+
