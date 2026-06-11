@@ -63,3 +63,4 @@ private:
                                uint64_t mtime, uint16_t mode);
 };
 
+}
