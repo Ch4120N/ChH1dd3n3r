@@ -177,3 +177,4 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
         const std::string& a = args[i];
         if (a == "--length") opts.length = std::stoi(get_value_after(args, a, i));
         else if (a == "--force") opts.force = true;
+        else if (a[0] != '-') opts.output_path = a;
