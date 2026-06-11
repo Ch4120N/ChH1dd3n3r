@@ -483,3 +483,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             if (!file) {
                 throw ChH1dd3n3rError("Cannot open file for shredding: " + p.string());
             }
+            std::vector<uint8_t> random_buffer(1024 * 1024);
