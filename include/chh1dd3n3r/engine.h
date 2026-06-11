@@ -35,3 +35,4 @@ public:
 
     void info(const std::string& input_path,
               const std::string& password,
+              bool grep,
