@@ -93,3 +93,4 @@ void append_zero_block(std::vector<uint8_t>& vec) {
 std::string relative_path(const fs::path& root, const fs::path& entry) {
     return fs::relative(entry, root).generic_string();
 }
+
