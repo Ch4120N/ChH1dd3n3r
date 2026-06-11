@@ -60,3 +60,4 @@ std::string HelpCenter::hide_help(bool color) {
         "Options:\n"
         "  --no-gzip              Disable GZip compression\n"
         "  --force                Overwrite output file if exists\n"
+        "  --shred                Securely delete originals after hiding\n"
