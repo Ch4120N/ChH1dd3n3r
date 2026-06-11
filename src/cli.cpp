@@ -30,3 +30,4 @@ struct CLI::Options {
     std::string log_file;
 
     // hide
+    std::string host, output, input, file, output_dir;
