@@ -73,3 +73,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         }
         if (1 != EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN,
                                      static_cast<int>(nonce.size()), nullptr)) {
+            throw ChH1dd3n3rError("Failed to set IV length.");
