@@ -23,3 +23,4 @@ std::string Logger::style(const std::string& text, const std::string& ansi_code)
 
 void Logger::log(const std::string& level, const std::string& msg,
                  const std::string& ansi_code, bool to_stderr) {
+    if (quiet_ && level != "ERROR" && level != "FATAL") {
