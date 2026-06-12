@@ -9,3 +9,4 @@ Spinner::Spinner(const std::string& text, bool enabled)
     : text_(text), enabled_(enabled), stop_flag_(false) {}
 
 Spinner::~Spinner() {
+    stop();
