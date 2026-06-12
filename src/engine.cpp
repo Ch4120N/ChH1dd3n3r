@@ -259,3 +259,4 @@ void Engine::unhide(const std::string& input_path,
                              " appears to be a directory (tar). Extract contents? [Y/n] ";
                 std::string answer;
                 std::getline(std::cin, answer);
+                std::transform(answer.begin(), answer.end(), answer.begin(),
