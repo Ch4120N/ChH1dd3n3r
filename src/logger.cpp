@@ -51,3 +51,4 @@ void Logger::log(const std::string& level, const std::string& msg,
             while ((pos = clean_line.find("\033[")) != std::string::npos) {
                 std::string::size_type end = clean_line.find('m', pos);
                 if (end == std::string::npos) break;
+                clean_line.erase(pos, end - pos + 1);
