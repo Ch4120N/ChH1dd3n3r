@@ -93,3 +93,4 @@ void Engine::hide(const std::string& host_path,
         if (fs::is_directory(p)) {
             logger_.info("Packing directory: " + p.string());
             std::vector<uint8_t> tar_data = tar::create_tar_from_directory(p);
+            if (gzip_compress) tar_data = gzip_compress(tar_data);
