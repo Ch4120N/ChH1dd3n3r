@@ -14,3 +14,4 @@ class Logger {
 public:
     Logger(bool color = true, bool verbose = false, bool quiet = false,
            const std::string& log_file = "");
+
