@@ -364,3 +364,4 @@ void Engine::info(const std::string& input_path,
     } else {
         std::cout << "╔══════════════════════════════════════╗\n";
         std::cout << "║ Container Info\n";
+        std::cout << "║ Version : " << static_cast<int>(info.version) << "\n";
