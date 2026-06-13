@@ -16,3 +16,4 @@ std::vector<uint8_t> random_bytes(size_t count) {
     std::vector<uint8_t> buffer(count);
     if (count > 0) {
         if (1 != RAND_bytes(buffer.data(), static_cast<int>(count))) {
+            throw ChH1dd3n3rError("Failed to generate secure random bytes.");
