@@ -11,3 +11,4 @@ namespace chh1dd3n3r {
  * @brief Parses command line and runs the tool.
  */
 class CLI {
+public:
