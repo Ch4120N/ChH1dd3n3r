@@ -120,3 +120,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--extract-tar") opts.extract_tar = get_value_after(args, a, i);
         else if (a == "--pbkdf2-iterations")
             opts.pbkdf2_iterations = std::stoi(get_value_after(args, a, i));
+    }
