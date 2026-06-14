@@ -38,3 +38,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
                     iterations,
                     EVP_sha256(),
                     32,
+                    key.data())) {
