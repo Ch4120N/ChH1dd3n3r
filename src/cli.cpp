@@ -231,3 +231,4 @@ std::string CLI::resolve_password(const Options& opts) {
     if (!opts.key_env.empty()) {
         const char* env = std::getenv(opts.key_env.c_str());
         if (env) return env;
+        throw ChH1dd3n3rError("Environment variable '" + opts.key_env + "' is not set");
