@@ -75,3 +75,4 @@ void Engine::hide(const std::string& host_path,
                   int pbkdf2_iterations,
                   bool preserve_metadata,
                   bool shred_originals) {
+    if (!fs::is_regular_file(host_path)) {
