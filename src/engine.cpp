@@ -141,3 +141,4 @@ void Engine::hide(const std::string& host_path,
         logger_.info("Encrypting " + std::to_string(i + 1) + "/" +
                      std::to_string(collected.size()) + ": " + entry.name +
                      " (" + std::to_string(entry.data.size()) + " bytes)");
+        Spinner spinner("  Encrypting " + entry.name, !logger_.quiet_);
