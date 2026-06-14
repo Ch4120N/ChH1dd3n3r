@@ -176,3 +176,4 @@ void Engine::hide(const std::string& host_path,
     }
 }
 
+void Engine::unhide(const std::string& input_path,
