@@ -451,3 +451,4 @@ void Engine::strip(const std::string& input_path,
     std::vector<uint8_t> original(data.begin(), data.begin() + host_end);
 
     std::string dest = output_path.empty() ? input_path : output_path;
+    if (dest == input_path && !force) {
