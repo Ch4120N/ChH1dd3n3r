@@ -180,3 +180,4 @@ uint64_t parse_octal(const char* field, size_t size) {
         str = str.substr(0, end);
     }
     if (str.empty()) {
+        return 0;
