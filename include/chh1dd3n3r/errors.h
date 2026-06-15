@@ -16,3 +16,4 @@ public:
 
 /**
  * @brief Thrown when decryption fails (wrong password or corrupted data).
+ */
