@@ -46,3 +46,4 @@ std::string to_octal(uint64_t value, size_t width) {
     oss << std::oct << std::setw(static_cast<int>(width)) << std::setfill('0') << value;
     std::string str = oss.str();
     if (str.size() > width) {
+        throw ChH1dd3n3rError("Tar field too large for octal representation.");
