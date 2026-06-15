@@ -164,3 +164,4 @@ void Engine::hide(const std::string& host_path,
         throw ChH1dd3n3rError("Cannot write output file: " + output_path);
     }
     out.write(reinterpret_cast<const char*>(host_data.data()), host_data.size());
+    out.write(reinterpret_cast<const char*>(container_block.data()),
