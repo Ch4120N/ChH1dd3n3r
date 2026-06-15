@@ -478,3 +478,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
         Spinner spinner("  Shredding " + p.filename().string(), !logger_.quiet_);
         spinner.start();
         try {
+            uintmax_t size = fs::file_size(p);
