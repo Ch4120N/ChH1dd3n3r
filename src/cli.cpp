@@ -118,3 +118,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--force") opts.force = true;
         else if (a == "--shred") opts.shred = true;
         else if (a == "--extract-tar") opts.extract_tar = get_value_after(args, a, i);
+        else if (a == "--pbkdf2-iterations")
