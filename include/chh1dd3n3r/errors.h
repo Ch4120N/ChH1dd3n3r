@@ -24,3 +24,4 @@ public:
 };
 
 /**
+ * @brief Thrown when the container format is malformed.
