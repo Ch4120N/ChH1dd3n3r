@@ -11,3 +11,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
     }
     std::vector<uint8_t> result;
     result.reserve(data.size());
+    for (size_t i = 0; i < data.size(); ++i) {
