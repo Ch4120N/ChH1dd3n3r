@@ -341,3 +341,4 @@ void Engine::info(const std::string& input_path,
     MetadataInfo info = parse_metadata_block(plain_meta);
 
     if (json_output) {
+        std::map<std::string, std::string> out;
