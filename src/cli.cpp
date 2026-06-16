@@ -165,3 +165,4 @@ void parse_shred(const std::vector<std::string>& args, CLI::Options& opts) {
     }
 }
 
+void parse_benchmark(const std::vector<std::string>& args, CLI::Options& opts) {
