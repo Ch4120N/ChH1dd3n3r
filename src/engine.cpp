@@ -228,3 +228,4 @@ void Engine::unhide(const std::string& input_path,
 
     for (const auto& file : info.files) {
         logger_.info("Extracting: " + file.name);
+        if (file.data_offset + file.data_len > plain_meta.size()) {
