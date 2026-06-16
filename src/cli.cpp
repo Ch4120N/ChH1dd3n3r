@@ -172,3 +172,4 @@ void parse_benchmark(const std::vector<std::string>& args, CLI::Options& opts) {
     }
 }
 
+void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
