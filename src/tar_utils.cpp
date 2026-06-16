@@ -81,3 +81,4 @@ void set_checksum(TarHeader& header) {
     header.checksum[7] = ' ';
 }
 
+void append_bytes(std::vector<uint8_t>& vec, const void* data, size_t size) {
