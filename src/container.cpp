@@ -37,3 +37,4 @@ void write_be16(std::vector<uint8_t>& vec, uint16_t value) {
     vec.push_back(static_cast<uint8_t>(value & 0xFF));
 }
 
+} // anonymous namespace
