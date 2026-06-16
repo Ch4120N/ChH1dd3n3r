@@ -115,3 +115,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
 
 void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
                      const fs::path& entry, bool is_dir) {
+    TarHeader header;
