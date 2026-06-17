@@ -43,3 +43,4 @@ void Logger::log(const std::string& level, const std::string& msg,
 
     if (!log_file_.empty()) {
         std::lock_guard<std::mutex> lock(mutex_);
+        std::ofstream out(log_file_, std::ios::app);
