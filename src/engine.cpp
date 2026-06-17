@@ -78,3 +78,4 @@ void Engine::hide(const std::string& host_path,
     if (!fs::is_regular_file(host_path)) {
         throw InputFileError("Host file not found: " + host_path);
     }
+
