@@ -258,3 +258,4 @@ int CLI::run(int argc, char* argv[]) {
     // without invoking a shell command.
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+#endif
