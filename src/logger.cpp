@@ -11,3 +11,4 @@ Logger::Logger(bool color, bool verbose, bool quiet, const std::string& log_file
 
 void Logger::set_color(bool enabled) { color_ = enabled; }
 void Logger::set_verbose(bool enabled) { verbose_ = enabled; }
+void Logger::set_quiet(bool enabled) { quiet_ = enabled; }
