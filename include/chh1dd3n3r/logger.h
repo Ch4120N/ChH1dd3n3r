@@ -37,3 +37,4 @@ private:
     bool verbose_;
     std::string log_file_;
     std::mutex mutex_;
+
