@@ -98,3 +98,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
     if (full.size() <= 100) {
         name = full;
         prefix.clear();
+        return;
