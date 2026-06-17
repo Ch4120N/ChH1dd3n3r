@@ -317,3 +317,4 @@ void Engine::info(const std::string& input_path,
     }
     uint64_t footer_pos = static_cast<uint64_t>(data.size() -
                                                 std::distance(data.rbegin(), footer_it) -
+                                                MAGIC_FOOTER.size());
