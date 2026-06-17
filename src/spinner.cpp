@@ -10,3 +10,4 @@ Spinner::Spinner(const std::string& text, bool enabled)
 
 Spinner::~Spinner() {
     stop();
+}
