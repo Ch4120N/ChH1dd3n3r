@@ -36,3 +36,4 @@ static const std::vector<uint8_t> MAGIC_FOOTER_XOR_KEY = {
 };
 
 const std::vector<uint8_t> MAGIC_HEADER_V1 =
+    xor_bytes(MAGIC_HEADER_V1_XORED, MAGIC_XOR_KEY);
