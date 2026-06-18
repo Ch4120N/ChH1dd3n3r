@@ -210,3 +210,4 @@ std::string get_tar_path(const TarHeader& header) {
 } // anonymous namespace
 
 std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
+    if (!fs::is_directory(dir)) {
