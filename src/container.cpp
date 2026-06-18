@@ -87,3 +87,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
 
 FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos) {
     const size_t footer_size = MAGIC_FOOTER.size() + 8 + 16 + 12;
+    if (data.size() - footer_pos < footer_size) {
