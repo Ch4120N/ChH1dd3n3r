@@ -19,3 +19,4 @@ public:
     void set_verbose(bool enabled);
     void set_quiet(bool enabled);
     void set_log_file(const std::string& path);
+
