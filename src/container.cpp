@@ -12,3 +12,4 @@ namespace chh1dd3n3r {
 namespace {
 
 uint64_t read_be64(const uint8_t* p) {
+    return (static_cast<uint64_t>(p[0]) << 56) |
