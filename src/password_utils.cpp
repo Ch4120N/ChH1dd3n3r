@@ -28,3 +28,4 @@ std::string read_password(const std::string& prompt) {
             password.push_back(ch);
             std::cout << '*';
         }
+    }
