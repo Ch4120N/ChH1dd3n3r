@@ -76,3 +76,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
         crypto::aes_gcm_encrypt(meta_key, meta_nonce, meta_block, {});
 
     // Footer
+    std::vector<uint8_t> result = encrypted_meta;
