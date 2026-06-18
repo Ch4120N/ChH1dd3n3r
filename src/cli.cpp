@@ -135,3 +135,4 @@ void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a[0] != '-') opts.file = a;
     }
 }
+
