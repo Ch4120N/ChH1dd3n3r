@@ -236,3 +236,4 @@ void Engine::unhide(const std::string& input_path,
 
         Spinner spinner("  Decrypting " + file.name, !logger_.quiet_);
         spinner.start();
+        std::vector<uint8_t> plain = crypto::decrypt_blob(password, enc_blob,
