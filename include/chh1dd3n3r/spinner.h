@@ -24,3 +24,4 @@ private:
     std::string text_;
     bool enabled_;
     std::atomic<bool> stop_flag_;
+    std::thread thread_;
