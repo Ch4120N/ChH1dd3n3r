@@ -408,3 +408,4 @@ bool Engine::test(const std::string& input_path,
         logger_.error(e.what());
         if (json_output) logger_.json({{"status", "INVALID"}});
         else if (grep) logger_.grep("STATUS", "INVALID");
+        return false;
