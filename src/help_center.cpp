@@ -107,3 +107,4 @@ std::string HelpCenter::test_help(bool color) {
         "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
 }
 
+std::string HelpCenter::strip_help(bool color) {
