@@ -16,3 +16,4 @@ std::string HelpCenter::main_help(bool color) {
         C("│  ChH1dd3n3r  │  Advanced File Steganography & Encryption      │", "\033[36m") + "\n" +
         C("╰──────────────────────────────────────────────────────────────╯", "\033[36m") + "\n" +
         C("USAGE:", "\033[37m") + "\n" +
+        "  ChH1dd3n3r <COMMAND> [OPTIONS]\n\n" +
