@@ -34,3 +34,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     else if (level == "FATAL") prefix = "[X]";
 
     std::string line = style(prefix, ansi_code) + " " + msg;
+
