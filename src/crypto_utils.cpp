@@ -222,3 +222,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
         throw InvalidPasswordError("Encrypted data is too short.");
     }
 
+    std::vector<uint8_t> salt(blob.begin(), blob.begin() + 16);
