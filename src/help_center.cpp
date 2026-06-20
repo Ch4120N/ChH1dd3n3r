@@ -25,3 +25,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  strip     ", "\033[32m") + " Remove hidden data, restore host file\n" +
         C("  shred     ", "\033[32m") + " Securely delete files\n" +
         C("  benchmark ", "\033[32m") + " Benchmark PBKDF2 speed\n" +
+        C("  genkey    ", "\033[32m") + " Generate random key file\n\n" +
