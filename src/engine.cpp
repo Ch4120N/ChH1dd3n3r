@@ -288,3 +288,4 @@ void Engine::unhide(const std::string& input_path,
         out.close();
 
         apply_metadata(dest, file.mtime, file.mode);
+        logger_.success("Written " + std::to_string(plain.size()) + " bytes to " + dest.string());
