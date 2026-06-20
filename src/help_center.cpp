@@ -55,3 +55,4 @@ std::string HelpCenter::hide_help(bool color) {
         "  -f, --files <PATH>...  Files/directories to hide\n\n"
         "Authentication:\n"
         "  -p, --password <PWD>   Encryption password\n"
+        "  --key-file <PATH>      Read password from file\n"
