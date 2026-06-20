@@ -21,3 +21,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
 /**
  * @brief Parsed footer information.
  */
+struct FooterInfo {
