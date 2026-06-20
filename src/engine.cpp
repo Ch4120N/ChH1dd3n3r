@@ -384,3 +384,4 @@ bool Engine::test(const std::string& input_path,
         throw InputFileError("File not found: " + input_path);
     }
 
+    try {
