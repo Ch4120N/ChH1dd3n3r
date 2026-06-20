@@ -91,3 +91,4 @@ void Engine::hide(const std::string& host_path,
     for (const auto& path_str : files) {
         fs::path p(path_str);
         if (fs::is_directory(p)) {
+            logger_.info("Packing directory: " + p.string());
