@@ -356,3 +356,4 @@ void Engine::info(const std::string& input_path,
     } else if (grep) {
         logger_.grep("VERSION", std::to_string(info.version));
         logger_.grep("GZIP", (info.flags & FLAG_GZIP) ? "YES" : "NO");
+        logger_.grep("METADATA_PRESERVED", (info.flags & FLAG_METADATA) ? "YES" : "NO");
