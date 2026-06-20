@@ -5,3 +5,4 @@
 #include <openssl/pkcs5.h>
 #include <openssl/sha.h>
 
+#include <stdexcept>
