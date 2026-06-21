@@ -96,3 +96,4 @@ void Engine::hide(const std::string& host_path,
             if (gzip_compress) tar_data = gzip_compress(tar_data);
 
             auto ftime = fs::last_write_time(p);
+            uint64_t mtime = static_cast<uint64_t>(
