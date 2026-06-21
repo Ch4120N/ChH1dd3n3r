@@ -34,3 +34,4 @@ std::string HelpCenter::main_help(bool color) {
         "  -v, --verbose         Verbose output\n" +
         "  -q, --quiet           Suppress non-error messages\n" +
         "  --grep                Machine-readable output\n" +
+        "  --json                JSON output\n" +
