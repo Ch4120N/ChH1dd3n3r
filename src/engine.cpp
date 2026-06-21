@@ -114,3 +114,4 @@ void Engine::hide(const std::string& host_path,
                                       std::istreambuf_iterator<char>());
             file.close();
             if (data.size() > 100ULL * 1024 * 1024) {
+                logger_.warn("Large file detected (" +
