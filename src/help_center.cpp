@@ -117,3 +117,4 @@ std::string HelpCenter::strip_help(bool color) {
         "  --force                Allow overwriting input file\n";
 }
 
+std::string HelpCenter::shred_help(bool color) {
