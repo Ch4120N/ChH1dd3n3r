@@ -62,3 +62,4 @@ private:
     static void apply_metadata(const std::filesystem::path& path,
                                uint64_t mtime, uint16_t mode);
 };
+
