@@ -61,3 +61,4 @@ void fill_field(char* dest, size_t dest_size, const std::string& value, bool num
         size_t len = std::min(value.size(), dest_size - 1);
         std::memcpy(dest, value.c_str(), len);
         dest[len] = '\0';
+    }
