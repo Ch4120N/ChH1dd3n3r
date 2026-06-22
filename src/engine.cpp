@@ -492,3 +492,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
                     std::vector<uint8_t> rnd = crypto::random_bytes(chunk);
                     file.write(reinterpret_cast<const char*>(rnd.data()), chunk);
                     remaining -= chunk;
+                }
