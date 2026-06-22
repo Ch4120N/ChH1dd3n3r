@@ -161,3 +161,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         if (!file) {
             throw ChH1dd3n3rError("Failed to open file for tar: " + entry.string());
         }
+        std::vector<uint8_t> buffer(std::istreambuf_iterator<char>(file), {});
