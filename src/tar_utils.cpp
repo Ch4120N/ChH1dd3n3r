@@ -64,3 +64,4 @@ void fill_field(char* dest, size_t dest_size, const std::string& value, bool num
     }
 }
 
+void clear_header(TarHeader& header) {
