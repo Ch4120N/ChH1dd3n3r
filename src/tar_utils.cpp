@@ -123,3 +123,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         rel += '/';
     }
 
+    std::string name, prefix;
