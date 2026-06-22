@@ -205,3 +205,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
     else if (cmd == "test") parse_test(args, opts);
     else if (cmd == "strip") parse_strip(args, opts);
     else if (cmd == "shred") parse_shred(args, opts);
+    else if (cmd == "benchmark") parse_benchmark(args, opts);
