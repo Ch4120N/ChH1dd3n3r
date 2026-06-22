@@ -278,3 +278,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             throw MetadataError("Dangerous tar path rejected: " + member);
         }
 
+        fs::path dest = output_dir / member;
