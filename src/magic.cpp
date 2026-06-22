@@ -24,3 +24,4 @@ static const std::vector<uint8_t> MAGIC_HEADER_V1_XORED = {
 static const std::vector<uint8_t> MAGIC_HEADER_V2_XORED = {
     0x23, 0xF8, 0x84, 0x95, 0x9B
 };
+static const std::vector<uint8_t> MAGIC_FOOTER_XORED = {
