@@ -248,3 +248,4 @@ void CLI::print_banner(const Logger& logger) {
         " | |   | |_| |  | |__ | ||_   / _` |/ _ \\  |_ \\| '__|\n"
         " | |___|  _  |  | '_ \\| |__   | (_| |  __/ ___) | |\n"
         "  \\____|_| |_|  |_| |_|   |_|  \\__,_|\\___||____/|_|\n"
+        "  File Steganography & Encryption v1.0  by Ch4120N\n\n";
