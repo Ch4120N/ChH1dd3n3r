@@ -32,3 +32,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
     std::vector<uint8_t> key(32);
     if (1 != PKCS5_PBKDF2_HMAC(
                     password.c_str(),
+                    static_cast<int>(password.size()),
