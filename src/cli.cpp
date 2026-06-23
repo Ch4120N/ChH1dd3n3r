@@ -59,3 +59,4 @@ bool has_flag(const std::vector<std::string>& args, const std::string& flag) {
         if (a == flag) return true;
     }
     return false;
+}
