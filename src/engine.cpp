@@ -241,3 +241,4 @@ void Engine::unhide(const std::string& input_path,
                                                           pbkdf2_iterations);
         spinner.stop();
 
+        if (info.flags & FLAG_GZIP) {
