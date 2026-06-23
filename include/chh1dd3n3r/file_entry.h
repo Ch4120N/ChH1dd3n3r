@@ -21,3 +21,4 @@ struct FileEntry {
  * @brief Describes a file inside a parsed metadata block.
  */
 struct BlockFileInfo {
+    std::string name;
