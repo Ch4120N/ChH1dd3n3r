@@ -302,3 +302,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         }
         out.write(reinterpret_cast<const char*>(tar_data.data() + offset), size);
         out.close();
+
