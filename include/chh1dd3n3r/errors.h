@@ -10,3 +10,4 @@ namespace chh1dd3n3r {
  */
 class ChH1dd3n3rError : public std::runtime_error {
 public:
+    explicit ChH1dd3n3rError(const std::string& message)
