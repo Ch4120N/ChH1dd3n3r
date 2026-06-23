@@ -12,3 +12,4 @@ namespace chh1dd3n3r {
  */
 class Logger {
 public:
+    Logger(bool color = true, bool verbose = false, bool quiet = false,
