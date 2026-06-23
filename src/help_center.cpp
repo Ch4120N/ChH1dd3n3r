@@ -77,3 +77,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  --key-env <VAR>        Read password from environment variable\n\n"
         "Options:\n"
         "  --force                Overwrite existing files\n"
+        "  --shred                Securely delete container after extraction\n"
