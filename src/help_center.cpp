@@ -59,3 +59,4 @@ std::string HelpCenter::hide_help(bool color) {
         "  --key-env <VAR>        Read password from environment variable\n\n"
         "Options:\n"
         "  --no-gzip              Disable GZip compression\n"
+        "  --force                Overwrite output file if exists\n"
