@@ -170,3 +170,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     } else if (is_dir) {
         // no data for directory
     }
+}
