@@ -537,3 +537,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     out.close();
     logger_.success("Random key written to '" + output_path + "'.");
 }
+
