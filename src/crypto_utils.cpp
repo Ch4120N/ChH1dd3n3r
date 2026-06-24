@@ -99,3 +99,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
             throw ChH1dd3n3rError("Encryption finalisation failed.");
         }
         ciphertext_len += len;
+
