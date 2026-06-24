@@ -23,3 +23,4 @@ struct FileEntry {
 struct BlockFileInfo {
     std::string name;
     uint64_t mtime = 0;
+    uint16_t mode = 0644;
