@@ -11,3 +11,4 @@ namespace chh1dd3n3r {
  */
 class Spinner {
 public:
+    Spinner(const std::string& text, bool enabled = true);
