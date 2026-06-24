@@ -24,3 +24,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  test      ", "\033[32m") + " Verify password can decrypt container\n" +
         C("  strip     ", "\033[32m") + " Remove hidden data, restore host file\n" +
         C("  shred     ", "\033[32m") + " Securely delete files\n" +
+        C("  benchmark ", "\033[32m") + " Benchmark PBKDF2 speed\n" +
