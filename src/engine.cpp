@@ -44,3 +44,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
             dest.resize(dest_len);
             return dest;
         }
+        if (ret == Z_BUF_ERROR) {
