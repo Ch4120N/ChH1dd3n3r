@@ -250,3 +250,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
         TarHeader header;
         std::memcpy(&header, block, sizeof(TarHeader));
+        offset += BLOCK_SIZE;
