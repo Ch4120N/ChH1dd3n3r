@@ -179,3 +179,4 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
         else if (a == "--force") opts.force = true;
         else if (a[0] != '-') opts.output_path = a;
     }
+}
