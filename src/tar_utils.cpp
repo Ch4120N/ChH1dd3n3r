@@ -21,3 +21,4 @@ constexpr size_t BLOCK_SIZE = 512;
 struct TarHeader {
     char name[100];
     char mode[8];
+    char uid[8];
