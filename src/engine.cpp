@@ -456,3 +456,4 @@ void Engine::strip(const std::string& input_path,
     }
     if (fs::exists(dest) && !force && dest != input_path) {
         throw OutputExistsError("'" + dest + "' exists. Use --force to overwrite.");
+    }
