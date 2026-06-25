@@ -358,3 +358,4 @@ void Engine::info(const std::string& input_path,
         logger_.grep("GZIP", (info.flags & FLAG_GZIP) ? "YES" : "NO");
         logger_.grep("METADATA_PRESERVED", (info.flags & FLAG_METADATA) ? "YES" : "NO");
         logger_.grep("FILES_COUNT", std::to_string(info.files.size()));
+        for (const auto& f : info.files) {
