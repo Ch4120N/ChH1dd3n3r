@@ -54,3 +54,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     meta_block.push_back(VERSION_V2);
     meta_block.push_back(flags);
 
+    for (const auto& entry : files) {
