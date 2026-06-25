@@ -65,3 +65,4 @@ std::string HelpCenter::hide_help(bool color) {
         "  --pbkdf2-iterations <N> PBKDF2 iterations (default: 100000)\n";
 }
 
+std::string HelpCenter::unhide_help(bool color) {
