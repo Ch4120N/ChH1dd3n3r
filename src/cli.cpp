@@ -265,3 +265,4 @@ int CLI::run(int argc, char* argv[]) {
 
     Logger logger(opts.color, opts.verbose, opts.quiet, opts.log_file);
 
+    if (opts.banner && !opts.quiet) {
