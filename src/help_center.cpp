@@ -83,3 +83,4 @@ std::string HelpCenter::unhide_help(bool color) {
 }
 
 std::string HelpCenter::info_help(bool color) {
+    return
