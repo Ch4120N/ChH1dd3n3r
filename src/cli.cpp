@@ -308,3 +308,4 @@ int CLI::run(int argc, char* argv[]) {
         if (opts.verbose) {
             // stack trace would be nice, but not portable
         }
+        return 1;
