@@ -135,3 +135,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     std::vector<uint8_t> tag(ciphertext_with_tag.end() - 16,
                              ciphertext_with_tag.end());
 
+    EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();
