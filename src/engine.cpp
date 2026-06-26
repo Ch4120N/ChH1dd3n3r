@@ -196,3 +196,4 @@ void Engine::unhide(const std::string& input_path,
                                  MAGIC_FOOTER.rbegin(), MAGIC_FOOTER.rend());
     if (footer_it == data.rend()) {
         throw ContainerError("No valid ChH1dd3n3r container footer found.");
+    }
