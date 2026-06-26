@@ -292,3 +292,4 @@ int CLI::run(int argc, char* argv[]) {
                                      opts.pbkdf2_iterations);
             return valid ? 0 : 1;
         } else if (opts.command == "strip") {
+            engine.strip(opts.input, opts.output_path, opts.force);
