@@ -130,3 +130,4 @@ std::string HelpCenter::benchmark_help(bool color) {
         "Options:\n"
         "  --iterations <N>       Number of PBKDF2 iterations (default: 100000)\n";
 }
+
