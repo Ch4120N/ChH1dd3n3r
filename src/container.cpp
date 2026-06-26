@@ -79,3 +79,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     std::vector<uint8_t> result = encrypted_meta;
     result.insert(result.end(), MAGIC_FOOTER.begin(), MAGIC_FOOTER.end());
     write_be64(result, static_cast<uint64_t>(encrypted_meta.size()));
+    result.insert(result.end(), meta_salt.begin(), meta_salt.end());
