@@ -16,3 +16,4 @@ struct FileEntry {
     uint64_t mtime = 0;      // milliseconds since epoch
     uint16_t mode = 0644;
 };
+
