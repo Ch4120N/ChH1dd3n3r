@@ -281,3 +281,4 @@ void Engine::unhide(const std::string& input_path,
         }
 
         std::ofstream out(dest, std::ios::binary);
+        if (!out) {
