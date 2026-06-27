@@ -210,3 +210,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
     else {
         std::cerr << "Unknown command: " << cmd << "\n\n";
         std::cout << HelpCenter::main_help(opts.color) << std::endl;
+        exit(2);
