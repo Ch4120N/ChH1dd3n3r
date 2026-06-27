@@ -198,3 +198,4 @@ bool is_zero_block(const uint8_t* block) {
     return true;
 }
 
+std::string get_tar_path(const TarHeader& header) {
