@@ -159,3 +159,4 @@ void Engine::hide(const std::string& host_path,
         throw OutputExistsError("Output '" + output_path + "' exists. Use --force to overwrite.");
     }
 
+    std::ofstream out(output_path, std::ios::binary);
