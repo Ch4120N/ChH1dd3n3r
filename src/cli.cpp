@@ -182,3 +182,4 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
 }
 
 } // anonymous namespace
+
