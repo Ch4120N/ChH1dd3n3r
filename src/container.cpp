@@ -65,3 +65,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
         }
 
         write_be64(meta_block, static_cast<uint64_t>(entry.data.size()));
+        meta_block.insert(meta_block.end(), entry.data.begin(), entry.data.end());
