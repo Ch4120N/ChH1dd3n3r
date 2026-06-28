@@ -39,3 +39,4 @@ void Logger::log(const std::string& level, const std::string& msg,
         std::cerr << line << std::endl;
     } else {
         std::cout << line << std::endl;
+    }
