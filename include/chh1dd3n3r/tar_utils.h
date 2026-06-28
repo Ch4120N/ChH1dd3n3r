@@ -12,3 +12,4 @@ namespace chh1dd3n3r::tar {
 std::vector<uint8_t> create_tar_from_directory(const std::filesystem::path& dir);
 
 /**
+ * @brief Extract a ustar tar archive to an output directory.
