@@ -21,3 +21,4 @@ public:
     void stop();
 
 private:
+    std::string text_;
