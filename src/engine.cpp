@@ -268,3 +268,4 @@ void Engine::unhide(const std::string& input_path,
                 try {
                     tar::extract_tar_to_directory(plain, output_dir);
                     logger_.success("Extracted directory tree to " + output_dir);
+                } catch (const std::exception& e) {
