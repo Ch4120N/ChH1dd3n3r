@@ -11,3 +11,4 @@ namespace chh1dd3n3r {
  */
 struct FileEntry {
     std::string name;
+    std::vector<uint8_t> data;
