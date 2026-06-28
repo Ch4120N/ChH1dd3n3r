@@ -22,3 +22,4 @@ private:
     static void print_banner(const Logger& logger);
 };
 
+} 
