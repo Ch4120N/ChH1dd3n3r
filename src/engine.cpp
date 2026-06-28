@@ -256,3 +256,4 @@ void Engine::unhide(const std::string& input_path,
             else if (extract_tar == "no") do_extract = false;
             else {
                 std::cout << "  [?] " << file.name <<
+                             " appears to be a directory (tar). Extract contents? [Y/n] ";
