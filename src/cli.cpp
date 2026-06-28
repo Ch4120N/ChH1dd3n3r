@@ -296,3 +296,4 @@ int CLI::run(int argc, char* argv[]) {
         } else if (opts.command == "shred") {
             engine.shred(opts.files, opts.passes);
         } else if (opts.command == "benchmark") {
+            engine.benchmark(opts.iterations);
