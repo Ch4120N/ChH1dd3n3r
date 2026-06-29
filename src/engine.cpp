@@ -381,3 +381,4 @@ bool Engine::test(const std::string& input_path,
                   bool json_output,
                   int pbkdf2_iterations) {
     if (!fs::is_regular_file(input_path)) {
+        throw InputFileError("File not found: " + input_path);
