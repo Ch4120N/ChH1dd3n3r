@@ -9,3 +9,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
     if (key.empty()) {
         return data;
     }
+    std::vector<uint8_t> result;
