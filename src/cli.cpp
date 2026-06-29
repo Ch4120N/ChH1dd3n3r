@@ -295,3 +295,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.strip(opts.input, opts.output_path, opts.force);
         } else if (opts.command == "shred") {
             engine.shred(opts.files, opts.passes);
+        } else if (opts.command == "benchmark") {
