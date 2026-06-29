@@ -52,3 +52,4 @@ std::string HelpCenter::hide_help(bool color) {
         "Required:\n"
         "  -H, --host <FILE>      Carrier file\n"
         "  -o, --output <FILE>    Output container file\n"
+        "  -f, --files <PATH>...  Files/directories to hide\n\n"
