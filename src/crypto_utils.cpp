@@ -237,3 +237,4 @@ std::string base64_encode(const std::vector<uint8_t>& data) {
     // OpenSSL EVP_EncodeBlock (with padding)
     size_t out_len = 4 * ((data.size() + 2) / 3);
     std::vector<char> out(out_len + 1, 0);
+    int len = EVP_EncodeBlock(reinterpret_cast<unsigned char*>(out.data()),
