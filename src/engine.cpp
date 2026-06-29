@@ -83,3 +83,4 @@ void Engine::hide(const std::string& host_path,
     if (!host_file) {
         throw InputFileError("Cannot read host file: " + host_path);
     }
+    std::vector<uint8_t> host_data((std::istreambuf_iterator<char>(host_file)),
