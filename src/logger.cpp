@@ -84,3 +84,4 @@ void Logger::json(const std::map<std::string, std::string>& data) {
     std::cout << "}" << std::endl;
 }
 
+}
