@@ -168,3 +168,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
             archive.resize(archive.size() + pad, 0);
         }
     } else if (is_dir) {
+        // no data for directory
