@@ -72,3 +72,4 @@ void set_checksum(TarHeader& header) {
     std::memset(header.checksum, ' ', sizeof(header.checksum));
     uint64_t sum = 0;
     const unsigned char* raw = reinterpret_cast<const unsigned char*>(&header);
+    for (size_t i = 0; i < sizeof(TarHeader); ++i) {
