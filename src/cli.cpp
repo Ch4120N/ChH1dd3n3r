@@ -297,3 +297,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.shred(opts.files, opts.passes);
         } else if (opts.command == "benchmark") {
             engine.benchmark(opts.iterations);
+        } else if (opts.command == "genkey") {
