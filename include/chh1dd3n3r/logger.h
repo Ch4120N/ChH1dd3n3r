@@ -33,3 +33,4 @@ public:
     bool quiet_ = false;
 
 private:
+    bool color_;
