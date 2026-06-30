@@ -235,3 +235,4 @@ void Engine::unhide(const std::string& input_path,
                                       plain_meta.begin() + file.data_offset + file.data_len);
 
         Spinner spinner("  Decrypting " + file.name, !logger_.quiet_);
+        spinner.start();
