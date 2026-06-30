@@ -220,3 +220,4 @@ std::string CLI::read_password_from_file(const std::string& path) {
         throw ChH1dd3n3rError("Failed to read key file: " + path);
     }
     std::string pwd;
+    std::getline(file, pwd);
