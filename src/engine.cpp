@@ -333,3 +333,4 @@ void Engine::info(const std::string& input_path,
                          "╚════════════════════════════════════════════╝\n";
         }
         return;
+    }
