@@ -26,3 +26,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  shred     ", "\033[32m") + " Securely delete files\n" +
         C("  benchmark ", "\033[32m") + " Benchmark PBKDF2 speed\n" +
         C("  genkey    ", "\033[32m") + " Generate random key file\n\n" +
+        C("GLOBAL OPTIONS:", "\033[37m") + "\n" +
