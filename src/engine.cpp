@@ -266,3 +266,4 @@ void Engine::unhide(const std::string& input_path,
             if (do_extract) {
                 logger_.info("Extracting directory contents from " + file.name + " ...");
                 try {
+                    tar::extract_tar_to_directory(plain, output_dir);
