@@ -39,3 +39,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
  * Layout: salt (16) || nonce (12) || ciphertext || tag (16)
  */
 std::vector<uint8_t> encrypt_blob(const std::string& password,
+                                  const std::vector<uint8_t>& plaintext,
