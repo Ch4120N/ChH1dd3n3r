@@ -406,3 +406,4 @@ bool Engine::test(const std::string& input_path,
                          password, pbkdf2_iterations);
     } catch (const InvalidPasswordError& e) {
         logger_.error(e.what());
+        if (json_output) logger_.json({{"status", "INVALID"}});
