@@ -41,3 +41,4 @@ public:
 
     bool test(const std::string& input_path,
               const std::string& password,
+              bool grep,
