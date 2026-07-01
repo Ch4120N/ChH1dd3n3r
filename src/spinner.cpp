@@ -13,3 +13,4 @@ Spinner::~Spinner() {
 }
 
 void Spinner::start() {
+    if (!enabled_) return;
