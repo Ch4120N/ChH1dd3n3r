@@ -497,3 +497,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
             }
             file.close();
             fs::remove(p);
+            logger_.success("Shredded: " + p.string());
