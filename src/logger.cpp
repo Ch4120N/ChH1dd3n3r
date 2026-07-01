@@ -72,3 +72,4 @@ void Logger::grep(const std::string& key, const std::string& value) {
     std::cout << key << ": " << value << std::endl;
 }
 
+void Logger::json(const std::map<std::string, std::string>& data) {
