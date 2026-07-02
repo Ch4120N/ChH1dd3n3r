@@ -307,3 +307,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         uint64_t mode = parse_octal(header.mode, sizeof(header.mode));
         if (mode != 0) {
             fs::permissions(dest, static_cast<fs::perms>(mode & 0777),
+                            fs::perm_options::replace);
