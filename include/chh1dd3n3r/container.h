@@ -16,3 +16,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
                                    bool gzip_flag,
                                    const std::string& password,
                                    int iterations,
+                                   bool preserve_metadata);
