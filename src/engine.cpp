@@ -354,3 +354,4 @@ void Engine::info(const std::string& input_path,
         out["total_encrypted_bytes"] = std::to_string(total);
         logger_.json(out);
     } else if (grep) {
+        logger_.grep("VERSION", std::to_string(info.version));
