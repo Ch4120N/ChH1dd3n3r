@@ -273,3 +273,4 @@ int CLI::run(int argc, char* argv[]) {
 
     try {
         if (opts.command == "hide") {
+            std::string password = resolve_password(opts);
