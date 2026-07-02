@@ -518,3 +518,4 @@ void Engine::benchmark(int iterations) {
                  " iterations in " + std::to_string(elapsed) + "s");
     logger_.success("Approximately " + std::to_string(static_cast<long long>(rate)) +
                     " iterations/second");
+}
