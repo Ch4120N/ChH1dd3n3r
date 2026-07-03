@@ -276,3 +276,4 @@ void Engine::unhide(const std::string& input_path,
         }
 
         fs::path dest = fs::path(output_dir) / file.name;
+        if (fs::exists(dest) && !force) {
