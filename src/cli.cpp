@@ -260,3 +260,4 @@ int CLI::run(int argc, char* argv[]) {
     SetConsoleCP(CP_UTF8);
 #endif
 
+    Options opts;
