@@ -132,3 +132,4 @@ std::string HelpCenter::benchmark_help(bool color) {
 }
 
 std::string HelpCenter::genkey_help(bool color) {
+    return
