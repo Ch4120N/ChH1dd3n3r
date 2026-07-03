@@ -211,3 +211,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
     blob.insert(blob.end(), nonce.begin(), nonce.end());
     blob.insert(blob.end(), encrypted.begin(), encrypted.end());
     return blob;
+}
