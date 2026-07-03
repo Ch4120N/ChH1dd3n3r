@@ -219,3 +219,4 @@ void Engine::unhide(const std::string& input_path,
                  ", gzip=" + ((info.flags & FLAG_GZIP) ? "yes" : "no") +
                  ", metadata=" + ((info.flags & FLAG_METADATA) ? "yes" : "no"));
 
+    if (info.files.empty()) {
