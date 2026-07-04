@@ -153,3 +153,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     fill_field(header.devmajor, sizeof(header.devmajor), "0", true);
     fill_field(header.devminor, sizeof(header.devminor), "0", true);
 
+    set_checksum(header);
