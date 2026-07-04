@@ -28,3 +28,4 @@ void Spinner::stop() {
 }
 
 void Spinner::animate() {
+    const char frames[] = {'|', '/', '-', '\\'};
