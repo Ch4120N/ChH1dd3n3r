@@ -136,3 +136,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
             throw MetadataError("Truncated filename.");
         }
         BlockFileInfo file;
+        file.name.assign(plain_meta.begin() + offset,
