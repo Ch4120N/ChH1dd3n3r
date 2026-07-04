@@ -143,3 +143,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     std::vector<uint8_t> plaintext(ct_len > 0 ? ct_len : 1);
     int len = 0;
     int plaintext_len = 0;
+
