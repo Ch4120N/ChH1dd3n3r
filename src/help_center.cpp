@@ -110,3 +110,4 @@ std::string HelpCenter::test_help(bool color) {
 std::string HelpCenter::strip_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r strip [OPTIONS]\n\n"
+        "Required:\n"
