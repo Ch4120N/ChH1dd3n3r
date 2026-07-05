@@ -70,3 +70,4 @@ std::string get_value_after(const std::vector<std::string>& args,
     throw ChH1dd3n3rError("Missing value for option: " + flag);
 }
 
+void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
