@@ -42,3 +42,4 @@ struct CLI::Options {
     // strip
     std::string output_path;
 
+    // shred
