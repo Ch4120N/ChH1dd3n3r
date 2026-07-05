@@ -43,3 +43,4 @@ std::string read_password(const std::string& prompt) {
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     std::cout << std::endl;
     return password;
+#endif
