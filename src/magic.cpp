@@ -30,3 +30,4 @@ static const std::vector<uint8_t> MAGIC_FOOTER_XORED = {
 
 static const std::vector<uint8_t> MAGIC_XOR_KEY = {
     0xAA, 0xBB, 0xCC, 0xDD, 0xEE
+};
