@@ -108,3 +108,4 @@ std::string HelpCenter::test_help(bool color) {
 }
 
 std::string HelpCenter::strip_help(bool color) {
+    return
