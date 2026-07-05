@@ -47,3 +47,4 @@ struct CLI::Options {
 
     // benchmark
     int iterations = 100000;
+
