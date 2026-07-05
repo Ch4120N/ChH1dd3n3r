@@ -121,3 +121,4 @@ void Engine::hide(const std::string& host_path,
 
             auto ftime = fs::last_write_time(p);
             uint64_t mtime = static_cast<uint64_t>(
+                std::chrono::duration_cast<std::chrono::milliseconds>(
