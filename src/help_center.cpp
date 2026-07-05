@@ -93,3 +93,4 @@ std::string HelpCenter::info_help(bool color) {
         "Options:\n"
         "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
 }
+
