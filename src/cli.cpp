@@ -229,3 +229,4 @@ std::string CLI::resolve_password(const Options& opts) {
     if (!opts.password.empty()) return opts.password;
     if (!opts.key_file.empty()) return read_password_from_file(opts.key_file);
     if (!opts.key_env.empty()) {
+        const char* env = std::getenv(opts.key_env.c_str());
