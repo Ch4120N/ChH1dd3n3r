@@ -57,3 +57,4 @@ namespace {
 bool has_flag(const std::vector<std::string>& args, const std::string& flag) {
     for (const auto& a : args) {
         if (a == flag) return true;
+    }
