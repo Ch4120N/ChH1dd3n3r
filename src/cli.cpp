@@ -134,3 +134,4 @@ void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
             opts.pbkdf2_iterations = std::stoi(get_value_after(args, a, i));
         else if (a[0] != '-') opts.file = a;
     }
+}
