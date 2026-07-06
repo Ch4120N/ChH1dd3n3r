@@ -135,3 +135,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     fill_field(header.gid, sizeof(header.gid), "0", true);
 
     uint64_t size = 0;
+    if (!is_dir && fs::is_regular_file(entry)) {
