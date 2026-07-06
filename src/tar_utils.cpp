@@ -129,3 +129,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     fill_field(header.prefix, sizeof(header.prefix), prefix);
 
     auto st = fs::symlink_status(entry);
+    uint32_t mode = static_cast<uint32_t>(st.permissions());
