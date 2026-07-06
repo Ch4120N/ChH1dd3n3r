@@ -557,3 +557,4 @@ void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode)
     }
 }
 
+}
