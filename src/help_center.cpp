@@ -97,3 +97,4 @@ std::string HelpCenter::info_help(bool color) {
 std::string HelpCenter::test_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r test [OPTIONS]\n\n"
+        "Required:\n"
