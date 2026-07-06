@@ -53,3 +53,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     meta_block.insert(meta_block.end(), MAGIC_HEADER_V2.begin(), MAGIC_HEADER_V2.end());
     meta_block.push_back(VERSION_V2);
     meta_block.push_back(flags);
+
