@@ -18,3 +18,4 @@ public:
     Spinner& operator=(const Spinner&) = delete;
 
     void start();
+    void stop();
