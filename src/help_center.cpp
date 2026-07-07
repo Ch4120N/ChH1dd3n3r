@@ -29,3 +29,4 @@ std::string HelpCenter::main_help(bool color) {
         C("GLOBAL OPTIONS:", "\033[37m") + "\n" +
         "  -h, --help            Show this help message\n" +
         "  --version             Show program version\n" +
+        "  --no-color            Disable coloured output\n" +
