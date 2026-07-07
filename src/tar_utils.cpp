@@ -126,3 +126,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     std::string name, prefix;
     split_tar_name(rel, name, prefix);
     fill_field(header.name, sizeof(header.name), name);
+    fill_field(header.prefix, sizeof(header.prefix), prefix);
