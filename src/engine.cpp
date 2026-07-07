@@ -544,3 +544,4 @@ bool Engine::is_tar_data(const std::vector<uint8_t>& data) {
 
 void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode) {
     if (mtime > 0) {
+        auto ftime = fs::file_time_type(std::chrono::milliseconds(mtime));
