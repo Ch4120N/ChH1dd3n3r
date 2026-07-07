@@ -16,3 +16,4 @@ public:
 
 private:
     struct Options;
+    static void parse_args(int argc, char* argv[], Options& opts);
