@@ -27,3 +27,4 @@ private:
     std::thread thread_;
 
     void animate();
+};
