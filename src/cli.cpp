@@ -153,3 +153,4 @@ void parse_strip(const std::vector<std::string>& args, CLI::Options& opts) {
         const std::string& a = args[i];
         if (a == "-i" || a == "--input") opts.input = get_value_after(args, a, i);
         else if (a == "-o" || a == "--output") opts.output_path = get_value_after(args, a, i);
+        else if (a == "--force") opts.force = true;
