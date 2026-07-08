@@ -26,3 +26,4 @@ struct CLI::Options {
     bool verbose = false;
     bool quiet = false;
     bool grep = false;
+    bool json = false;
