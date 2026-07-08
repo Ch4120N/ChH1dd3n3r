@@ -51,3 +51,4 @@ struct CLI::Options {
     // genkey
     int length = 32;
 };
+
