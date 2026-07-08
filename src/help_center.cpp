@@ -68,3 +68,4 @@ std::string HelpCenter::hide_help(bool color) {
 std::string HelpCenter::unhide_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r unhide [OPTIONS]\n\n"
+        "Required:\n"
