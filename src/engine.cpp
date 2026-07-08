@@ -389,3 +389,4 @@ bool Engine::test(const std::string& input_path,
         std::vector<uint8_t> data((std::istreambuf_iterator<char>(input)),
                                   std::istreambuf_iterator<char>());
         input.close();
+
