@@ -473,3 +473,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
         if (!fs::is_regular_file(p)) {
             logger_.warn("Skipping non-file: " + p.string());
             continue;
+        }
