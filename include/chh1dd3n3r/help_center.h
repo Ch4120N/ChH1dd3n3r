@@ -15,3 +15,4 @@ public:
     static std::string info_help(bool color);
     static std::string test_help(bool color);
     static std::string strip_help(bool color);
+    static std::string shred_help(bool color);
