@@ -12,3 +12,4 @@ Spinner::~Spinner() {
     stop();
 }
 
+void Spinner::start() {
