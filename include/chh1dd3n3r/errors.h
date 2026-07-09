@@ -28,3 +28,4 @@ public:
  */
 class ContainerError : public ChH1dd3n3rError {
 public:
+    explicit ContainerError(const std::string& message)
