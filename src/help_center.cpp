@@ -76,3 +76,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  --key-file <PATH>      Read password from file\n"
         "  --key-env <VAR>        Read password from environment variable\n\n"
         "Options:\n"
+        "  --force                Overwrite existing files\n"
