@@ -100,3 +100,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
         prefix.clear();
         return;
     }
+    // split into prefix (<=155) and name (<=100)
