@@ -289,3 +289,4 @@ int CLI::run(int argc, char* argv[]) {
         } else if (opts.command == "test") {
             std::string password = resolve_password(opts);
             bool valid = engine.test(opts.input, password, opts.grep, opts.json,
+                                     opts.pbkdf2_iterations);
