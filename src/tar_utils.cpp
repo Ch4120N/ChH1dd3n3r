@@ -53,3 +53,4 @@ std::string to_octal(uint64_t value, size_t width) {
 
 void fill_field(char* dest, size_t dest_size, const std::string& value, bool numeric = false) {
     std::memset(dest, 0, dest_size);
+    if (numeric) {
