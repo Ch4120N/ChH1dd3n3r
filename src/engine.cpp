@@ -465,3 +465,4 @@ void Engine::strip(const std::string& input_path,
     out.write(reinterpret_cast<const char*>(original.data()), original.size());
     out.close();
     logger_.success("Stripped container. Clean host saved to '" + dest + "'.");
+}
