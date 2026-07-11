@@ -26,3 +26,4 @@ struct FooterInfo {
     std::vector<uint8_t> meta_salt;
     std::vector<uint8_t> meta_nonce;
 };
+
