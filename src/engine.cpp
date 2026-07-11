@@ -342,3 +342,4 @@ void Engine::info(const std::string& input_path,
 
     if (json_output) {
         std::map<std::string, std::string> out;
+        out["version"] = std::to_string(info.version);
