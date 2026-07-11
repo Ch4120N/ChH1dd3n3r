@@ -13,3 +13,4 @@ namespace {
 
 uint64_t read_be64(const uint8_t* p) {
     return (static_cast<uint64_t>(p[0]) << 56) |
+           (static_cast<uint64_t>(p[1]) << 48) |
