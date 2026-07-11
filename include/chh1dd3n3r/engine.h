@@ -52,3 +52,4 @@ public:
     void shred(const std::vector<std::string>& paths, int passes);
 
     void benchmark(int iterations);
+
