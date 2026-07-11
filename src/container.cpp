@@ -115,3 +115,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         throw MetadataError("Metadata block is too short.");
     }
 
+    if (!std::equal(MAGIC_HEADER_V1.begin(), MAGIC_HEADER_V1.end(), plain_meta.begin()) &&
