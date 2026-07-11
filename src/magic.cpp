@@ -17,3 +17,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
     return result;
 }
 
+// XOR‑obfuscated values – the literal magic strings never appear in source.
