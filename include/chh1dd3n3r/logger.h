@@ -26,3 +26,4 @@ public:
     void error(const std::string& msg);
     void fatal(const std::string& msg);
 
+    void grep(const std::string& key, const std::string& value);
