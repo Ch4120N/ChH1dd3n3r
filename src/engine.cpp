@@ -14,3 +14,4 @@
 #include "chh1dd3n3r/errors.h"
 #include "chh1dd3n3r/magic.h"
 #include "chh1dd3n3r/spinner.h"
+#include "chh1dd3n3r/tar_utils.h"
