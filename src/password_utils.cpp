@@ -10,3 +10,4 @@
 #include <unistd.h>
 #endif
 
+namespace chh1dd3n3r {
