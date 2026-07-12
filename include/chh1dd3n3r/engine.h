@@ -26,3 +26,4 @@ public:
               bool shred_originals);
 
     void unhide(const std::string& input_path,
+                const std::string& output_dir,
