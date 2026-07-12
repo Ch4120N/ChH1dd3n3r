@@ -18,3 +18,4 @@ private:
     struct Options;
     static void parse_args(int argc, char* argv[], Options& opts);
     static std::string resolve_password(const Options& opts);
+    static std::string read_password_from_file(const std::string& path);
