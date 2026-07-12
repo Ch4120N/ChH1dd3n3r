@@ -131,3 +131,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
     auto st = fs::symlink_status(entry);
     uint32_t mode = static_cast<uint32_t>(st.permissions());
     fill_field(header.mode, sizeof(header.mode), std::to_string(mode), true);
+    fill_field(header.uid, sizeof(header.uid), "0", true);
