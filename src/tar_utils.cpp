@@ -70,3 +70,4 @@ void clear_header(TarHeader& header) {
 
 void set_checksum(TarHeader& header) {
     std::memset(header.checksum, ' ', sizeof(header.checksum));
+    uint64_t sum = 0;
