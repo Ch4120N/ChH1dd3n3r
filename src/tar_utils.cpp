@@ -29,3 +29,4 @@ struct TarHeader {
     char typeflag;
     char linkname[100];
     char magic[6];
+    char version[2];
