@@ -375,3 +375,4 @@ void Engine::info(const std::string& input_path,
     }
 }
 
+bool Engine::test(const std::string& input_path,
