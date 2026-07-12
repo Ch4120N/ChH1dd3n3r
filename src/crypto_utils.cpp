@@ -196,3 +196,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     }
 }
 
+std::vector<uint8_t> encrypt_blob(const std::string& password,
