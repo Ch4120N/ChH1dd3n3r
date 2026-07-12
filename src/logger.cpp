@@ -58,3 +58,4 @@ void Logger::log(const std::string& level, const std::string& msg,
             std::strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S",
                           localtime(&now));
             out << time_buf << " [" << level << "] " << clean_line << std::endl;
+        }
