@@ -139,3 +139,4 @@ std::string HelpCenter::genkey_help(bool color) {
         "  --force                Overwrite output file if exists\n";
 }
 
+}
