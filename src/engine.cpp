@@ -184,3 +184,4 @@ void Engine::unhide(const std::string& input_path,
                     int pbkdf2_iterations,
                     bool shred_container) {
     if (!fs::is_regular_file(input_path)) {
+        throw InputFileError("Container file not found: " + input_path);
