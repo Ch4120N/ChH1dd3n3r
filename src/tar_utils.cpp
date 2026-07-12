@@ -75,3 +75,4 @@ void set_checksum(TarHeader& header) {
     for (size_t i = 0; i < sizeof(TarHeader); ++i) {
         sum += raw[i];
     }
+    std::string chk = to_octal(sum, 6);
