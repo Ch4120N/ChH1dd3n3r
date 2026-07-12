@@ -27,3 +27,4 @@ std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
     std::vector<uint8_t> dest(dest_len);
     int ret = compress2(dest.data(), &dest_len, data.data(),
                         static_cast<uLong>(data.size()), Z_BEST_SPEED);
+    if (ret != Z_OK) {
