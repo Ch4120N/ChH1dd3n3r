@@ -18,3 +18,4 @@ std::string read_password(const std::string& prompt) {
 #ifdef _WIN32
     std::string password;
     char ch;
+    while ((ch = _getch()) != '\r' && ch != '\n') {
