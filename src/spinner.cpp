@@ -5,3 +5,4 @@
 
 namespace chh1dd3n3r {
 
+Spinner::Spinner(const std::string& text, bool enabled)
