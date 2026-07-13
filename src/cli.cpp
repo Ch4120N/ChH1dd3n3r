@@ -197,3 +197,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
     std::vector<std::string> args;
     for (int i = 2; i < argc; ++i) args.emplace_back(argv[i]);
 
+    parse_common(args, opts);
