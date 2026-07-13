@@ -355,3 +355,4 @@ void Engine::info(const std::string& input_path,
         logger_.json(out);
     } else if (grep) {
         logger_.grep("VERSION", std::to_string(info.version));
+        logger_.grep("GZIP", (info.flags & FLAG_GZIP) ? "YES" : "NO");
