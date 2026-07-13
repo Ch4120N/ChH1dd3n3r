@@ -444,3 +444,4 @@ void Engine::strip(const std::string& input_path,
                                                 MAGIC_FOOTER.size());
     FooterInfo footer = parse_footer(data, footer_pos);
     uint64_t host_end = footer_pos - footer.enc_len;
+    if (host_end > data.size()) {
