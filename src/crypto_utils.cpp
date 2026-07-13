@@ -160,3 +160,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
 
         if (!aad.empty()) {
             int aad_len = 0;
+            if (1 != EVP_DecryptUpdate(ctx, nullptr, &aad_len,
