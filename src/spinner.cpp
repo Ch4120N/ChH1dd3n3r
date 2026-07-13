@@ -18,3 +18,4 @@ void Spinner::start() {
     thread_ = std::thread(&Spinner::animate, this);
 }
 
+void Spinner::stop() {
