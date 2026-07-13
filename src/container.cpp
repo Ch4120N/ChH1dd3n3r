@@ -146,3 +146,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
             }
             file.mtime = read_be64(plain_meta.data() + offset);
             offset += 8;
+            file.mode = read_be16(plain_meta.data() + offset);
