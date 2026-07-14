@@ -212,3 +212,4 @@ void Engine::unhide(const std::string& input_path,
     std::vector<uint8_t> plain_meta =
         decrypt_metadata(encrypted_meta, footer.meta_salt, footer.meta_nonce,
                          password, pbkdf2_iterations);
+
