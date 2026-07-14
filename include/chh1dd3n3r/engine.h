@@ -60,3 +60,4 @@ private:
 
     static bool is_tar_data(const std::vector<uint8_t>& data);
     static void apply_metadata(const std::filesystem::path& path,
+                               uint64_t mtime, uint16_t mode);
