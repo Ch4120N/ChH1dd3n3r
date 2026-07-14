@@ -17,3 +17,4 @@ public:
     Spinner(const Spinner&) = delete;
     Spinner& operator=(const Spinner&) = delete;
 
+    void start();
