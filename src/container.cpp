@@ -69,3 +69,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
     }
 
     // Encrypt metadata block
+    std::vector<uint8_t> meta_salt = crypto::random_bytes(16);
