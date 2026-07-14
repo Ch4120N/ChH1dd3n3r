@@ -62,3 +62,4 @@ std::string HelpCenter::hide_help(bool color) {
         "  --force                Overwrite output file if exists\n"
         "  --shred                Securely delete originals after hiding\n"
         "  --no-metadata          Do not preserve mtime/permissions\n"
+        "  --pbkdf2-iterations <N> PBKDF2 iterations (default: 100000)\n";
