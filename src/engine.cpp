@@ -151,3 +151,4 @@ void Engine::hide(const std::string& host_path,
         spinner.stop();
     }
 
+    std::vector<uint8_t> container_block =
