@@ -255,3 +255,4 @@ void Engine::unhide(const std::string& input_path,
             if (extract_tar == "yes") do_extract = true;
             else if (extract_tar == "no") do_extract = false;
             else {
+                std::cout << "  [?] " << file.name <<
