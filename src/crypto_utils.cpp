@@ -140,3 +140,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         throw ChH1dd3n3rError("Failed to create cipher context.");
     }
 
+    std::vector<uint8_t> plaintext(ct_len > 0 ? ct_len : 1);
