@@ -29,3 +29,4 @@ struct FooterInfo {
 
 /**
  * @brief Parse footer at a given position.
+ */
