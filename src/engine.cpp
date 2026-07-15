@@ -513,3 +513,4 @@ void Engine::benchmark(int iterations) {
     auto end = std::chrono::steady_clock::now();
     double elapsed = std::chrono::duration<double>(end - start).count();
     if (elapsed <= 0) elapsed = 1e-9;
+    double rate = iterations / elapsed;
