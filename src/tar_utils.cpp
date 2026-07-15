@@ -219,3 +219,4 @@ std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
         const fs::path& entry = it->path();
         bool is_dir = fs::is_directory(entry);
         write_tar_entry(archive, dir, entry, is_dir);
+    }
