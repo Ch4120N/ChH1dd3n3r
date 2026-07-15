@@ -440,3 +440,4 @@ void Engine::strip(const std::string& input_path,
         throw ContainerError("No container footer – nothing to strip.");
     }
     uint64_t footer_pos = static_cast<uint64_t>(data.size() -
+                                                std::distance(data.rbegin(), footer_it) -
