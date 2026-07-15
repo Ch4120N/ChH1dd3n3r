@@ -15,3 +15,4 @@
 #include "chh1dd3n3r/errors.h"
 #include "chh1dd3n3r/help_center.h"
 #include "chh1dd3n3r/logger.h"
+#include "chh1dd3n3r/password_utils.h"
