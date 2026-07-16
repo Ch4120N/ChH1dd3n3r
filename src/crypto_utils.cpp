@@ -245,3 +245,4 @@ std::string base64_encode(const std::vector<uint8_t>& data) {
     return std::string(out.data(), static_cast<size_t>(len));
 }
 
+} 
