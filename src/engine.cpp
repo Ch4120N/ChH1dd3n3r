@@ -74,3 +74,4 @@ void Engine::hide(const std::string& host_path,
                   bool force,
                   int pbkdf2_iterations,
                   bool preserve_metadata,
+                  bool shred_originals) {
