@@ -23,3 +23,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
  */
 struct FooterInfo {
     uint64_t enc_len = 0;
+    std::vector<uint8_t> meta_salt;
