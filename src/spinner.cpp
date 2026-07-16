@@ -36,3 +36,4 @@ void Spinner::animate() {
         ++i;
     }
 }
+
