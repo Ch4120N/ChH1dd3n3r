@@ -63,3 +63,4 @@ void fill_field(char* dest, size_t dest_size, const std::string& value, bool num
         dest[len] = '\0';
     }
 }
+
