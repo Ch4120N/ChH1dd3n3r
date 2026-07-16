@@ -49,3 +49,4 @@ public:
                const std::string& output_path,
                bool force);
 
+    void shred(const std::vector<std::string>& paths, int passes);
