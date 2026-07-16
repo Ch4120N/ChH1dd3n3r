@@ -258,3 +258,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
             // GNU long name
             if (offset + size > tar_data.size()) {
                 throw MetadataError("Truncated long name in tar.");
+            }
