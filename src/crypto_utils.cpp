@@ -118,3 +118,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
 std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
                                      const std::vector<uint8_t>& nonce,
                                      const std::vector<uint8_t>& ciphertext_with_tag,
+                                     const std::vector<uint8_t>& aad) {
