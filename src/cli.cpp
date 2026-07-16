@@ -301,3 +301,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.genkey(opts.output_path, opts.length, opts.force);
         }
     } catch (const ChH1dd3n3rError& e) {
+        logger.fatal(e.what());
