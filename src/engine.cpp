@@ -128,3 +128,4 @@ void Engine::hide(const std::string& host_path,
                                  std::move(data),
                                  gzip_compress,
                                  mtime,
+                                 static_cast<uint16_t>(perms)});
