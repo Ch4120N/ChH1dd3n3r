@@ -36,3 +36,4 @@ struct CLI::Options {
     bool no_gzip = false, force = false, shred = false, no_metadata = false;
     int pbkdf2_iterations = 100000;
 
+    // unhide
