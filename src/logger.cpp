@@ -62,3 +62,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     }
 }
 
+void Logger::info(const std::string& msg)  { log("INFO", msg, "\033[36m"); }
