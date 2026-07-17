@@ -367,3 +367,4 @@ void Engine::info(const std::string& input_path,
         std::cout << "║ Version : " << static_cast<int>(info.version) << "\n";
         std::cout << "║ GZip    : " << ((info.flags & FLAG_GZIP) ? "Yes" : "No") << "\n";
         std::cout << "║ Metadata: " << ((info.flags & FLAG_METADATA) ? "Yes" : "No") << "\n";
+        std::cout << "║ Files   : " << info.files.size() << "\n";
