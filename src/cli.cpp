@@ -29,3 +29,4 @@ struct CLI::Options {
     bool json = false;
     std::string log_file;
 
+    // hide
