@@ -160,3 +160,4 @@ void Engine::hide(const std::string& host_path,
     }
 
     std::ofstream out(output_path, std::ios::binary);
+    if (!out) {
