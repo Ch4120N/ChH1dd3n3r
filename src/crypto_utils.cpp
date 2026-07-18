@@ -95,3 +95,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
             ciphertext_len = len;
         }
 
+        if (1 != EVP_EncryptFinal_ex(ctx, ciphertext.data() + len, &len)) {
