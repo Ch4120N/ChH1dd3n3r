@@ -21,3 +21,4 @@ void Spinner::start() {
 void Spinner::stop() {
     if (!enabled_) return;
     stop_flag_ = true;
+    if (thread_.joinable()) {
