@@ -24,3 +24,4 @@ struct BlockFileInfo {
     std::string name;
     uint64_t mtime = 0;
     uint16_t mode = 0644;
+    uint64_t data_len = 0;
