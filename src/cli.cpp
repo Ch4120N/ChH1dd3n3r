@@ -307,3 +307,4 @@ int CLI::run(int argc, char* argv[]) {
         logger.fatal(std::string("Unexpected error: ") + e.what());
         if (opts.verbose) {
             // stack trace would be nice, but not portable
+        }
