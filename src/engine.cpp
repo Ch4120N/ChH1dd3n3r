@@ -462,3 +462,4 @@ void Engine::strip(const std::string& input_path,
     if (!out) {
         throw ChH1dd3n3rError("Cannot write file: " + dest);
     }
+    out.write(reinterpret_cast<const char*>(original.data()), original.size());
