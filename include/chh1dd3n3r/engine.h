@@ -50,3 +50,4 @@ public:
                bool force);
 
     void shred(const std::vector<std::string>& paths, int passes);
+
