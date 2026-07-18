@@ -27,3 +27,4 @@ struct FooterInfo {
     std::vector<uint8_t> meta_nonce;
 };
 
+/**
