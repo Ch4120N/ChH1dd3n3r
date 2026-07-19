@@ -216,3 +216,4 @@ std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
 
     std::vector<uint8_t> archive;
     for (fs::recursive_directory_iterator it(dir), end; it != end; ++it) {
+        const fs::path& entry = it->path();
