@@ -26,3 +26,4 @@ struct TarHeader {
     char size[12];
     char mtime[12];
     char checksum[8];
+    char typeflag;
