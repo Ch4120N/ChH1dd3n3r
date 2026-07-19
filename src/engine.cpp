@@ -447,3 +447,4 @@ void Engine::strip(const std::string& input_path,
     if (host_end > data.size()) {
         throw ContainerError("Invalid container layout.");
     }
+
