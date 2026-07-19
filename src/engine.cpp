@@ -327,3 +327,4 @@ void Engine::info(const std::string& input_path,
             logger_.json({{"status", "encrypted_metadata"}});
         } else if (grep) {
             logger_.grep("STATUS", "ENCRYPTED_METADATA");
+        } else {
