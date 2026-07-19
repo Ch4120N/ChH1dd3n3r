@@ -48,3 +48,4 @@ struct MetadataInfo {
     uint8_t version = 0;
     uint8_t flags = 0;
     std::vector<BlockFileInfo> files;
+};
