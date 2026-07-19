@@ -182,3 +182,4 @@ void Engine::unhide(const std::string& input_path,
                     bool force,
                     const std::string& extract_tar,
                     int pbkdf2_iterations,
+                    bool shred_container) {
