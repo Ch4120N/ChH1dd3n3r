@@ -178,3 +178,4 @@ uint64_t parse_octal(const char* field, size_t size) {
     size_t end = str.find_first_of("\0 ");
     if (end != std::string::npos) {
         str = str.substr(0, end);
+    }
