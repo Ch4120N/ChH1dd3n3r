@@ -111,3 +111,4 @@ void Engine::hide(const std::string& host_path,
                 throw InputFileError("Cannot read file: " + p.string());
             }
             std::vector<uint8_t> data((std::istreambuf_iterator<char>(file)),
+                                      std::istreambuf_iterator<char>());
