@@ -137,3 +137,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         }
         BlockFileInfo file;
         file.name.assign(plain_meta.begin() + offset,
+                         plain_meta.begin() + offset + fname_len);
