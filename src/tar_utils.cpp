@@ -110,3 +110,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
         throw ChH1dd3n3rError("Tar path too long: " + full);
     }
     prefix = full.substr(0, slash);
+    name = full.substr(slash + 1);
