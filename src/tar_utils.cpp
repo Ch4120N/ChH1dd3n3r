@@ -205,3 +205,4 @@ std::string get_tar_path(const TarHeader& header) {
         return prefix + "/" + name;
     }
     return name;
+}
