@@ -21,3 +21,4 @@ std::string read_password(const std::string& prompt) {
     while ((ch = _getch()) != '\r' && ch != '\n') {
         if (ch == '\b') {
             if (!password.empty()) {
+                password.pop_back();
