@@ -201,3 +201,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
                                   const std::vector<uint8_t>& aad,
                                   int iterations) {
     std::vector<uint8_t> salt = random_bytes(16);
+    std::vector<uint8_t> key = derive_key(password, salt, iterations);
