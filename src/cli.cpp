@@ -268,3 +268,4 @@ int CLI::run(int argc, char* argv[]) {
     if (opts.banner && !opts.quiet) {
         print_banner(logger);
     }
+
