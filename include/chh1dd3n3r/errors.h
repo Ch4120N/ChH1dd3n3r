@@ -44,3 +44,4 @@ public:
 /**
  * @brief Thrown when an output file/directory already exists.
  */
+class OutputExistsError : public ChH1dd3n3rError {
