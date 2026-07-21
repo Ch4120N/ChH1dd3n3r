@@ -25,3 +25,4 @@ public:
               bool preserve_metadata,
               bool shred_originals);
 
+    void unhide(const std::string& input_path,
