@@ -49,3 +49,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
             if (dest_len > 1ULL << 30) { // 1 GiB safety
                 throw ChH1dd3n3rError("GZip decompression buffer too large.");
             }
+            continue;
