@@ -533,3 +533,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     if (!out) {
         throw ChH1dd3n3rError("Cannot write key file: " + output_path);
     }
+    out << encoded << '\n';
