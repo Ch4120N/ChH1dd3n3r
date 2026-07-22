@@ -168,3 +168,4 @@ void Engine::hide(const std::string& host_path,
               container_block.size());
     out.close();
 
+    logger_.success("Hidden data written to '" + output_path + "' (" +
