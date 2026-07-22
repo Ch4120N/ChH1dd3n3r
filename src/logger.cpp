@@ -78,3 +78,4 @@ void Logger::json(const std::map<std::string, std::string>& data) {
     for (const auto& [key, value] : data) {
         if (!first) std::cout << "," << std::endl;
         std::cout << "  \"" << key << "\": \"" << value << "\"";
+        first = false;
