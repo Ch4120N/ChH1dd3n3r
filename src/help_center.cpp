@@ -79,3 +79,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  --force                Overwrite existing files\n"
         "  --shred                Securely delete container after extraction\n"
         "  --extract-tar <POLICY> yes|no|ask (default: ask)\n"
+        "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
