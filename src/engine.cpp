@@ -346,3 +346,4 @@ void Engine::info(const std::string& input_path,
         out["gzip"] = (info.flags & FLAG_GZIP) ? "true" : "false";
         out["metadata_preserved"] = (info.flags & FLAG_METADATA) ? "true" : "false";
         out["files_count"] = std::to_string(info.files.size());
+        size_t total = 0;
