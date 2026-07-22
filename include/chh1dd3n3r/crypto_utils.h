@@ -37,3 +37,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
 /**
  * @brief Encrypt a blob with a random salt/nonce.
  * Layout: salt (16) || nonce (12) || ciphertext || tag (16)
+ */
