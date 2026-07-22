@@ -241,3 +241,4 @@ std::string CLI::resolve_password(const Options& opts) {
     return "";
 }
 
+void CLI::print_banner(const Logger& logger) {
