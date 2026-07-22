@@ -19,3 +19,4 @@ extern const std::vector<uint8_t> MAGIC_FOOTER;
 constexpr uint8_t VERSION_V1 = 1;
 constexpr uint8_t VERSION_V2 = 2;
 constexpr uint8_t FLAG_GZIP = 0x01;
+constexpr uint8_t FLAG_METADATA = 0x02;
