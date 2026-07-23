@@ -166,3 +166,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         size_t pad = (BLOCK_SIZE - (buffer.size() % BLOCK_SIZE)) % BLOCK_SIZE;
         if (pad > 0) {
             archive.resize(archive.size() + pad, 0);
+        }
