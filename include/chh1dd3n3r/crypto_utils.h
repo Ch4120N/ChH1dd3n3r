@@ -54,3 +54,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
 /**
  * @brief Base64 encode (for genkey).
  */
+std::string base64_encode(const std::vector<uint8_t>& data);
