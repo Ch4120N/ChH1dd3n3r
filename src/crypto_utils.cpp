@@ -206,3 +206,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
     std::vector<uint8_t> encrypted = aes_gcm_encrypt(key, nonce, plaintext, aad);
 
     std::vector<uint8_t> blob;
+    blob.reserve(salt.size() + nonce.size() + encrypted.size());
