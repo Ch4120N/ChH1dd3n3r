@@ -78,3 +78,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "Options:\n"
         "  --force                Overwrite existing files\n"
         "  --shred                Securely delete container after extraction\n"
+        "  --extract-tar <POLICY> yes|no|ask (default: ask)\n"
