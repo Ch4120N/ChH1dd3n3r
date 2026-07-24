@@ -90,3 +90,4 @@ FooterInfo parse_footer(const std::vector<uint8_t>& data, uint64_t footer_pos) {
     if (data.size() - footer_pos < footer_size) {
         throw ContainerError("Container footer is too short.");
     }
+
