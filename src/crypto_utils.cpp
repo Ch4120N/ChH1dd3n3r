@@ -207,3 +207,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
 
     std::vector<uint8_t> blob;
     blob.reserve(salt.size() + nonce.size() + encrypted.size());
+    blob.insert(blob.end(), salt.begin(), salt.end());
