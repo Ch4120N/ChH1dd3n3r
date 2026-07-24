@@ -17,3 +17,4 @@ struct FileEntry {
     uint16_t mode = 0644;
 };
 
+/**
