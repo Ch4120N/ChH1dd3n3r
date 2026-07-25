@@ -520,3 +520,4 @@ void Engine::benchmark(int iterations) {
                     " iterations/second");
 }
 
+void Engine::genkey(const std::string& output_path, int length, bool force) {
