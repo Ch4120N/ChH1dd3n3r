@@ -31,3 +31,4 @@ struct TarHeader {
     char magic[6];
     char version[2];
     char uname[32];
+    char gname[32];
