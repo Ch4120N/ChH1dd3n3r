@@ -460,3 +460,4 @@ void Engine::strip(const std::string& input_path,
 
     std::ofstream out(dest, std::ios::binary);
     if (!out) {
+        throw ChH1dd3n3rError("Cannot write file: " + dest);
