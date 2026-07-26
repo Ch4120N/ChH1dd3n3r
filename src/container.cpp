@@ -151,3 +151,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         }
 
         if (offset + 8 > plain_meta.size()) {
+            throw MetadataError("Truncated data length.");
