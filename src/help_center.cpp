@@ -6,3 +6,4 @@ static std::string colorize(const std::string& text, const char* code, bool use_
     if (!use_color) return text;
     return std::string(code) + text + "\033[0m";
 }
+
