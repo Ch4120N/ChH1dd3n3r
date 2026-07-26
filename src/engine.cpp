@@ -135,3 +135,4 @@ void Engine::hide(const std::string& host_path,
     }
 
     std::vector<FileEntry> encrypted;
+    encrypted.reserve(collected.size());
