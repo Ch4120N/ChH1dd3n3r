@@ -51,3 +51,4 @@ std::string to_octal(uint64_t value, size_t width) {
     return str;
 }
 
+void fill_field(char* dest, size_t dest_size, const std::string& value, bool numeric = false) {
