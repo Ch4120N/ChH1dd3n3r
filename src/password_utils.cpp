@@ -33,3 +33,4 @@ std::string read_password(const std::string& prompt) {
     return password;
 #else
     termios oldt, newt;
+    tcgetattr(STDIN_FILENO, &oldt);
