@@ -287,3 +287,4 @@ void Engine::unhide(const std::string& input_path,
         out.write(reinterpret_cast<const char*>(plain.data()), plain.size());
         out.close();
 
+        apply_metadata(dest, file.mtime, file.mode);
