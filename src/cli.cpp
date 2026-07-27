@@ -201,3 +201,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
 
     if (cmd == "hide") parse_hide(args, opts);
     else if (cmd == "unhide") parse_unhide(args, opts);
+    else if (cmd == "info") parse_info(args, opts);
