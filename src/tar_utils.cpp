@@ -189,3 +189,4 @@ uint64_t parse_octal(const char* field, size_t size) {
     }
 }
 
+bool is_zero_block(const uint8_t* block) {
