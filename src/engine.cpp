@@ -214,3 +214,4 @@ void Engine::unhide(const std::string& input_path,
                          password, pbkdf2_iterations);
 
     MetadataInfo info = parse_metadata_block(plain_meta);
+
