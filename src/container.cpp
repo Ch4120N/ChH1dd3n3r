@@ -26,3 +26,4 @@ void write_be64(std::vector<uint8_t>& vec, uint64_t value) {
     for (int i = 7; i >= 0; --i) {
         vec.push_back(static_cast<uint8_t>((value >> (i * 8)) & 0xFF));
     }
+}
