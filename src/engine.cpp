@@ -34,3 +34,4 @@ std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
     return dest;
 }
 
+std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
