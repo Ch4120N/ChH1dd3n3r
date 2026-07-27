@@ -158,3 +158,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
 
     if (!is_dir && fs::is_regular_file(entry)) {
         std::ifstream file(entry, std::ios::binary);
+        if (!file) {
