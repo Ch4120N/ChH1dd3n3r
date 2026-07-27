@@ -55,3 +55,4 @@ public:
  */
 class InputFileError : public ChH1dd3n3rError {
 public:
+    explicit InputFileError(const std::string& message)
