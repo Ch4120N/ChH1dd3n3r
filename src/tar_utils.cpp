@@ -24,3 +24,4 @@ struct TarHeader {
     char uid[8];
     char gid[8];
     char size[12];
+    char mtime[12];
