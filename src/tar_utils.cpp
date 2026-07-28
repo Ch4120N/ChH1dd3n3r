@@ -17,3 +17,4 @@ namespace {
 
 constexpr size_t BLOCK_SIZE = 512;
 
+#pragma pack(push, 1)
