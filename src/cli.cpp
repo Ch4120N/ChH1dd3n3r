@@ -171,3 +171,4 @@ void parse_benchmark(const std::vector<std::string>& args, CLI::Options& opts) {
         if (a == "--iterations") opts.iterations = std::stoi(get_value_after(args, a, i));
     }
 }
+
