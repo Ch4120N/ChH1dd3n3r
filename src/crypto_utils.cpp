@@ -226,3 +226,4 @@ std::vector<uint8_t> decrypt_blob(const std::string& password,
     std::vector<uint8_t> nonce(blob.begin() + 16, blob.begin() + 28);
     std::vector<uint8_t> ct_tag(blob.begin() + 28, blob.end());
 
+    std::vector<uint8_t> key = derive_key(password, salt, iterations);
