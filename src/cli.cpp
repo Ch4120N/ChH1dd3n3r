@@ -122,3 +122,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
             opts.pbkdf2_iterations = std::stoi(get_value_after(args, a, i));
     }
 }
+
