@@ -18,3 +18,4 @@ public:
  * @brief Thrown when decryption fails (wrong password or corrupted data).
  */
 class InvalidPasswordError : public ChH1dd3n3rError {
+public:
