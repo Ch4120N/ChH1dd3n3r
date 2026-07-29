@@ -186,3 +186,4 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
 void CLI::parse_args(int argc, char* argv[], Options& opts) {
     if (argc < 2) {
         std::cout << HelpCenter::main_help(true) << std::endl;
+        exit(0);
