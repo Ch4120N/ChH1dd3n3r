@@ -225,3 +225,4 @@ std::string CLI::read_password_from_file(const std::string& path) {
     return pwd;
 }
 
+std::string CLI::resolve_password(const Options& opts) {
