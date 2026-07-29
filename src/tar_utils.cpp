@@ -319,3 +319,4 @@ bool is_tar(const std::vector<uint8_t>& data) {
            std::memcmp(data.data() + 257, "ustar", 5) == 0;
 }
 
+}
