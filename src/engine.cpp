@@ -80,3 +80,4 @@ void Engine::hide(const std::string& host_path,
     }
 
     std::ifstream host_file(host_path, std::ios::binary);
+    if (!host_file) {
