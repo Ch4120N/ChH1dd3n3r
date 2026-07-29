@@ -55,3 +55,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
             throw ChH1dd3n3rError("Out of memory during GZip decompression.");
         }
         throw ChH1dd3n3rError("GZip decompression failed.");
+    }
