@@ -304,3 +304,4 @@ int CLI::run(int argc, char* argv[]) {
         logger.fatal(e.what());
         return 1;
     } catch (const std::exception& e) {
+        logger.fatal(std::string("Unexpected error: ") + e.what());
