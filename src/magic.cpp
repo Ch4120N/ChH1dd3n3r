@@ -21,3 +21,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
 static const std::vector<uint8_t> MAGIC_HEADER_V1_XORED = {
     0x23, 0xF8, 0x84, 0x95, 0xAA
 };
+static const std::vector<uint8_t> MAGIC_HEADER_V2_XORED = {
