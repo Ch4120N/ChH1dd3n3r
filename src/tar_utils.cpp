@@ -34,3 +34,4 @@ struct TarHeader {
     char gname[32];
     char devmajor[8];
     char devminor[8];
+    char prefix[155];
