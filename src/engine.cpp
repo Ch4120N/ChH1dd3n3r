@@ -541,3 +541,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
 bool Engine::is_tar_data(const std::vector<uint8_t>& data) {
     return tar::is_tar(data);
 }
+
