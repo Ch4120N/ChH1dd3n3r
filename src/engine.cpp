@@ -205,3 +205,4 @@ void Engine::unhide(const std::string& input_path,
     if (footer.enc_len > footer_pos) {
         throw ContainerError("Invalid container layout (negative metadata offset).");
     }
+    uint64_t encrypted_meta_start = footer_pos - footer.enc_len;
