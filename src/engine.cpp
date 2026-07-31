@@ -279,3 +279,4 @@ void Engine::unhide(const std::string& input_path,
         if (fs::exists(dest) && !force) {
             throw OutputExistsError("'" + dest.string() + "' already exists. Use --force to overwrite.");
         }
+
