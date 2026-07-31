@@ -508,3 +508,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
 void Engine::benchmark(int iterations) {
     std::vector<uint8_t> salt = crypto::random_bytes(16);
     std::string password = "benchmark-password";
+    auto start = std::chrono::steady_clock::now();
