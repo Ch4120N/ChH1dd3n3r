@@ -46,3 +46,4 @@ public:
  */
 class OutputExistsError : public ChH1dd3n3rError {
 public:
+    explicit OutputExistsError(const std::string& message)
