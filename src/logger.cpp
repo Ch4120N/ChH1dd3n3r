@@ -27,3 +27,4 @@ void Logger::log(const std::string& level, const std::string& msg,
         return;
     }
 
+    std::string prefix = "[*]";
