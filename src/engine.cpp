@@ -527,3 +527,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     if (fs::exists(output_path) && !force) {
         throw OutputExistsError("'" + output_path + "' exists. Use --force to overwrite.");
     }
+    std::vector<uint8_t> random = crypto::random_bytes(length);
