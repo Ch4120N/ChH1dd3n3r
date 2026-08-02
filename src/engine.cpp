@@ -530,3 +530,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     std::vector<uint8_t> random = crypto::random_bytes(length);
     std::string encoded = crypto::base64_encode(random);
     std::ofstream out(output_path, std::ios::binary);
+    if (!out) {
