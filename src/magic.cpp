@@ -42,3 +42,4 @@ const std::vector<uint8_t> MAGIC_HEADER_V2 =
 const std::vector<uint8_t> MAGIC_FOOTER =
     xor_bytes(MAGIC_FOOTER_XORED, MAGIC_FOOTER_XOR_KEY);
 
+} // namespace chh1dd3n3r
