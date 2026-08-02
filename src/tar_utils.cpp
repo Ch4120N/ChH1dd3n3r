@@ -111,3 +111,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
     }
     prefix = full.substr(0, slash);
     name = full.substr(slash + 1);
+}
