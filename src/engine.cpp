@@ -404,3 +404,4 @@ bool Engine::test(const std::string& input_path,
                                             data.begin() + footer_pos);
         decrypt_metadata(encrypted_meta, footer.meta_salt, footer.meta_nonce,
                          password, pbkdf2_iterations);
+    } catch (const InvalidPasswordError& e) {
