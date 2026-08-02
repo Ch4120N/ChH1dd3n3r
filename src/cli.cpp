@@ -28,3 +28,4 @@ struct CLI::Options {
     bool grep = false;
     bool json = false;
     std::string log_file;
+
