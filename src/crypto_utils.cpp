@@ -43,3 +43,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
     }
     return key;
 }
+
