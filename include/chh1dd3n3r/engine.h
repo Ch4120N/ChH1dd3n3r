@@ -54,3 +54,4 @@ public:
     void benchmark(int iterations);
 
     void genkey(const std::string& output_path, int length, bool force);
+
