@@ -36,3 +36,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     std::string line = style(prefix, ansi_code) + " " + msg;
 
     if (to_stderr) {
+        std::cerr << line << std::endl;
