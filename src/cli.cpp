@@ -128,3 +128,4 @@ void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
         if (a == "--password") opts.password = get_value_after(args, a, i);
+        else if (a == "--key-file") opts.key_file = get_value_after(args, a, i);
