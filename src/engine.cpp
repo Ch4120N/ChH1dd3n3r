@@ -305,3 +305,4 @@ void Engine::info(const std::string& input_path,
         throw InputFileError("File not found: " + input_path);
     }
 
+    std::ifstream input(input_path, std::ios::binary);
