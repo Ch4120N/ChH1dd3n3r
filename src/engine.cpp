@@ -79,3 +79,4 @@ void Engine::hide(const std::string& host_path,
         throw InputFileError("Host file not found: " + host_path);
     }
 
+    std::ifstream host_file(host_path, std::ios::binary);
