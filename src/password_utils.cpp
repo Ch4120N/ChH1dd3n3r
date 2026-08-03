@@ -25,3 +25,4 @@ std::string read_password(const std::string& prompt) {
                 std::cout << "\b \b";
             }
         } else {
+            password.push_back(ch);
