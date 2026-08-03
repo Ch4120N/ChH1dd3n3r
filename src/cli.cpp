@@ -257,3 +257,4 @@ int CLI::run(int argc, char* argv[]) {
     // This is the programmatic equivalent of `chcp 65001`,
     // without invoking a shell command.
     SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
