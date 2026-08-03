@@ -6,3 +6,4 @@
 
 namespace chh1dd3n3r {
 
+Logger::Logger(bool color, bool verbose, bool quiet, const std::string& log_file)
