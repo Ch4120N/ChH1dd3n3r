@@ -194,3 +194,4 @@ void CLI::parse_args(int argc, char* argv[], Options& opts) {
     else if (cmd == "list") cmd = "info";
     opts.command = cmd;
 
+    std::vector<std::string> args;
