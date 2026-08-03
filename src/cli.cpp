@@ -137,3 +137,4 @@ void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
 }
 
 void parse_test(const std::vector<std::string>& args, CLI::Options& opts) {
+    for (size_t i = 0; i < args.size(); ++i) {
