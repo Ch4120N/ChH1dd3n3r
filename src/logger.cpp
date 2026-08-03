@@ -37,3 +37,4 @@ void Logger::log(const std::string& level, const std::string& msg,
 
     if (to_stderr) {
         std::cerr << line << std::endl;
+    } else {
