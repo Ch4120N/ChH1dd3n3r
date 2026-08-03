@@ -145,3 +145,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
                 throw MetadataError("Truncated metadata.");
             }
             file.mtime = read_be64(plain_meta.data() + offset);
+            offset += 8;
