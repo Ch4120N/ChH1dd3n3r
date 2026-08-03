@@ -23,3 +23,4 @@ public:
         : ChH1dd3n3rError(message) {}
 };
 
+/**
