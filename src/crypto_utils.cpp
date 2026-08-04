@@ -189,3 +189,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         return plaintext;
     } catch (const InvalidPasswordError&) {
         cleanup();
+        throw;
