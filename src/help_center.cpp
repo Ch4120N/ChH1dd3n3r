@@ -75,3 +75,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  -p, --password <PWD>   Decryption password\n"
         "  --key-file <PATH>      Read password from file\n"
         "  --key-env <VAR>        Read password from environment variable\n\n"
+        "Options:\n"
