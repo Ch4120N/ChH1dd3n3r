@@ -155,3 +155,4 @@ void Engine::hide(const std::string& host_path,
         pack_v2_block(encrypted, gzip_compress, password, pbkdf2_iterations,
                       preserve_metadata);
 
+    if (fs::exists(output_path) && !force) {
