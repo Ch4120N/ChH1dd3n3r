@@ -17,3 +17,4 @@ public:
 
     void hide(const std::string& host_path,
               const std::string& output_path,
+              const std::vector<std::string>& files,
