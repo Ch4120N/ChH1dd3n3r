@@ -262,3 +262,4 @@ void Engine::unhide(const std::string& input_path,
                 std::transform(answer.begin(), answer.end(), answer.begin(),
                                [](unsigned char c) { return std::tolower(c); });
                 do_extract = answer.empty() || answer == "y" || answer == "yes";
+            }
