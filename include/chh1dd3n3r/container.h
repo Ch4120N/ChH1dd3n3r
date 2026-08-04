@@ -51,3 +51,4 @@ struct MetadataInfo {
 };
 
 /**
+ * @brief Parse decrypted metadata block.
