@@ -121,3 +121,4 @@ std::string HelpCenter::shred_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r shred [OPTIONS] <FILES>...\n\n"
         "Options:\n"
+        "  --passes <N>           Number of overwrite passes (default: 3)\n";
