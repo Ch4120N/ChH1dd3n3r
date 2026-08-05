@@ -29,3 +29,4 @@ public:
     void grep(const std::string& key, const std::string& value);
     void json(const std::map<std::string, std::string>& data);
 
+    // Allow direct access for Spinner (friend not needed)
