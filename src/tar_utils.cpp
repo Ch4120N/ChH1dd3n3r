@@ -167,3 +167,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         if (pad > 0) {
             archive.resize(archive.size() + pad, 0);
         }
+    } else if (is_dir) {
