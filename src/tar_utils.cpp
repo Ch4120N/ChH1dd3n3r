@@ -99,3 +99,4 @@ void split_tar_name(const std::string& full, std::string& name, std::string& pre
         name = full;
         prefix.clear();
         return;
+    }
