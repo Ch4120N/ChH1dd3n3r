@@ -148,3 +148,4 @@ void parse_test(const std::vector<std::string>& args, CLI::Options& opts) {
     }
 }
 
+void parse_strip(const std::vector<std::string>& args, CLI::Options& opts) {
