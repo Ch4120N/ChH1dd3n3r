@@ -299,3 +299,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.benchmark(opts.iterations);
         } else if (opts.command == "genkey") {
             engine.genkey(opts.output_path, opts.length, opts.force);
+        }
