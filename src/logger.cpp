@@ -65,3 +65,4 @@ void Logger::log(const std::string& level, const std::string& msg,
 void Logger::info(const std::string& msg)  { log("INFO", msg, "\033[36m"); }
 void Logger::success(const std::string& msg) { log("SUCCESS", msg, "\033[32m"); }
 void Logger::warn(const std::string& msg)  { log("WARN", msg, "\033[33m"); }
+void Logger::error(const std::string& msg) { log("ERROR", msg, "\033[31m", true); }
