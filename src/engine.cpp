@@ -67,3 +67,4 @@ bool is_tar_data(const std::vector<uint8_t>& data) {
 Engine::Engine(Logger& logger) : logger_(logger) {}
 
 void Engine::hide(const std::string& host_path,
+                  const std::string& output_path,
