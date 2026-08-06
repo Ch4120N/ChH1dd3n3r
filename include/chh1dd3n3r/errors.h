@@ -49,3 +49,4 @@ public:
     explicit OutputExistsError(const std::string& message)
         : ChH1dd3n3rError(message) {}
 };
+
