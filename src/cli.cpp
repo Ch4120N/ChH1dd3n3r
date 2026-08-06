@@ -22,3 +22,4 @@ namespace chh1dd3n3r {
 struct CLI::Options {
     std::string command;
     bool color = true;
+    bool banner = true;
