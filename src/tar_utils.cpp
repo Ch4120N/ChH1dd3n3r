@@ -164,3 +164,4 @@ void write_tar_entry(std::vector<uint8_t>& archive, const fs::path& root,
         std::vector<uint8_t> buffer(std::istreambuf_iterator<char>(file), {});
         append_bytes(archive, buffer.data(), buffer.size());
         size_t pad = (BLOCK_SIZE - (buffer.size() % BLOCK_SIZE)) % BLOCK_SIZE;
+        if (pad > 0) {
