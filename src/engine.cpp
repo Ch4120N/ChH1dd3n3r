@@ -51,3 +51,4 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
             }
             continue;
         }
+        if (ret == Z_MEM_ERROR) {
