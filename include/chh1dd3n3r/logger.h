@@ -20,3 +20,4 @@ public:
     void set_quiet(bool enabled);
     void set_log_file(const std::string& path);
 
+    void info(const std::string& msg);
