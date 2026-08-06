@@ -514,3 +514,4 @@ void Engine::benchmark(int iterations) {
     double elapsed = std::chrono::duration<double>(end - start).count();
     if (elapsed <= 0) elapsed = 1e-9;
     double rate = iterations / elapsed;
+    logger_.info("PBKDF2-SHA256 benchmark: " + std::to_string(iterations) +
