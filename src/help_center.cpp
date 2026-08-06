@@ -28,3 +28,4 @@ std::string HelpCenter::main_help(bool color) {
         C("  genkey    ", "\033[32m") + " Generate random key file\n\n" +
         C("GLOBAL OPTIONS:", "\033[37m") + "\n" +
         "  -h, --help            Show this help message\n" +
+        "  --version             Show program version\n" +
