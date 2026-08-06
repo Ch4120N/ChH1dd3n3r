@@ -183,3 +183,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
             throw InvalidPasswordError("Wrong password or corrupted ciphertext.");
         }
         plaintext_len += len;
+
