@@ -194,3 +194,4 @@ void Engine::unhide(const std::string& input_path,
 
     auto footer_it = std::search(data.rbegin(), data.rend(),
                                  MAGIC_FOOTER.rbegin(), MAGIC_FOOTER.rend());
+    if (footer_it == data.rend()) {
