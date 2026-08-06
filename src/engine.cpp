@@ -197,3 +197,4 @@ void Engine::unhide(const std::string& input_path,
     if (footer_it == data.rend()) {
         throw ContainerError("No valid ChH1dd3n3r container footer found.");
     }
+    uint64_t footer_pos = static_cast<uint64_t>(data.size() -
