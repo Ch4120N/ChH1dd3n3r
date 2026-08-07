@@ -302,3 +302,4 @@ int CLI::run(int argc, char* argv[]) {
         }
     } catch (const ChH1dd3n3rError& e) {
         logger.fatal(e.what());
+        return 1;
