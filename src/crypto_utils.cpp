@@ -181,3 +181,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         int ret = EVP_DecryptFinal_ex(ctx, plaintext.data() + len, &len);
         if (ret != 1) {
             throw InvalidPasswordError("Wrong password or corrupted ciphertext.");
+        }
