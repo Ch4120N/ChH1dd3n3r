@@ -120,3 +120,4 @@ std::string HelpCenter::strip_help(bool color) {
 std::string HelpCenter::shred_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r shred [OPTIONS] <FILES>...\n\n"
+        "Options:\n"
