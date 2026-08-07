@@ -310,3 +310,4 @@ void Engine::info(const std::string& input_path,
                               std::istreambuf_iterator<char>());
     input.close();
 
+    auto footer_it = std::search(data.rbegin(), data.rend(),
