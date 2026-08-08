@@ -156,3 +156,4 @@ void Engine::hide(const std::string& host_path,
                       preserve_metadata);
 
     if (fs::exists(output_path) && !force) {
+        throw OutputExistsError("Output '" + output_path + "' exists. Use --force to overwrite.");
