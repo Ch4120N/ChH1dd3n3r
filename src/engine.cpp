@@ -23,3 +23,4 @@ namespace fs = std::filesystem;
 namespace {
 
 std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
+    uLongf dest_len = compressBound(static_cast<uLong>(data.size()));
