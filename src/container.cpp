@@ -77,3 +77,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
 
     // Footer
     std::vector<uint8_t> result = encrypted_meta;
+    result.insert(result.end(), MAGIC_FOOTER.begin(), MAGIC_FOOTER.end());
