@@ -363,3 +363,4 @@ void Engine::info(const std::string& input_path,
         }
     } else {
         std::cout << "╔══════════════════════════════════════╗\n";
+        std::cout << "║ Container Info\n";
