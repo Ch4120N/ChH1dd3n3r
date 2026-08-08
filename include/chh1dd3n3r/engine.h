@@ -38,3 +38,4 @@ public:
               bool grep,
               bool json_output,
               int pbkdf2_iterations);
+
