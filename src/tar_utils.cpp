@@ -252,3 +252,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         std::memcpy(&header, block, sizeof(TarHeader));
         offset += BLOCK_SIZE;
 
+        uint64_t size = parse_octal(header.size, sizeof(header.size));
