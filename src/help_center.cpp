@@ -42,3 +42,4 @@ std::string HelpCenter::main_help(bool color) {
         "  --key-env <VAR>       Read password from environment variable\n\n" +
         C("EXAMPLES:", "\033[37m") + "\n" +
         "  ChH1dd3n3r hide -H photo.jpg -f secret.txt -o hidden.jpg -p MyP@ss\n" +
+        "  ChH1dd3n3r unhide -i hidden.jpg -o ./recovered -p MyP@ss\n" +
