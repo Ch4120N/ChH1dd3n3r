@@ -49,3 +49,4 @@ struct CLI::Options {
     int iterations = 100000;
 
     // genkey
+    int length = 32;
