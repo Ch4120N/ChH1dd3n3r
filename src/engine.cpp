@@ -476,3 +476,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
         }
         logger_.info("Securely shredding: " + p.string());
         Spinner spinner("  Shredding " + p.filename().string(), !logger_.quiet_);
+        spinner.start();
