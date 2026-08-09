@@ -140,3 +140,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
                          plain_meta.begin() + offset + fname_len);
         offset += fname_len;
 
+        if (info.flags & FLAG_METADATA) {
