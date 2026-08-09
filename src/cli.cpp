@@ -235,3 +235,4 @@ std::string CLI::resolve_password(const Options& opts) {
     }
     if (opts.command == "hide" || opts.command == "unhide" ||
         opts.command == "test" ||
+        (opts.command == "info" && !opts.password.empty())) {
