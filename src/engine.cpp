@@ -234,3 +234,4 @@ void Engine::unhide(const std::string& input_path,
         std::vector<uint8_t> enc_blob(plain_meta.begin() + file.data_offset,
                                       plain_meta.begin() + file.data_offset + file.data_len);
 
+        Spinner spinner("  Decrypting " + file.name, !logger_.quiet_);
