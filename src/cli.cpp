@@ -111,3 +111,4 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
         if (a == "-i" || a == "--input") opts.input = get_value_after(args, a, i);
+        else if (a == "-o" || a == "--output") opts.output_dir = get_value_after(args, a, i);
