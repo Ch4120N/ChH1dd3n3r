@@ -287,3 +287,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
         if (header.typeflag != '0' && header.typeflag != '\0') {
             // unknown type – skip data
+            offset += ((size + BLOCK_SIZE - 1) / BLOCK_SIZE) * BLOCK_SIZE;
