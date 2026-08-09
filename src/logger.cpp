@@ -40,3 +40,4 @@ void Logger::log(const std::string& level, const std::string& msg,
     } else {
         std::cout << line << std::endl;
     }
+
