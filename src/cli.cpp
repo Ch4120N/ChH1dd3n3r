@@ -277,3 +277,4 @@ int CLI::run(int argc, char* argv[]) {
             engine.hide(opts.host, opts.output, opts.files, password,
                         !opts.no_gzip, opts.force, opts.pbkdf2_iterations,
                         !opts.no_metadata, opts.shred);
+        } else if (opts.command == "unhide") {
