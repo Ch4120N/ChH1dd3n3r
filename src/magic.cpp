@@ -13,3 +13,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
     result.reserve(data.size());
     for (size_t i = 0; i < data.size(); ++i) {
         result.push_back(data[i] ^ key[i % key.size()]);
+    }
