@@ -528,3 +528,4 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
         throw OutputExistsError("'" + output_path + "' exists. Use --force to overwrite.");
     }
     std::vector<uint8_t> random = crypto::random_bytes(length);
+    std::string encoded = crypto::base64_encode(random);
