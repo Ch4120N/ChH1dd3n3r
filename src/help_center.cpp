@@ -124,3 +124,4 @@ std::string HelpCenter::shred_help(bool color) {
         "  --passes <N>           Number of overwrite passes (default: 3)\n";
 }
 
+std::string HelpCenter::benchmark_help(bool color) {
