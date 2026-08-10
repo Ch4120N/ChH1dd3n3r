@@ -55,3 +55,4 @@ void Logger::log(const std::string& level, const std::string& msg,
             }
             time_t now = time(nullptr);
             char time_buf[32];
+            std::strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S",
