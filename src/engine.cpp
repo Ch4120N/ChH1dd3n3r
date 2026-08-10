@@ -166,3 +166,4 @@ void Engine::hide(const std::string& host_path,
     out.write(reinterpret_cast<const char*>(host_data.data()), host_data.size());
     out.write(reinterpret_cast<const char*>(container_block.data()),
               container_block.size());
+    out.close();
