@@ -3,3 +3,4 @@
 #include <openssl/evp.h>
 #include <openssl/rand.h>
 #include <openssl/pkcs5.h>
+#include <openssl/sha.h>
