@@ -21,3 +21,4 @@ class InvalidPasswordError : public ChH1dd3n3rError {
 public:
     explicit InvalidPasswordError(const std::string& message)
         : ChH1dd3n3rError(message) {}
+};
