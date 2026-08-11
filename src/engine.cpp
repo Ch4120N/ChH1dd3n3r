@@ -187,3 +187,4 @@ void Engine::unhide(const std::string& input_path,
         throw InputFileError("Container file not found: " + input_path);
     }
 
+    std::ifstream input(input_path, std::ios::binary);
