@@ -91,3 +91,4 @@ std::string HelpCenter::info_help(bool color) {
         "  --key-file <PATH>      Read password from file\n"
         "  --key-env <VAR>        Read password from env var\n\n"
         "Options:\n"
+        "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
