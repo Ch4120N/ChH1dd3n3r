@@ -22,3 +22,4 @@ std::string read_password(const std::string& prompt) {
         if (ch == '\b') {
             if (!password.empty()) {
                 password.pop_back();
+                std::cout << "\b \b";
