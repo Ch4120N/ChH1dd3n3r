@@ -23,3 +23,4 @@ std::vector<uint8_t> random_bytes(size_t count) {
 }
 
 std::vector<uint8_t> derive_key(const std::string& password,
+                                const std::vector<uint8_t>& salt,
