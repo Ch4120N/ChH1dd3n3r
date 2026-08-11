@@ -505,3 +505,4 @@ void Engine::shred(const std::vector<std::string>& paths, int passes) {
     }
 }
 
+void Engine::benchmark(int iterations) {
