@@ -7,3 +7,4 @@ int main(int argc, char* argv[]) {
     std::locale::global(std::locale(""));
 
     // Run CLI
+    return chh1dd3n3r::CLI::run(argc, argv);
