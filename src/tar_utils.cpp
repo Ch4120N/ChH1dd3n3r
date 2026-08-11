@@ -300,3 +300,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
         if (!out) {
             throw ChH1dd3n3rError("Failed to create file during tar extraction: " + dest.string());
         }
+        out.write(reinterpret_cast<const char*>(tar_data.data() + offset), size);
