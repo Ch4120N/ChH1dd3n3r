@@ -32,3 +32,4 @@ void Spinner::animate() {
     size_t i = 0;
     while (!stop_flag_) {
         std::cout << "\r" << text_ << " " << frames[i % 4] << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
