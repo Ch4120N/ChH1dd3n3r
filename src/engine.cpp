@@ -439,3 +439,4 @@ void Engine::strip(const std::string& input_path,
     if (footer_it == data.rend()) {
         throw ContainerError("No container footer – nothing to strip.");
     }
+    uint64_t footer_pos = static_cast<uint64_t>(data.size() -
