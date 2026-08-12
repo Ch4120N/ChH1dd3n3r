@@ -22,3 +22,4 @@ void Spinner::stop() {
     if (!enabled_) return;
     stop_flag_ = true;
     if (thread_.joinable()) {
+        thread_.join();
