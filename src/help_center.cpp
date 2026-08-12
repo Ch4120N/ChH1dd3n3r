@@ -7,3 +7,4 @@ static std::string colorize(const std::string& text, const char* code, bool use_
     return std::string(code) + text + "\033[0m";
 }
 
+std::string HelpCenter::main_help(bool color) {
