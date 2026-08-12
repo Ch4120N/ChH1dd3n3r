@@ -213,3 +213,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
     return blob;
 }
 
+std::vector<uint8_t> decrypt_blob(const std::string& password,
