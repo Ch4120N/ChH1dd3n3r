@@ -143,3 +143,4 @@ void Engine::hide(const std::string& host_path,
                      " (" + std::to_string(entry.data.size()) + " bytes)");
         Spinner spinner("  Encrypting " + entry.name, !logger_.quiet_);
         spinner.start();
+        std::vector<uint8_t> aad(entry.name.begin(), entry.name.end());
