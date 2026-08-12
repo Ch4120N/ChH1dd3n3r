@@ -105,3 +105,4 @@ std::string HelpCenter::test_help(bool color) {
         "  --key-env <VAR>        Read password from env var\n\n"
         "Options:\n"
         "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
+}
