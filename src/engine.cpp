@@ -153,3 +153,4 @@ void Engine::hide(const std::string& host_path,
 
     std::vector<uint8_t> container_block =
         pack_v2_block(encrypted, gzip_compress, password, pbkdf2_iterations,
+                      preserve_metadata);
