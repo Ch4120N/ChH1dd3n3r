@@ -133,3 +133,4 @@ void Engine::hide(const std::string& host_path,
             throw InputFileError("Path does not exist: " + p.string());
         }
     }
+
