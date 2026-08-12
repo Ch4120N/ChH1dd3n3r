@@ -161,3 +161,4 @@ void parse_shred(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
         if (a == "--passes") opts.passes = std::stoi(get_value_after(args, a, i));
+        else if (a[0] != '-') opts.files.push_back(a);
