@@ -109,3 +109,4 @@ void Engine::hide(const std::string& host_path,
             std::ifstream file(p, std::ios::binary);
             if (!file) {
                 throw InputFileError("Cannot read file: " + p.string());
+            }
