@@ -162,3 +162,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
             int aad_len = 0;
             if (1 != EVP_DecryptUpdate(ctx, nullptr, &aad_len,
                                        aad.data(), static_cast<int>(aad.size()))) {
+                throw ChH1dd3n3rError("Failed to process AAD.");
