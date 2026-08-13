@@ -74,3 +74,4 @@ void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
         if (a == "--no-color") opts.color = false;
+        else if (a == "--no-banner") opts.banner = false;
