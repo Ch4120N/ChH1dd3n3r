@@ -94,3 +94,4 @@ std::string relative_path(const fs::path& root, const fs::path& entry) {
     return fs::relative(entry, root).generic_string();
 }
 
+void split_tar_name(const std::string& full, std::string& name, std::string& prefix) {
