@@ -21,3 +21,4 @@ public:
     void set_log_file(const std::string& path);
 
     void info(const std::string& msg);
+    void success(const std::string& msg);
