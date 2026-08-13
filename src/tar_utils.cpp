@@ -222,3 +222,4 @@ std::vector<uint8_t> create_tar_from_directory(const fs::path& dir) {
     }
     append_zero_block(archive);
     append_zero_block(archive);
+    return archive;
