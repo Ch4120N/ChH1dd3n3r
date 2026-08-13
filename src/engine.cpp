@@ -324,3 +324,4 @@ void Engine::info(const std::string& input_path,
 
     if (password.empty()) {
         if (json_output) {
+            logger_.json({{"status", "encrypted_metadata"}});
