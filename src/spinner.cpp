@@ -31,3 +31,4 @@ void Spinner::animate() {
     const char frames[] = {'|', '/', '-', '\\'};
     size_t i = 0;
     while (!stop_flag_) {
+        std::cout << "\r" << text_ << " " << frames[i % 4] << std::flush;
