@@ -89,3 +89,4 @@ std::string HelpCenter::info_help(bool color) {
         "Authentication:\n"
         "  --password <PWD>       Password\n"
         "  --key-file <PATH>      Read password from file\n"
+        "  --key-env <VAR>        Read password from env var\n\n"
