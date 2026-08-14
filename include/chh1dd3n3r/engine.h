@@ -58,3 +58,4 @@ public:
 private:
     Logger& logger_;
 
+    static bool is_tar_data(const std::vector<uint8_t>& data);
