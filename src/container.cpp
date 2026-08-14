@@ -160,3 +160,4 @@ MetadataInfo parse_metadata_block(const std::vector<uint8_t>& plain_meta) {
         if (offset + file.data_len > plain_meta.size()) {
             throw MetadataError("File data extends beyond metadata block.");
         }
+        offset += file.data_len;
