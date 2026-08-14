@@ -194,3 +194,4 @@ bool is_zero_block(const uint8_t* block) {
         if (block[i] != 0) {
             return false;
         }
+    }
