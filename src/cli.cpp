@@ -239,3 +239,4 @@ std::string CLI::resolve_password(const Options& opts) {
         return read_password("Password: ");
     }
     return "";
+}
