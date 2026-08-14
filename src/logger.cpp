@@ -29,3 +29,4 @@ void Logger::log(const std::string& level, const std::string& msg,
 
     std::string prefix = "[*]";
     if (level == "SUCCESS") prefix = "[+]";
+    else if (level == "WARN") prefix = "[-]";
