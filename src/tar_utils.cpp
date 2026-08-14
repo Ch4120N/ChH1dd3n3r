@@ -293,3 +293,4 @@ void extract_tar_to_directory(const std::vector<uint8_t>& tar_data,
 
         fs::create_directories(dest.parent_path());
         if (offset + size > tar_data.size()) {
+            throw MetadataError("Truncated tar file data.");
