@@ -51,3 +51,4 @@ std::string HelpCenter::hide_help(bool color) {
         "Usage:\n  ChH1dd3n3r hide [OPTIONS]\n\n"
         "Required:\n"
         "  -H, --host <FILE>      Carrier file\n"
+        "  -o, --output <FILE>    Output container file\n"
