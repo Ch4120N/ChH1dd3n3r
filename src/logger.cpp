@@ -70,3 +70,4 @@ void Logger::fatal(const std::string& msg) { log("FATAL", msg, "\033[35m", true)
 
 void Logger::grep(const std::string& key, const std::string& value) {
     std::cout << key << ": " << value << std::endl;
+}
