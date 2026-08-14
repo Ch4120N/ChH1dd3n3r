@@ -34,3 +34,4 @@ public:
                 bool shred_container);
 
     void info(const std::string& input_path,
+              const std::string& password,
