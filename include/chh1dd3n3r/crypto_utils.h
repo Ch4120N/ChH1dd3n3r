@@ -21,3 +21,4 @@ std::vector<uint8_t> derive_key(const std::string& password,
 /**
  * @brief AES‑256‑GCM encrypt. Returns ciphertext || 16‑byte tag.
  */
+std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
