@@ -20,3 +20,4 @@ std::string read_password(const std::string& prompt) {
     char ch;
     while ((ch = _getch()) != '\r' && ch != '\n') {
         if (ch == '\b') {
+            if (!password.empty()) {
