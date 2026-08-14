@@ -48,3 +48,4 @@ std::vector<uint8_t> encrypt_blob(const std::string& password,
  */
 std::vector<uint8_t> decrypt_blob(const std::string& password,
                                   const std::vector<uint8_t>& blob,
+                                  const std::vector<uint8_t>& aad,
