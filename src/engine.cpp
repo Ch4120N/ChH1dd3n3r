@@ -204,3 +204,4 @@ void Engine::unhide(const std::string& input_path,
     FooterInfo footer = parse_footer(data, footer_pos);
     if (footer.enc_len > footer_pos) {
         throw ContainerError("Invalid container layout (negative metadata offset).");
+    }
