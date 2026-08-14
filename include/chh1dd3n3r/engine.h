@@ -22,3 +22,4 @@ public:
               bool gzip_compress,
               bool force,
               int pbkdf2_iterations,
+              bool preserve_metadata,
