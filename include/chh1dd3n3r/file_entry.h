@@ -14,3 +14,4 @@ struct FileEntry {
     std::vector<uint8_t> data;
     bool is_gzip = false;
     uint64_t mtime = 0;      // milliseconds since epoch
+    uint16_t mode = 0644;
