@@ -25,3 +25,4 @@ struct CLI::Options {
     bool banner = true;
     bool verbose = false;
     bool quiet = false;
+    bool grep = false;
