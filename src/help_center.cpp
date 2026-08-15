@@ -81,3 +81,4 @@ std::string HelpCenter::unhide_help(bool color) {
         "  --extract-tar <POLICY> yes|no|ask (default: ask)\n"
         "  --pbkdf2-iterations <N> PBKDF2 iterations\n";
 }
+
