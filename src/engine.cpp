@@ -246,3 +246,4 @@ void Engine::unhide(const std::string& input_path,
                 plain = gzip_decompress(plain);
             } catch (...) {
                 logger_.warn("GZip decompression failed for " + file.name +
+                             ". Saving raw data.");
