@@ -126,3 +126,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         throw ChH1dd3n3rError("AES-256-GCM requires a 12-byte nonce.");
     }
     if (ciphertext_with_tag.size() < 16) {
+        throw InvalidPasswordError("Ciphertext is too short (missing tag).");
