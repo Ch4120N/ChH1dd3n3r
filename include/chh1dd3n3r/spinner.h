@@ -22,3 +22,4 @@ public:
 
 private:
     std::string text_;
+    bool enabled_;
