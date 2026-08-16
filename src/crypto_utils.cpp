@@ -71,3 +71,4 @@ std::vector<uint8_t> aes_gcm_encrypt(const std::vector<uint8_t>& key,
         if (1 != EVP_EncryptInit_ex(ctx, EVP_aes_256_gcm(), nullptr, nullptr, nullptr)) {
             throw ChH1dd3n3rError("EVP_EncryptInit_ex failed.");
         }
+        if (1 != EVP_CIPHER_CTX_ctrl(ctx, EVP_CTRL_GCM_SET_IVLEN,
