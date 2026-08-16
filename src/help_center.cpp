@@ -103,3 +103,4 @@ std::string HelpCenter::test_help(bool color) {
         "  -p, --password <PWD>   Password to test\n"
         "  --key-file <PATH>      Read password from file\n"
         "  --key-env <VAR>        Read password from env var\n\n"
+        "Options:\n"
