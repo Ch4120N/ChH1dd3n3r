@@ -275,3 +275,4 @@ void Engine::unhide(const std::string& input_path,
             continue;
         }
 
+        fs::path dest = fs::path(output_dir) / file.name;
