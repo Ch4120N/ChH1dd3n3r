@@ -149,3 +149,4 @@ void Engine::hide(const std::string& host_path,
         encrypted.push_back({entry.name, std::move(blob), entry.is_gzip,
                              entry.mtime, entry.mode});
         spinner.stop();
+    }
