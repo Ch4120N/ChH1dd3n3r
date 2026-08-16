@@ -284,3 +284,4 @@ int CLI::run(int argc, char* argv[]) {
                           opts.pbkdf2_iterations, opts.shred);
         } else if (opts.command == "info") {
             std::string password = resolve_password(opts);
+            engine.info(opts.file, password, opts.grep, opts.json,
