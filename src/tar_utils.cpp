@@ -41,3 +41,4 @@ struct TarHeader {
 
 static_assert(sizeof(TarHeader) == 512, "TarHeader must be 512 bytes");
 
+std::string to_octal(uint64_t value, size_t width) {
