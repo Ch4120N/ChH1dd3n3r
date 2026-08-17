@@ -72,3 +72,4 @@ std::string get_value_after(const std::vector<std::string>& args,
 
 void parse_common(const std::vector<std::string>& args, CLI::Options& opts) {
     for (size_t i = 0; i < args.size(); ++i) {
+        const std::string& a = args[i];
