@@ -19,47 +19,7 @@
 
 namespace chh1dd3n3r {
 
-struct CLI::Options {
-    std::string command;
-    bool color = true;
-    bool banner = true;
-    bool verbose = false;
-    bool quiet = false;
-    bool grep = false;
-    bool json = false;
-    std::string log_file;
-
-    // hide
-    std::string host, output, input, file, output_dir;
-    std::vector<std::string> files;
-    std::string password, key_file, key_env;
-    bool no_gzip = false, force = false, shred = false, no_metadata = false;
-    int pbkdf2_iterations = 100000;
-
-    // unhide
-    std::string extract_tar = "ask";
-
-    // strip
-    std::string output_path;
-
-    // shred
-    int passes = 3;
-
-    // benchmark
-    int iterations = 100000;
-
-    // genkey
-    int length = 32;
-};
-
 namespace {
-
-bool has_flag(const std::vector<std::string>& args, const std::string& flag) {
-    for (const auto& a : args) {
-        if (a == flag) return true;
-    }
-    return false;
-}
 
 std::string get_value_after(const std::vector<std::string>& args,
                             const std::string& flag,
@@ -242,13 +202,14 @@ std::string CLI::resolve_password(const Options& opts) {
 }
 
 void CLI::print_banner(const Logger& logger) {
+    (void)logger; // silence unused parameter
     std::cout <<
         "   ____ _   _    _ _   _  _               _____\n"
         "  / ___| | | |  / | ||_| ||_|  __ _  ___ |___ / _ __\n"
         " | |   | |_| |  | |__ | ||_   / _` |/ _ \\  |_ \\| '__|\n"
         " | |___|  _  |  | '_ \\| |__   | (_| |  __/ ___) | |\n"
         "  \\____|_| |_|  |_| |_|   |_|  \\__,_|\\___||____/|_|\n"
-        "  File Steganography & Encryption v1.0  by Ch4120N\n\n";
+        "  File Steganography & Encryption v3.0  by Ch4120N\n\n";
 }
 
 int CLI::run(int argc, char* argv[]) {
