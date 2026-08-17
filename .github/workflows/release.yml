@@ -18,22 +18,27 @@ jobs:
             arch: x86_64
             artifact_name: chh1dd3n3r-linux-x86_64
             install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
+            cmake_args: ""
           - os: ubuntu-24.04-arm
             arch: aarch64
             artifact_name: chh1dd3n3r-linux-aarch64
             install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
+            cmake_args: ""
           - os: macos-13
             arch: x86_64
             artifact_name: chh1dd3n3r-macos-x86_64
             install_deps: "brew install openssl zlib"
+            cmake_args: "-DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DZLIB_ROOT=/usr/local/opt/zlib"
           - os: macos-14
             arch: arm64
             artifact_name: chh1dd3n3r-macos-arm64
             install_deps: "brew install openssl zlib"
+            cmake_args: "-DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DZLIB_ROOT=/usr/local/opt/zlib"
           - os: windows-latest
             arch: x86_64
             artifact_name: chh1dd3n3r-windows-x86_64
             install_deps: ""
+            cmake_args: "-DCMAKE_TOOLCHAIN_FILE=$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -53,7 +58,7 @@ jobs:
           vcpkgJsonGlob: 'vcpkg.json'
 
       - name: Configure CMake
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release ${{ matrix.cmake_args }}
 
       - name: Build
         run: cmake --build build --config Release
