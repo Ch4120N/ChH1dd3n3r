@@ -23,3 +23,8 @@ add_executable(chh1dd3n3r
 )
 
 target_include_directories(chh1dd3n3r PRIVATE include)
+target_link_libraries(chh1dd3n3r PRIVATE OpenSSL::Crypto ZLIB::ZLIB)
+
+if(MSVC)
+    target_compile_options(chh1dd3n3r PRIVATE /utf-8)
+else()
