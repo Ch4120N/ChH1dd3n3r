@@ -128,3 +128,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     if (ciphertext_with_tag.size() < 16) {
         throw InvalidPasswordError("Ciphertext is too short (missing tag).");
     }
+
