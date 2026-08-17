@@ -24,16 +24,11 @@ jobs:
             artifact_name: chh1dd3n3r-linux-aarch64
             install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
             cmake_args: ""
-          - os: macos-13
-            arch: x86_64
-            artifact_name: chh1dd3n3r-macos-x86_64
-            install_deps: "brew install openssl zlib"
-            cmake_args: "-DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DZLIB_ROOT=/usr/local/opt/zlib"
           - os: macos-14
             arch: arm64
             artifact_name: chh1dd3n3r-macos-arm64
             install_deps: "brew install openssl zlib"
-            cmake_args: "-DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DZLIB_ROOT=/usr/local/opt/zlib"
+            cmake_args: "-DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib"
           - os: windows-latest
             arch: x86_64
             artifact_name: chh1dd3n3r-windows-x86_64
