@@ -18,3 +18,4 @@ std::vector<uint8_t> xor_bytes(const std::vector<uint8_t>& data,
 }
 
 // XOR‑obfuscated values – the literal magic strings never appear in source.
+static const std::vector<uint8_t> MAGIC_HEADER_V1_XORED = {
