@@ -28,3 +28,7 @@ target_link_libraries(chh1dd3n3r PRIVATE OpenSSL::Crypto ZLIB::ZLIB)
 if(MSVC)
     target_compile_options(chh1dd3n3r PRIVATE /utf-8)
 else()
+    target_compile_options(chh1dd3n3r PRIVATE -Wall -Wextra -Wpedantic -finput-charset=utf-8 -fexec-charset=utf-8)
+endif()
+
+install(TARGETS chh1dd3n3r RUNTIME DESTINATION bin)
