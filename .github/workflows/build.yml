@@ -19,8 +19,8 @@ jobs:
             cmake_args: "-DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib"
             install_deps: "brew install openssl zlib"
           - os: windows-latest
-            cmake_args: "-DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake"
-            install_deps: ""
+            cmake_args: ""
+            install_deps: "choco install -y openssl zlib"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -33,11 +33,9 @@ jobs:
         if: runner.os == 'macOS'
         run: ${{ matrix.install_deps }}
 
-      - name: Setup vcpkg (Windows)
+      - name: Install dependencies (Windows)
         if: runner.os == 'Windows'
-        uses: lukka/run-vcpkg@v11
-        with:
-          vcpkgJsonGlob: 'vcpkg.json'
+        run: ${{ matrix.install_deps }}
 
       - name: Configure CMake
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release ${{ matrix.cmake_args }}
