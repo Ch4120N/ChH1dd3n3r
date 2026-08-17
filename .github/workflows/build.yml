@@ -20,7 +20,7 @@ jobs:
             install_deps: "brew install openssl zlib"
           - os: windows-latest
             cmake_args: ""
-            install_deps: "choco install -y openssl zlib"
+            install_deps: "choco install -y openssl zlib --pre"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
