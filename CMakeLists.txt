@@ -8,3 +8,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(OpenSSL REQUIRED)
 find_package(ZLIB REQUIRED)
 
+add_executable(chh1dd3n3r
+    src/main.cpp
+    src/magic.cpp
+    src/crypto_utils.cpp
+    src/tar_utils.cpp
