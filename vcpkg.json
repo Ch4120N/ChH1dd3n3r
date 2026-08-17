@@ -1,0 +1,8 @@
+{
+  "name": "chh1dd3n3r",
+  "version-string": "3.0.0",
+  "dependencies": [
+    "openssl",
+    "zlib"
+  ]
+}
