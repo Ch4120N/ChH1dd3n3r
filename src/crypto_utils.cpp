@@ -122,3 +122,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
     if (key.size() != 32) {
         throw ChH1dd3n3rError("AES-256-GCM requires a 32-byte key.");
     }
+    if (nonce.size() != 12) {
