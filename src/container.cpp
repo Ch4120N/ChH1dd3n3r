@@ -61,3 +61,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
 
         if (flags & FLAG_METADATA) {
             write_be64(meta_block, entry.mtime);
+            write_be16(meta_block, entry.mode);
