@@ -1,0 +1,94 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            arch: x86_64
+            artifact_name: chh1dd3n3r-linux-x86_64
+            install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
+          - os: ubuntu-24.04-arm
+            arch: aarch64
+            artifact_name: chh1dd3n3r-linux-aarch64
+            install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
+          - os: macos-13
+            arch: x86_64
+            artifact_name: chh1dd3n3r-macos-x86_64
+            install_deps: "brew install openssl zlib"
+          - os: macos-14
+            arch: arm64
+            artifact_name: chh1dd3n3r-macos-arm64
+            install_deps: "brew install openssl zlib"
+          - os: windows-latest
+            arch: x86_64
+            artifact_name: chh1dd3n3r-windows-x86_64
+            install_deps: ""
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: ${{ matrix.install_deps }}
+
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: ${{ matrix.install_deps }}
+
+      - name: Setup vcpkg (Windows)
+        if: runner.os == 'Windows'
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgJsonGlob: 'vcpkg.json'
+
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Package (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          mkdir -p dist
+          cp build/chh1dd3n3r dist/
+          tar -czf ${{ matrix.artifact_name }}.tar.gz -C dist chh1dd3n3r
+
+      - name: Package (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          mkdir dist
+          copy build\Release\chh1dd3n3r.exe dist\
+          Compress-Archive -Path dist\* -DestinationPath ${{ matrix.artifact_name }}.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_name }}.*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**
+          generate_release_notes: true
