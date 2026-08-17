@@ -351,3 +351,4 @@ void Engine::info(const std::string& input_path,
             total += f.data_len;
             out["file_" + f.name] = std::to_string(f.data_len);
         }
+        out["total_encrypted_bytes"] = std::to_string(total);
