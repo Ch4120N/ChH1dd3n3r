@@ -15,3 +15,4 @@ public:
     static int run(int argc, char* argv[]);
 
 private:
+    struct Options;
