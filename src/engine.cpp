@@ -421,3 +421,4 @@ bool Engine::test(const std::string& input_path,
     else logger_.success("Password is valid.");
     return true;
 }
+
