@@ -13,3 +13,8 @@ add_executable(chh1dd3n3r
     src/magic.cpp
     src/crypto_utils.cpp
     src/tar_utils.cpp
+    src/logger.cpp
+    src/spinner.cpp
+    src/password_utils.cpp
+    src/help_center.cpp
+    src/container.cpp
