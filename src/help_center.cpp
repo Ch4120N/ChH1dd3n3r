@@ -39,3 +39,4 @@ std::string HelpCenter::main_help(bool color) {
         C("AUTHENTICATION OPTIONS:", "\033[37m") + "\n" +
         "  -p, --password <PWD>  Encryption/decryption password\n" +
         "  --key-file <PATH>     Read password from file\n" +
+        "  --key-env <VAR>       Read password from environment variable\n\n" +
