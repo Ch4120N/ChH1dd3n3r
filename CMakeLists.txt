@@ -18,3 +18,8 @@ add_executable(chh1dd3n3r
     src/password_utils.cpp
     src/help_center.cpp
     src/container.cpp
+    src/engine.cpp
+    src/cli.cpp
+)
+
+target_include_directories(chh1dd3n3r PRIVATE include)
