@@ -1,5 +1,6 @@
 #pragma once
 
+#include <filesystem>
 #include <string>
 #include <vector>
 
@@ -58,7 +59,6 @@ public:
 private:
     Logger& logger_;
 
-    static bool is_tar_data(const std::vector<uint8_t>& data);
     static void apply_metadata(const std::filesystem::path& path,
                                uint64_t mtime, uint16_t mode);
 };

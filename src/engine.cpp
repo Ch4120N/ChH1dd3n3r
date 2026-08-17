@@ -22,7 +22,8 @@ namespace fs = std::filesystem;
 
 namespace {
 
-std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
+// Renamed to avoid conflict with the `gzip_compress` parameter in `hide()`
+std::vector<uint8_t> compress_gzip(const std::vector<uint8_t>& data) {
     uLongf dest_len = compressBound(static_cast<uLong>(data.size()));
     std::vector<uint8_t> dest(dest_len);
     int ret = compress2(dest.data(), &dest_len, data.data(),
@@ -34,7 +35,7 @@ std::vector<uint8_t> gzip_compress(const std::vector<uint8_t>& data) {
     return dest;
 }
 
-std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
+std::vector<uint8_t> decompress_gzip(const std::vector<uint8_t>& data) {
     uLongf dest_len = static_cast<uLongf>(data.size() * 4 + 1024);
     while (true) {
         std::vector<uint8_t> dest(dest_len);
@@ -56,10 +57,6 @@ std::vector<uint8_t> gzip_decompress(const std::vector<uint8_t>& data) {
         }
         throw ChH1dd3n3rError("GZip decompression failed.");
     }
-}
-
-bool is_tar_data(const std::vector<uint8_t>& data) {
-    return tar::is_tar(data);
 }
 
 } // anonymous namespace
@@ -93,7 +90,7 @@ void Engine::hide(const std::string& host_path,
         if (fs::is_directory(p)) {
             logger_.info("Packing directory: " + p.string());
             std::vector<uint8_t> tar_data = tar::create_tar_from_directory(p);
-            if (gzip_compress) tar_data = gzip_compress(tar_data);
+            if (gzip_compress) tar_data = compress_gzip(tar_data);  // renamed
 
             auto ftime = fs::last_write_time(p);
             uint64_t mtime = static_cast<uint64_t>(
@@ -117,7 +114,7 @@ void Engine::hide(const std::string& host_path,
                 logger_.warn("Large file detected (" +
                              std::to_string(data.size() / (1024 * 1024)) + " MB).");
             }
-            if (gzip_compress) data = gzip_compress(data);
+            if (gzip_compress) data = compress_gzip(data);  // renamed
 
             auto ftime = fs::last_write_time(p);
             uint64_t mtime = static_cast<uint64_t>(
@@ -243,7 +240,7 @@ void Engine::unhide(const std::string& input_path,
 
         if (info.flags & FLAG_GZIP) {
             try {
-                plain = gzip_decompress(plain);
+                plain = decompress_gzip(plain);   // renamed
             } catch (...) {
                 logger_.warn("GZip decompression failed for " + file.name +
                              ". Saving raw data.");
@@ -536,10 +533,6 @@ void Engine::genkey(const std::string& output_path, int length, bool force) {
     out << encoded << '\n';
     out.close();
     logger_.success("Random key written to '" + output_path + "'.");
-}
-
-bool Engine::is_tar_data(const std::vector<uint8_t>& data) {
-    return tar::is_tar(data);
 }
 
 void Engine::apply_metadata(const fs::path& path, uint64_t mtime, uint16_t mode) {

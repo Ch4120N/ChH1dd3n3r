@@ -47,6 +47,7 @@ std::string HelpCenter::main_help(bool color) {
 }
 
 std::string HelpCenter::hide_help(bool color) {
+    (void)color; // silence unused parameter
     return
         "Usage:\n  ChH1dd3n3r hide [OPTIONS]\n\n"
         "Required:\n"
@@ -66,6 +67,7 @@ std::string HelpCenter::hide_help(bool color) {
 }
 
 std::string HelpCenter::unhide_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r unhide [OPTIONS]\n\n"
         "Required:\n"
@@ -83,6 +85,7 @@ std::string HelpCenter::unhide_help(bool color) {
 }
 
 std::string HelpCenter::info_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r info [OPTIONS] <FILE>\n\n"
         "Password is optional but required to list hidden files.\n\n"
@@ -95,6 +98,7 @@ std::string HelpCenter::info_help(bool color) {
 }
 
 std::string HelpCenter::test_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r test [OPTIONS]\n\n"
         "Required:\n"
@@ -108,6 +112,7 @@ std::string HelpCenter::test_help(bool color) {
 }
 
 std::string HelpCenter::strip_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r strip [OPTIONS]\n\n"
         "Required:\n"
@@ -118,6 +123,7 @@ std::string HelpCenter::strip_help(bool color) {
 }
 
 std::string HelpCenter::shred_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r shred [OPTIONS] <FILES>...\n\n"
         "Options:\n"
@@ -125,6 +131,7 @@ std::string HelpCenter::shred_help(bool color) {
 }
 
 std::string HelpCenter::benchmark_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r benchmark [--iterations N]\n\n"
         "Options:\n"
@@ -132,6 +139,7 @@ std::string HelpCenter::benchmark_help(bool color) {
 }
 
 std::string HelpCenter::genkey_help(bool color) {
+    (void)color;
     return
         "Usage:\n  ChH1dd3n3r genkey [OPTIONS] <OUTPUT_FILE>\n\n"
         "Options:\n"
@@ -139,4 +147,4 @@ std::string HelpCenter::genkey_help(bool color) {
         "  --force                Overwrite output file if exists\n";
 }
 
-}
+} 
