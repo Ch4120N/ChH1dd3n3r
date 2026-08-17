@@ -88,3 +88,4 @@ std::string HelpCenter::info_help(bool color) {
         "Password is optional but required to list hidden files.\n\n"
         "Authentication:\n"
         "  --password <PWD>       Password\n"
+        "  --key-file <PATH>      Read password from file\n"
