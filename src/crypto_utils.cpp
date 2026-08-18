@@ -167,3 +167,4 @@ std::vector<uint8_t> aes_gcm_decrypt(const std::vector<uint8_t>& key,
         }
 
         if (!ciphertext.empty()) {
+            if (1 != EVP_DecryptUpdate(ctx, plaintext.data(), &len,
