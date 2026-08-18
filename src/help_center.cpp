@@ -137,3 +137,4 @@ std::string HelpCenter::genkey_help(bool color) {
         "Options:\n"
         "  --length <N>           Key length in bytes (default: 32)\n"
         "  --force                Overwrite output file if exists\n";
+}
