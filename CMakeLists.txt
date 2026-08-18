@@ -5,16 +5,20 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Option to force static linking (default OFF; workflows set it as needed)
+# Option to enable fully static linking (passed by workflow)
 option(STATIC_LINKING "Build static executable" OFF)
+
 if(STATIC_LINKING)
     if(MSVC)
+        # Use static MSVC runtime (no VCRUNTIME DLL)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     else()
-        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
-        # Also prefer static libraries
+        # Prefer static libraries (.a) and link libgcc/libstdc++ statically
         set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
         set(BUILD_SHARED_LIBS OFF)
+        if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+            add_link_options(-static-libgcc -static-libstdc++)
+        endif()
     endif()
 endif()
 
