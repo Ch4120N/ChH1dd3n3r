@@ -13,13 +13,10 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            cmake_args: ""
             install_deps: "sudo apt-get update && sudo apt-get install -y libssl-dev zlib1g-dev"
           - os: macos-latest
-            cmake_args: "-DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib"
             install_deps: "brew install openssl zlib"
           - os: windows-latest
-            cmake_args: "-DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
             install_deps: ""
     runs-on: ${{ matrix.os }}
     steps:
@@ -39,9 +36,19 @@ jobs:
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
           .\vcpkg\vcpkg.exe install --triplet x64-windows
+          echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
 
-      - name: Configure CMake
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release ${{ matrix.cmake_args }}
+      - name: Configure CMake (Windows)
+        if: runner.os == 'Windows'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+
+      - name: Configure CMake (macOS)
+        if: runner.os == 'macOS'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib
+
+      - name: Configure CMake (Linux)
+        if: runner.os == 'Linux'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
         run: cmake --build build --config Release
