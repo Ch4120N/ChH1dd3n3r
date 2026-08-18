@@ -115,3 +115,4 @@ void Engine::hide(const std::string& host_path,
             file.close();
             if (data.size() > 100ULL * 1024 * 1024) {
                 logger_.warn("Large file detected (" +
+                             std::to_string(data.size() / (1024 * 1024)) + " MB).");
