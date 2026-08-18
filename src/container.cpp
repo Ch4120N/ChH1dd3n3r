@@ -68,3 +68,4 @@ std::vector<uint8_t> pack_v2_block(const std::vector<FileEntry>& files,
         meta_block.insert(meta_block.end(), entry.data.begin(), entry.data.end());
     }
 
+    // Encrypt metadata block
