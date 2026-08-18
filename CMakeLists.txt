@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(ChH1dd3n3r VERSION 1.0.0 LANGUAGES CXX)
+project(ChH1dd3n3r VERSION 3.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,10 +10,9 @@ option(STATIC_LINKING "Build static executable" OFF)
 
 if(STATIC_LINKING)
     if(MSVC)
-        # Use static MSVC runtime (no VCRUNTIME DLL)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     else()
-        # Prefer static libraries (.a) and link libgcc/libstdc++ statically
+        # Prefer static libraries and link libgcc/libstdc++ statically
         set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
         set(BUILD_SHARED_LIBS OFF)
         if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
@@ -21,6 +20,10 @@ if(STATIC_LINKING)
         endif()
     endif()
 endif()
+
+# Prefer static OpenSSL and zlib if available (on Unix-like systems)
+set(OPENSSL_USE_STATIC_LIBS TRUE)
+set(ZLIB_USE_STATIC_LIBS TRUE)
 
 find_package(OpenSSL REQUIRED)
 find_package(ZLIB REQUIRED)
