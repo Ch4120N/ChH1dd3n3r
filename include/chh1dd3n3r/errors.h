@@ -34,3 +34,4 @@ public:
 
 /**
  * @brief Thrown when metadata parsing fails.
+ */
