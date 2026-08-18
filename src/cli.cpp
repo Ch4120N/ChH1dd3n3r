@@ -53,7 +53,7 @@ void parse_hide(const std::vector<std::string>& args, CLI::Options& opts) {
             while (i < args.size() && args[i][0] != '-') {
                 opts.files.push_back(args[i++]);
             }
-            --i; // compensate for loop increment
+            --i;
         }
         else if (a == "-p" || a == "--password") opts.password = get_value_after(args, a, i);
         else if (a == "--key-file") opts.key_file = get_value_after(args, a, i);
@@ -84,7 +84,6 @@ void parse_unhide(const std::vector<std::string>& args, CLI::Options& opts) {
 }
 
 void parse_info(const std::vector<std::string>& args, CLI::Options& opts) {
-    // positional file
     for (size_t i = 0; i < args.size(); ++i) {
         const std::string& a = args[i];
         if (a == "--password") opts.password = get_value_after(args, a, i);
@@ -141,9 +140,55 @@ void parse_genkey(const std::vector<std::string>& args, CLI::Options& opts) {
     }
 }
 
+// Helper to show help for a command if -h/--help is present after the command
+bool show_help_if_requested(int argc, char* argv[]) {
+    if (argc < 2) {
+        std::cout << HelpCenter::main_help(true) << std::endl;
+        return true;
+    }
+
+    std::string first = argv[1];
+    if (first == "-h" || first == "--help") {
+        std::cout << HelpCenter::main_help(true) << std::endl;
+        return true;
+    }
+    if (first == "--version") {
+        std::cout << "ChH1dd3n3r v3.0.0 by Ch4120N" << std::endl;
+        return true;
+    }
+
+    // Check for help flag after the command
+    for (int i = 2; i < argc; ++i) {
+        std::string arg = argv[i];
+        if (arg == "-h" || arg == "--help") {
+            // Determine which command's help to show
+            std::string cmd = first;
+            if (cmd == "extract") cmd = "unhide";
+            else if (cmd == "list") cmd = "info";
+
+            if (cmd == "hide") std::cout << HelpCenter::hide_help(true) << std::endl;
+            else if (cmd == "unhide") std::cout << HelpCenter::unhide_help(true) << std::endl;
+            else if (cmd == "info") std::cout << HelpCenter::info_help(true) << std::endl;
+            else if (cmd == "test") std::cout << HelpCenter::test_help(true) << std::endl;
+            else if (cmd == "strip") std::cout << HelpCenter::strip_help(true) << std::endl;
+            else if (cmd == "shred") std::cout << HelpCenter::shred_help(true) << std::endl;
+            else if (cmd == "benchmark") std::cout << HelpCenter::benchmark_help(true) << std::endl;
+            else if (cmd == "genkey") std::cout << HelpCenter::genkey_help(true) << std::endl;
+            else std::cout << HelpCenter::main_help(true) << std::endl;
+            return true;
+        }
+    }
+    return false;
+}
+
 } // anonymous namespace
 
 void CLI::parse_args(int argc, char* argv[], Options& opts) {
+    // We handle help/version separately before parsing required args
+    if (show_help_if_requested(argc, argv)) {
+        exit(0);
+    }
+
     if (argc < 2) {
         std::cout << HelpCenter::main_help(true) << std::endl;
         exit(0);
@@ -202,25 +247,17 @@ std::string CLI::resolve_password(const Options& opts) {
 }
 
 void CLI::print_banner(const Logger& logger) {
-    (void)logger; // silence unused parameter
+    (void)logger;
     std::cout <<
         "   ____ _   _    _ _   _  _               _____\n"
         "  / ___| | | |  / | ||_| ||_|  __ _  ___ |___ / _ __\n"
         " | |   | |_| |  | |__ | ||_   / _` |/ _ \\  |_ \\| '__|\n"
         " | |___|  _  |  | '_ \\| |__   | (_| |  __/ ___) | |\n"
         "  \\____|_| |_|  |_| |_|   |_|  \\__,_|\\___||____/|_|\n"
-        "  File Steganography & Encryption v3.0  by Ch4120N\n\n";
+        "  File Steganography & Encryption v1.0  by Ch4120N\n\n";
 }
 
 int CLI::run(int argc, char* argv[]) {
-#ifdef _WIN32
-    // Set the console code page to UTF-8.
-    // This is the programmatic equivalent of `chcp 65001`,
-    // without invoking a shell command.
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
-#endif
-
     Options opts;
     parse_args(argc, argv, opts);
 
@@ -267,7 +304,7 @@ int CLI::run(int argc, char* argv[]) {
     } catch (const std::exception& e) {
         logger.fatal(std::string("Unexpected error: ") + e.what());
         if (opts.verbose) {
-            // stack trace would be nice, but not portable
+            // stack trace not portable
         }
         return 1;
     }
