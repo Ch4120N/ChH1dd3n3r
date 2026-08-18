@@ -16,63 +16,55 @@ jobs:
         include:
           - os: ubuntu-24.04
             arch: x86_64
-            triplet: x64-linux
             artifact_name: chh1dd3n3r-linux-x86_64
           - os: ubuntu-24.04-arm
             arch: aarch64
-            triplet: arm64-linux
             artifact_name: chh1dd3n3r-linux-aarch64
           - os: macos-14
             arch: arm64
-            triplet: arm64-osx
             artifact_name: chh1dd3n3r-macos-arm64
           - os: macos-13
             arch: x86_64
-            triplet: x64-osx
             artifact_name: chh1dd3n3r-macos-x86_64
           - os: windows-latest
             arch: x86_64
-            triplet: x64-windows
             artifact_name: chh1dd3n3r-windows-x86_64
     runs-on: ${{ matrix.os }}
-    env:
-      VCPKG_LIBRARY_LINKAGE: static
-      VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install system dependencies (Linux)
+      - name: Install Linux dependencies
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake ninja-build perl
+          sudo apt-get install -y build-essential cmake ninja-build libssl-dev zlib1g-dev
 
-      - name: Install system dependencies (macOS)
+      - name: Install macOS dependencies
         if: runner.os == 'macOS'
         run: |
-          brew install cmake ninja perl
+          brew install cmake ninja openssl zlib
 
-      - name: Setup vcpkg
+      - name: Setup vcpkg (Windows)
+        if: runner.os == 'Windows'
         run: |
           git clone https://github.com/microsoft/vcpkg.git
-          if [ "$RUNNER_OS" == "Windows" ]; then
-            .\vcpkg\bootstrap-vcpkg.bat
-            .\vcpkg\vcpkg.exe install --triplet ${{ matrix.triplet }}
-          else
-            ./vcpkg/bootstrap-vcpkg.sh
-            ./vcpkg/vcpkg install --triplet ${{ matrix.triplet }}
-          fi
-          echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
-          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
-          echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
+          .\vcpkg\bootstrap-vcpkg.bat
+          .\vcpkg\vcpkg.exe install --triplet x64-windows-static
+          echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
+          echo "VCPKG_DEFAULT_TRIPLET=x64-windows-static" >> $env:GITHUB_ENV
+          echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
 
       - name: Configure CMake (Windows)
         if: runner.os == 'Windows'
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
 
-      - name: Configure CMake (Linux/macOS)
-        if: runner.os != 'Windows'
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+      - name: Configure CMake (Linux)
+        if: runner.os == 'Linux'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_EXE_LINKER_FLAGS="-static"
+
+      - name: Configure CMake (macOS)
+        if: runner.os == 'macOS'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++"
 
       - name: Build
         run: cmake --build build --config Release
