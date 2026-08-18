@@ -135,3 +135,4 @@ std::string HelpCenter::genkey_help(bool color) {
     return
         "Usage:\n  ChH1dd3n3r genkey [OPTIONS] <OUTPUT_FILE>\n\n"
         "Options:\n"
+        "  --length <N>           Key length in bytes (default: 32)\n"
