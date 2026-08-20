@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 3.20)
-project(ChH1dd3n3r VERSION 3.0.0 LANGUAGES CXX)
+project(ChH1dd3n3r VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Option to enable fully static linking (passed by workflow)
 option(STATIC_LINKING "Build static executable" OFF)
 
 if(STATIC_LINKING)
     if(MSVC)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     else()
-        # Prefer static libraries and link libgcc/libstdc++ statically
         set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
         set(BUILD_SHARED_LIBS OFF)
         if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
@@ -21,7 +19,7 @@ if(STATIC_LINKING)
     endif()
 endif()
 
-# Prefer static OpenSSL and zlib if available (on Unix-like systems)
+# Prefer static libraries for OpenSSL and zlib
 set(OPENSSL_USE_STATIC_LIBS TRUE)
 set(ZLIB_USE_STATIC_LIBS TRUE)
 
@@ -51,7 +49,6 @@ else()
     target_compile_options(chh1dd3n3r PRIVATE -Wall -Wextra -Wpedantic -finput-charset=utf-8 -fexec-charset=utf-8)
 endif()
 
-# Ensure static runtime on Windows when STATIC_LINKING is enabled
 if(STATIC_LINKING AND MSVC)
     set_property(TARGET chh1dd3n3r PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()

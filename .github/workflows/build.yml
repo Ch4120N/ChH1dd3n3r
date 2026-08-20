@@ -12,27 +12,27 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
-          - os: macos-latest
+          - os: ubuntu-24.04
+            triplet: x64-linux
+          - os: macos-14
+            triplet: arm64-osx
           - os: windows-latest
+            triplet: x64-windows-static
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
-      # ----- Linux dependencies -----
-      - name: Install Linux dependencies
+      - name: Install Linux build tools
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake ninja-build libssl-dev zlib1g-dev
+          sudo apt-get install -y build-essential cmake ninja-build perl
 
-      # ----- macOS dependencies -----
-      - name: Install macOS dependencies
+      - name: Install macOS build tools
         if: runner.os == 'macOS'
         run: |
-          brew install cmake ninja openssl zlib
+          brew install cmake ninja perl
 
-      # ----- Windows vcpkg setup -----
       - name: Setup vcpkg (Windows)
         if: runner.os == 'Windows'
         run: |
@@ -43,18 +43,23 @@ jobs:
           echo "VCPKG_DEFAULT_TRIPLET=x64-windows-static" >> $env:GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
 
-      # ----- Configure CMake per OS -----
+      - name: Setup vcpkg (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
+          ./vcpkg/vcpkg install --triplet ${{ matrix.triplet }}
+          echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
+          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
+          echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
+
       - name: Configure CMake (Windows)
         if: runner.os == 'Windows'
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
 
-      - name: Configure CMake (Linux)
-        if: runner.os == 'Linux'
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_EXE_LINKER_FLAGS="-static"
-
-      - name: Configure CMake (macOS)
-        if: runner.os == 'macOS'
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DOPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl -DZLIB_ROOT=/opt/homebrew/opt/zlib -DCMAKE_EXE_LINKER_FLAGS="-static-libgcc -static-libstdc++"
+      - name: Configure CMake (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
 
       - name: Build
         run: cmake --build build --config Release
@@ -62,7 +67,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: chh1dd3n3r-${{ runner.os }}
+          name: chh1dd3n3r-${{ runner.os }}-${{ matrix.triplet }}
           path: |
             build/chh1dd3n3r*
             build/Release/chh1dd3n3r.exe
