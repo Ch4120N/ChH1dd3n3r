@@ -9,13 +9,19 @@ option(STATIC_LINKING "Build static executable" OFF)
 
 if(STATIC_LINKING)
     if(MSVC)
+        # Use static MSVC runtime (no VCRUNTIME DLL)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     else()
+        # Prefer static libraries (.a) and disable shared libraries
         set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
         set(BUILD_SHARED_LIBS OFF)
-        if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+
+        # On Linux, link libgcc and libstdc++ statically (optional, but reduces dependencies)
+        if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
             add_link_options(-static-libgcc -static-libstdc++)
         endif()
+        # On macOS, do NOT add GNU-specific flags like -static-libgcc;
+        # just rely on vcpkg static libraries (libcrypto.a, libz.a).
     endif()
 endif()
 
@@ -49,6 +55,7 @@ else()
     target_compile_options(chh1dd3n3r PRIVATE -Wall -Wextra -Wpedantic -finput-charset=utf-8 -fexec-charset=utf-8)
 endif()
 
+# Ensure static runtime on Windows when STATIC_LINKING is enabled
 if(STATIC_LINKING AND MSVC)
     set_property(TARGET chh1dd3n3r PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
