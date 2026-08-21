@@ -22,7 +22,7 @@ jobs:
             arch: aarch64
             triplet: arm64-linux
             artifact_name: chh1dd3n3r-linux-aarch64
-          - os: macos-latest   # always uses the newest available macOS (currently arm64)
+          - os: macos-latest
             arch: arm64
             triplet: arm64-osx
             artifact_name: chh1dd3n3r-macos-arm64
@@ -55,11 +55,22 @@ jobs:
           echo "VCPKG_DEFAULT_TRIPLET=x64-windows-static" >> $env:GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
 
-      - name: Setup vcpkg (Linux/macOS)
-        if: runner.os != 'Windows'
+      - name: Setup vcpkg (Linux)
+        if: runner.os == 'Linux'
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
+          ./vcpkg/vcpkg install --triplet ${{ matrix.triplet }}
+          echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
+          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
+          echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
+
+      - name: Setup vcpkg (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          git clone https://github.com/microsoft/vcpkg.git
+          ./vcpkg/bootstrap-vcpkg.sh
+          export VCPKG_BUILD_TYPE=release   # <-- FIX: skip debug builds (zlib debug is broken)
           ./vcpkg/vcpkg install --triplet ${{ matrix.triplet }}
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
           echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
