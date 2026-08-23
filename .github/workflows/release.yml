@@ -56,8 +56,6 @@ jobs:
             install_deps: "sudo apt-get update && sudo apt-get install -y g++-aarch64-linux-gnu cmake ninja-build pkg-config"
 
           # ---- macOS (2 Architectures) ----
-          # PRO FIX: Using macos-14 (Apple Silicon) to build BOTH arm64 and x86_64 instantly.
-          # This completely bypasses the 2-hour queue time of the deprecated macos-13 Intel runners.
           - os: macos-14
             arch: x64 (Intel)
             build_dir: build_x64
@@ -126,9 +124,10 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install openssl zlib --triplet ${{ matrix.vcpkg_triplet }}
           echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
+          # Manifest mode: reads vcpkg.json automatically
+          .\vcpkg\vcpkg.exe install --triplet ${{ matrix.vcpkg_triplet }}
 
       - name: Setup vcpkg (Linux/macOS)
         if: runner.os != 'Windows'
@@ -136,9 +135,10 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          ./vcpkg/vcpkg install openssl zlib --triplet ${{ matrix.vcpkg_triplet }}
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
+          # Manifest mode: reads vcpkg.json automatically
+          ./vcpkg/vcpkg install --triplet ${{ matrix.vcpkg_triplet }}
 
       - name: Configure CMake
         shell: bash
@@ -147,7 +147,6 @@ jobs:
           EXTRA_FLAGS="${{ matrix.cmake_extra }} -DSTATIC_LINKING=ON -DVCPKG_TARGET_TRIPLET=${{ matrix.vcpkg_triplet }}"
           
           if [ -n "${{ matrix.toolchain }}" ]; then
-            # Chainload the custom cross-compile toolchain INTO vcpkg
             cmake -B ${{ matrix.build_dir }} -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_TOOLCHAIN_FILE="$VCPKG_TOOLCHAIN" \
               -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE="$GITHUB_WORKSPACE/${{ matrix.toolchain }}" \
@@ -169,7 +168,6 @@ jobs:
           mkdir -p release
           build_dir="${{ matrix.build_dir }}"
           
-          # Locate and rename the executable to the exact required name
           if [ -f "$build_dir/chh1dd3n3r" ]; then
             cp "$build_dir/chh1dd3n3r" "release/${{ matrix.executable_name }}"
           elif [ -f "$build_dir/Release/chh1dd3n3r" ]; then
@@ -179,7 +177,6 @@ jobs:
             exit 1
           fi
           
-          # Verify static linking and architecture (prints to CI logs for your confidence)
           file "release/${{ matrix.executable_name }}" || true
           
           cd release
