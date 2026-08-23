@@ -1,4 +1,4 @@
-name: Release
+name: Build and Release (All Architectures)
 
 on:
   push:
@@ -14,42 +14,111 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # ---- Linux (4 Architectures) ----
           - os: ubuntu-24.04
-            arch: x86_64
-            triplet: x64-linux
-            artifact_name: ChH1dd3n3r-linux-x86_64
-          - os: ubuntu-24.04-arm
-            arch: aarch64
-            triplet: arm64-linux
-            artifact_name: ChH1dd3n3r-linux-aarch64
-          - os: macos-13
-            arch: x86_64
-            triplet: x64-osx
-            artifact_name: ChH1dd3n3r-macos-x86_64
+            arch: x86 (32-bit)
+            build_dir: build_x86
+            artifact_name: linux-x86
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: x86-linux
+            cmake_extra: ""
+            toolchain: "cmake/i686-linux-gnu.cmake"
+            install_deps: "sudo apt-get update && sudo apt-get install -y g++-i686-linux-gnu cmake ninja-build pkg-config"
+            
+          - os: ubuntu-24.04
+            arch: x64 (64-bit)
+            build_dir: build_x64
+            artifact_name: linux-x64
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: x64-linux
+            cmake_extra: ""
+            toolchain: ""
+            install_deps: "sudo apt-get update && sudo apt-get install -y build-essential cmake ninja-build pkg-config"
+            
+          - os: ubuntu-24.04
+            arch: armv7 (32-bit ARM)
+            build_dir: build_armv7
+            artifact_name: linux-armv7
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: arm-linux
+            cmake_extra: ""
+            toolchain: "cmake/arm-linux-gnueabihf.cmake"
+            install_deps: "sudo apt-get update && sudo apt-get install -y g++-arm-linux-gnueabihf cmake ninja-build pkg-config"
+            
+          - os: ubuntu-24.04
+            arch: arm64 (64-bit ARM)
+            build_dir: build_arm64
+            artifact_name: linux-arm64
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: arm64-linux
+            cmake_extra: ""
+            toolchain: "cmake/aarch64-linux-gnu.cmake"
+            install_deps: "sudo apt-get update && sudo apt-get install -y g++-aarch64-linux-gnu cmake ninja-build pkg-config"
+
+          # ---- macOS (2 Architectures) ----
+          # PRO FIX: Using macos-14 (Apple Silicon) to build BOTH arm64 and x86_64 instantly.
+          # This completely bypasses the 2-hour queue time of the deprecated macos-13 Intel runners.
           - os: macos-14
-            arch: arm64
-            triplet: arm64-osx
-            artifact_name: ChH1dd3n3r-macos-arm64
+            arch: x64 (Intel)
+            build_dir: build_x64
+            artifact_name: macos-x64
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: x64-osx
+            cmake_extra: "-DCMAKE_OSX_ARCHITECTURES=x86_64"
+            toolchain: ""
+            install_deps: "brew install cmake ninja pkg-config"
+            
+          - os: macos-14
+            arch: arm64 (Apple Silicon)
+            build_dir: build_arm64
+            artifact_name: macos-arm64
+            executable_name: ChH1dd3n3r
+            vcpkg_triplet: arm64-osx
+            cmake_extra: "-DCMAKE_OSX_ARCHITECTURES=arm64"
+            toolchain: ""
+            install_deps: "brew install cmake ninja pkg-config"
+
+          # ---- Windows (3 Architectures) ----
           - os: windows-latest
-            arch: x86_64
-            triplet: x64-windows-static
-            artifact_name: ChH1dd3n3r-windows-x86_64
+            arch: x86 (32-bit)
+            build_dir: build_x86
+            artifact_name: windows-x86
+            executable_name: ChH1dd3n3r.exe
+            vcpkg_triplet: x86-windows-static
+            cmake_extra: "-A Win32"
+            toolchain: ""
+            install_deps: ""
+            
+          - os: windows-latest
+            arch: x64 (64-bit)
+            build_dir: build_x64
+            artifact_name: windows-x64
+            executable_name: ChH1dd3n3r.exe
+            vcpkg_triplet: x64-windows-static
+            cmake_extra: "-A x64"
+            toolchain: ""
+            install_deps: ""
+            
+          - os: windows-latest
+            arch: arm64 (64-bit ARM)
+            build_dir: build_arm64
+            artifact_name: windows-arm64
+            executable_name: ChH1dd3n3r.exe
+            vcpkg_triplet: arm64-windows-static
+            cmake_extra: "-A ARM64"
+            toolchain: ""
+            install_deps: ""
 
     runs-on: ${{ matrix.os }}
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Linux build tools
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential cmake ninja-build perl pkg-config
-
-      - name: Install macOS build tools
-        if: runner.os == 'macOS'
-        run: |
-          brew install cmake ninja perl pkg-config
+      - name: Install dependencies
+        if: matrix.install_deps != ''
+        shell: bash
+        run: ${{ matrix.install_deps }}
 
       - name: Setup vcpkg (Windows)
         if: runner.os == 'Windows'
@@ -57,69 +126,91 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install openssl zlib --triplet ${{ matrix.triplet }}
+          .\vcpkg\vcpkg.exe install openssl zlib --triplet ${{ matrix.vcpkg_triplet }}
           echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
-          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $env:GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
 
       - name: Setup vcpkg (Linux/macOS)
         if: runner.os != 'Windows'
+        shell: bash
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          ./vcpkg/vcpkg install openssl zlib --triplet ${{ matrix.triplet }}
+          ./vcpkg/vcpkg install openssl zlib --triplet ${{ matrix.vcpkg_triplet }}
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
-          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
 
       - name: Configure CMake
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake
+        shell: bash
+        run: |
+          VCPKG_TOOLCHAIN="${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake"
+          EXTRA_FLAGS="${{ matrix.cmake_extra }} -DSTATIC_LINKING=ON -DVCPKG_TARGET_TRIPLET=${{ matrix.vcpkg_triplet }}"
+          
+          if [ -n "${{ matrix.toolchain }}" ]; then
+            # Chainload the custom cross-compile toolchain INTO vcpkg
+            cmake -B ${{ matrix.build_dir }} -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_TOOLCHAIN_FILE="$VCPKG_TOOLCHAIN" \
+              -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE="$GITHUB_WORKSPACE/${{ matrix.toolchain }}" \
+              $EXTRA_FLAGS
+          else
+            cmake -B ${{ matrix.build_dir }} -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_TOOLCHAIN_FILE="$VCPKG_TOOLCHAIN" \
+              $EXTRA_FLAGS
+          fi
 
       - name: Build
-        run: cmake --build build --config Release --parallel
+        shell: bash
+        run: cmake --build ${{ matrix.build_dir }} --config Release --parallel
 
-      - name: Install to staging directory
-        run: cmake --install build --config Release --prefix ${{ github.workspace }}/staging
-
-      - name: Package (Linux/macOS)
+      - name: Create archive (Linux/macOS)
         if: runner.os != 'Windows'
+        shell: bash
         run: |
-          mkdir -p dist
-          # Rename to exact required name inside the archive
-          mv ${{ github.workspace }}/staging/bin/chh1dd3n3r dist/ChH1dd3n3r
+          mkdir -p release
+          build_dir="${{ matrix.build_dir }}"
           
-          # Verify static linking and binary type in CI logs
-          file dist/ChH1dd3n3r
+          # Locate and rename the executable to the exact required name
+          if [ -f "$build_dir/chh1dd3n3r" ]; then
+            cp "$build_dir/chh1dd3n3r" "release/${{ matrix.executable_name }}"
+          elif [ -f "$build_dir/Release/chh1dd3n3r" ]; then
+            cp "$build_dir/Release/chh1dd3n3r" "release/${{ matrix.executable_name }}"
+          else
+            echo "Error: Executable not found in build directory"
+            exit 1
+          fi
           
-          tar -czf ${{ matrix.artifact_name }}.tar.gz -C dist ChH1dd3n3r
+          # Verify static linking and architecture (prints to CI logs for your confidence)
+          file "release/${{ matrix.executable_name }}" || true
+          
+          cd release
+          tar -czf "../ChH1dd3n3r-${{ matrix.artifact_name }}.tar.gz" "${{ matrix.executable_name }}"
 
-      - name: Package (Windows)
+      - name: Create archive (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force -Path dist
-          # Rename to exact required base name (Windows requires .exe extension to execute properly)
-          Move-Item -Path "${{ github.workspace }}\staging\bin\chh1dd3n3r.exe" -Destination "dist\ChH1dd3n3r.exe"
+          New-Item -ItemType Directory -Path release -Force | Out-Null
+          $buildDir = "${{ matrix.build_dir }}"
+          $targetName = "${{ matrix.executable_name }}"
           
-          Compress-Archive -Path dist\* -DestinationPath ${{ matrix.artifact_name }}.zip
+          if (Test-Path "$buildDir\chh1dd3n3r.exe") {
+            Copy-Item "$buildDir\chh1dd3n3r.exe" "release\$targetName"
+          } elseif (Test-Path "$buildDir\Release\chh1dd3n3r.exe") {
+            Copy-Item "$buildDir\Release\chh1dd3n3r.exe" "release\$targetName"
+          } else {
+            Write-Error "Executable not found in build directory"
+            exit 1
+          }
+          
+          Compress-Archive -Path release\* -DestinationPath "ChH1dd3n3r-${{ matrix.artifact_name }}.zip"
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.artifact_name }}
-          path: ${{ matrix.artifact_name }}.*
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-
-      - name: Create GitHub Release
+      - name: Upload release asset
         uses: softprops/action-gh-release@v2
+        if: success()
         with:
-          files: artifacts/**/*
+          files: |
+            ChH1dd3n3r-${{ matrix.artifact_name }}.tar.gz
+            ChH1dd3n3r-${{ matrix.artifact_name }}.zip
           generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
