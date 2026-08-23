@@ -1,9 +1,8 @@
 {
   "name": "chh1dd3n3r",
-  "version-string": "3.0.0",
+  "version": "1.0.0",
   "dependencies": [
     "openssl",
     "zlib"
-  ],
-  "builtin-baseline": "a42af01b72c28a8e1d7b48107b33e4f286a55ef6"
+  ]
 }
