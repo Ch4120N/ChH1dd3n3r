@@ -5,27 +5,34 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Force output to the root of the build directory for predictable packaging
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR})
+
 option(STATIC_LINKING "Build static executable" OFF)
 
 if(STATIC_LINKING)
     if(MSVC)
-        # Use static MSVC runtime (no VCRUNTIME DLL)
+        # Static MSVC runtime (no VCRUNTIME DLL dependency)
         set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
     else()
         # Prefer static libraries (.a) and disable shared libraries
         set(CMAKE_FIND_LIBRARY_SUFFIXES .a ${CMAKE_FIND_LIBRARY_SUFFIXES})
         set(BUILD_SHARED_LIBS OFF)
 
-        # On Linux, link libgcc and libstdc++ statically (optional, but reduces dependencies)
+        # On Linux, link libgcc and libstdc++ statically to reduce dependencies
         if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-            add_link_options(-static-libgcc -static-libstdc++)
+            # Add -m32 if building for 32-bit x86
+            if(CMAKE_SIZEOF_VOID_P EQUAL 4 AND CMAKE_SYSTEM_PROCESSOR MATCHES "i686|x86")
+                add_link_options(-m32 -static-libgcc -static-libstdc++)
+            else()
+                add_link_options(-static-libgcc -static-libstdc++)
+            endif()
         endif()
-        # On macOS, do NOT add GNU-specific flags like -static-libgcc;
-        # just rely on vcpkg static libraries (libcrypto.a, libz.a).
     endif()
 endif()
 
-# Prefer static libraries for OpenSSL and zlib
+# Force vcpkg to provide static versions of these libraries
 set(OPENSSL_USE_STATIC_LIBS TRUE)
 set(ZLIB_USE_STATIC_LIBS TRUE)
 
@@ -53,11 +60,6 @@ if(MSVC)
     target_compile_options(chh1dd3n3r PRIVATE /utf-8)
 else()
     target_compile_options(chh1dd3n3r PRIVATE -Wall -Wextra -Wpedantic -finput-charset=utf-8 -fexec-charset=utf-8)
-endif()
-
-# Ensure static runtime on Windows when STATIC_LINKING is enabled
-if(STATIC_LINKING AND MSVC)
-    set_property(TARGET chh1dd3n3r PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 
 install(TARGETS chh1dd3n3r RUNTIME DESTINATION bin)
