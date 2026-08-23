@@ -17,42 +17,49 @@ jobs:
           - os: ubuntu-24.04
             arch: x86_64
             triplet: x64-linux
-            artifact_name: chh1dd3n3r-linux-x86_64
+            artifact_name: ChH1dd3n3r-linux-x86_64
           - os: ubuntu-24.04-arm
             arch: aarch64
             triplet: arm64-linux
-            artifact_name: chh1dd3n3r-linux-aarch64
+            artifact_name: ChH1dd3n3r-linux-aarch64
+          - os: macos-13
+            arch: x86_64
+            triplet: x64-osx
+            artifact_name: ChH1dd3n3r-macos-x86_64
           - os: macos-14
             arch: arm64
             triplet: arm64-osx
-            artifact_name: chh1dd3n3r-macos-arm64
+            artifact_name: ChH1dd3n3r-macos-arm64
           - os: windows-latest
             arch: x86_64
             triplet: x64-windows-static
-            artifact_name: chh1dd3n3r-windows-x86_64
+            artifact_name: ChH1dd3n3r-windows-x86_64
+
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install Linux build tools
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake ninja-build perl
+          sudo apt-get install -y build-essential cmake ninja-build perl pkg-config
 
       - name: Install macOS build tools
         if: runner.os == 'macOS'
         run: |
-          brew install cmake ninja perl
+          brew install cmake ninja perl pkg-config
 
       - name: Setup vcpkg (Windows)
         if: runner.os == 'Windows'
+        shell: pwsh
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           .\vcpkg\bootstrap-vcpkg.bat
-          .\vcpkg\vcpkg.exe install --triplet x64-windows-static
+          .\vcpkg\vcpkg.exe install openssl zlib --triplet ${{ matrix.triplet }}
           echo "VCPKG_ROOT=$env:GITHUB_WORKSPACE\vcpkg" >> $env:GITHUB_ENV
-          echo "VCPKG_DEFAULT_TRIPLET=x64-windows-static" >> $env:GITHUB_ENV
+          echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $env:GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $env:GITHUB_ENV
 
       - name: Setup vcpkg (Linux/macOS)
@@ -60,34 +67,40 @@ jobs:
         run: |
           git clone https://github.com/microsoft/vcpkg.git
           ./vcpkg/bootstrap-vcpkg.sh
-          ./vcpkg/vcpkg install --triplet ${{ matrix.triplet }}
+          ./vcpkg/vcpkg install openssl zlib --triplet ${{ matrix.triplet }}
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
           echo "VCPKG_DEFAULT_TRIPLET=${{ matrix.triplet }}" >> $GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
 
-      - name: Configure CMake (Windows)
-        if: runner.os == 'Windows'
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
-
-      - name: Configure CMake (Linux/macOS)
-        if: runner.os != 'Windows'
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DSTATIC_LINKING=ON -DCMAKE_TOOLCHAIN_FILE=${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake
 
       - name: Build
-        run: cmake --build build --config Release
+        run: cmake --build build --config Release --parallel
+
+      - name: Install to staging directory
+        run: cmake --install build --config Release --prefix ${{ github.workspace }}/staging
 
       - name: Package (Linux/macOS)
         if: runner.os != 'Windows'
         run: |
           mkdir -p dist
-          cp build/chh1dd3n3r dist/
-          tar -czf ${{ matrix.artifact_name }}.tar.gz -C dist chh1dd3n3r
+          # Rename to exact required name inside the archive
+          mv ${{ github.workspace }}/staging/bin/chh1dd3n3r dist/ChH1dd3n3r
+          
+          # Verify static linking and binary type in CI logs
+          file dist/ChH1dd3n3r
+          
+          tar -czf ${{ matrix.artifact_name }}.tar.gz -C dist ChH1dd3n3r
 
       - name: Package (Windows)
         if: runner.os == 'Windows'
+        shell: pwsh
         run: |
-          mkdir dist
-          copy build\Release\chh1dd3n3r.exe dist\
+          New-Item -ItemType Directory -Force -Path dist
+          # Rename to exact required base name (Windows requires .exe extension to execute properly)
+          Move-Item -Path "${{ github.workspace }}\staging\bin\chh1dd3n3r.exe" -Destination "dist\ChH1dd3n3r.exe"
+          
           Compress-Archive -Path dist\* -DestinationPath ${{ matrix.artifact_name }}.zip
 
       - name: Upload artifact
@@ -108,5 +121,5 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: artifacts/**
+          files: artifacts/**/*
           generate_release_notes: true
