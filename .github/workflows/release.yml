@@ -137,7 +137,16 @@ jobs:
           ./vcpkg/bootstrap-vcpkg.sh
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
-          # Manifest mode: reads vcpkg.json automatically
+          if [ "${{ matrix.vcpkg_triplet }}" == "x86-linux" ]; then
+            export CC=i686-linux-gnu-gcc
+            export CXX=i686-linux-gnu-g++
+          elif [ "${{ matrix.vcpkg_triplet }}" == "arm-linux" ]; then
+            export CC=arm-linux-gnueabihf-gcc
+            export CXX=arm-linux-gnueabihf-g++
+          elif [ "${{ matrix.vcpkg_triplet }}" == "aarch64-linux" ]; then
+            export CC=aarch64-linux-gnu-gcc
+            export CXX=aarch64-linux-gnu-g++
+          fi
           ./vcpkg/vcpkg install --triplet ${{ matrix.vcpkg_triplet }}
 
       - name: Configure CMake
