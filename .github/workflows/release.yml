@@ -118,6 +118,28 @@ jobs:
         shell: bash
         run: ${{ matrix.install_deps }}
 
+      - name: Set compiler for cross-compilation (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          case "${{ matrix.vcpkg_triplet }}" in
+            "x86-linux")
+              echo "CC=i686-linux-gnu-gcc" >> $GITHUB_ENV
+              echo "CXX=i686-linux-gnu-g++" >> $GITHUB_ENV
+              ;;
+            "arm-linux")
+              echo "CC=arm-linux-gnueabihf-gcc" >> $GITHUB_ENV
+              echo "CXX=arm-linux-gnueabihf-g++" >> $GITHUB_ENV
+              ;;
+            "aarch64-linux")
+              echo "CC=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
+              echo "CXX=aarch64-linux-gnu-g++" >> $GITHUB_ENV
+              ;;
+            *)
+              # Native compiler: leave default
+              ;;
+          esac
+
       - name: Setup vcpkg (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
@@ -137,16 +159,6 @@ jobs:
           ./vcpkg/bootstrap-vcpkg.sh
           echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
           echo "VCPKG_LIBRARY_LINKAGE=static" >> $GITHUB_ENV
-          if [ "${{ matrix.vcpkg_triplet }}" == "x86-linux" ]; then
-            export CC=i686-linux-gnu-gcc
-            export CXX=i686-linux-gnu-g++
-          elif [ "${{ matrix.vcpkg_triplet }}" == "arm-linux" ]; then
-            export CC=arm-linux-gnueabihf-gcc
-            export CXX=arm-linux-gnueabihf-g++
-          elif [ "${{ matrix.vcpkg_triplet }}" == "aarch64-linux" ]; then
-            export CC=aarch64-linux-gnu-gcc
-            export CXX=aarch64-linux-gnu-g++
-          fi
           ./vcpkg/vcpkg install --triplet ${{ matrix.vcpkg_triplet }}
 
       - name: Configure CMake
@@ -176,14 +188,21 @@ jobs:
         run: |
           mkdir -p release
           build_dir="${{ matrix.build_dir }}"
+          target_name="ChH1dd3n3r"
           
-          if [ -f "$build_dir/chh1dd3n3r" ]; then
-            cp "$build_dir/chh1dd3n3r" "release/${{ matrix.executable_name }}"
-          elif [ -f "$build_dir/Release/chh1dd3n3r" ]; then
-            cp "$build_dir/Release/chh1dd3n3r" "release/${{ matrix.executable_name }}"
+          # Find the executable (name is case-sensitive)
+          if [ -f "$build_dir/$target_name" ]; then
+            cp "$build_dir/$target_name" "release/${{ matrix.executable_name }}"
+          elif [ -f "$build_dir/Release/$target_name" ]; then
+            cp "$build_dir/Release/$target_name" "release/${{ matrix.executable_name }}"
           else
-            echo "Error: Executable not found in build directory"
-            exit 1
+            # Fallback: search for the file
+            found=$(find "$build_dir" -maxdepth 3 -type f -name "$target_name" | head -n 1)
+            if [ -z "$found" ]; then
+              echo "Error: Executable '$target_name' not found in $build_dir"
+              exit 1
+            fi
+            cp "$found" "release/${{ matrix.executable_name }}"
           fi
           
           file "release/${{ matrix.executable_name }}" || true
@@ -197,15 +216,19 @@ jobs:
         run: |
           New-Item -ItemType Directory -Path release -Force | Out-Null
           $buildDir = "${{ matrix.build_dir }}"
-          $targetName = "${{ matrix.executable_name }}"
+          $targetName = "ChH1dd3n3r.exe"
           
-          if (Test-Path "$buildDir\chh1dd3n3r.exe") {
-            Copy-Item "$buildDir\chh1dd3n3r.exe" "release\$targetName"
-          } elseif (Test-Path "$buildDir\Release\chh1dd3n3r.exe") {
-            Copy-Item "$buildDir\Release\chh1dd3n3r.exe" "release\$targetName"
+          if (Test-Path "$buildDir\$targetName") {
+            Copy-Item "$buildDir\$targetName" "release\$targetName"
+          } elseif (Test-Path "$buildDir\Release\$targetName") {
+            Copy-Item "$buildDir\Release\$targetName" "release\$targetName"
           } else {
-            Write-Error "Executable not found in build directory"
-            exit 1
+            $found = Get-ChildItem -Path $buildDir -Recurse -Filter $targetName | Select-Object -First 1
+            if (-not $found) {
+              Write-Error "Executable '$targetName' not found in $buildDir"
+              exit 1
+            }
+            Copy-Item $found.FullName "release\$targetName"
           }
           
           Compress-Archive -Path release\* -DestinationPath "ChH1dd3n3r-${{ matrix.artifact_name }}.zip"
